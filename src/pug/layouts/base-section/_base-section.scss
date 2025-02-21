@@ -1,0 +1,5 @@
+@forward "@styles/_extends/flexbox.scss";
+
+.base-section {
+	padding: clamp(30px, 2.6vw, 40px) 0;
+}

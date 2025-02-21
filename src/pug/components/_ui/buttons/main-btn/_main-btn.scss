@@ -1,0 +1,91 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/effects.scss";
+@forward "@styles/_extends/resets.scss";
+
+.main-btn {
+	@extend %flex-align;
+	justify-content: center;
+	gap: 5px;
+	width: 100%;
+	max-width: fit-content;
+	height: 60px;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 20px 24px;
+	border: 1px solid transparent;
+	background-color: var(--primary);
+	color: var(--light);
+	transition: color var(--main-transition),
+		background-color var(--main-transition), border-color var(--main-transition),
+		opacity var(--main-transition);
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: #4e5254;
+			color: var(--light);
+
+			svg {
+				fill: var(--light);
+			}
+		}
+	}
+
+	svg {
+		fill: var(--light);
+		transition: fill var(--main-transition);
+	}
+
+	&.outlined {
+		background-color: transparent;
+		border-color: var(--primary);
+		color: var(--primary);
+
+		svg {
+			fill: var(--primary);
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: var(--light);
+				color: var(--primary);
+
+				svg {
+					fill: var(--primary);
+				}
+			}
+		}
+	}
+
+	&.light {
+		border-color: var(--light);
+		color: var(--light);
+
+		svg {
+			fill: var(--light);
+		}
+	}
+
+	&.dark {
+		border-color: var(--lighter);
+		color: var(--primary);
+
+		svg {
+			fill: var(--primary);
+		}
+	}
+
+	&.wide {
+		max-width: 100%;
+	}
+
+	&.transparent {
+		border-color: transparent;
+		background-color: transparent;
+		color: var(--primary);
+
+		svg {
+			fill: var(--primary);
+		}
+	}
+}

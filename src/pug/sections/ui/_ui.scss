@@ -1,0 +1,16 @@
+.ui {
+	background-color: rgb(201, 220, 228);
+
+	&__section {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		padding: 40px;
+
+		&-field {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+block variables
+  - sectionClass = ''
+  - sectionContainerClass = ''
+  - sectionTitle = ''
+
+section.base-section(class= sectionClass)
+  .container(class= sectionContainerClass)
+    .base-section__header
+      h2.base-title!= sectionTitle
+
+  .container-fluid
+    block content
+      

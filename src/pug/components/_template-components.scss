@@ -1,3 +1,7 @@
 /* purgecss start ignore */
+@use "./_ui/buttons/burger/burger";
+@use "./_ui/logos/main-logo/main-logo";
+@use "@pug/layouts/base-section/base-section";
+@use "./_ui/buttons/main-btn/main-btn";
 @use "./blocks/content-block/content-block";
 /* purgecss end ignore */

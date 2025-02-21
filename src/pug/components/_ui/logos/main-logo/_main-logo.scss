@@ -1,0 +1,13 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/effects.scss";
+
+.main-logo {
+	@extend %flex-center;
+	@extend %hover-opacity;
+
+	img {
+		width: 60px;
+		height: auto;
+		object-fit: contain;
+	}
+}

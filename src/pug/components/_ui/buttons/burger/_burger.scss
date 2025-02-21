@@ -1,0 +1,19 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/effects.scss";
+@forward "@styles/_extends/resets.scss";
+
+.burger {
+	@extend %flex-center;
+	@extend %btn-reset;
+	flex-direction: column;
+	gap: 8px;
+	width: 60px;
+	height: 60px;
+	padding: 16px;
+
+	&__line {
+		width: 100%;
+		height: 2px;
+		background-color: var(--primary);
+	}
+}

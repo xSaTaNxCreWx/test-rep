@@ -1,0 +1,92 @@
+extends ../../layouts/base-section/base-section.pug
+block variables
+  - sectionClass = 'ui'
+  - sectionContainerClass = ''
+  - sectionTitle = 'Компоненты'
+block content
+  include ../../components/_ui/buttons/main-btn/main-btn
+
+  .container
+    .ui__section
+      .base-title Типографика
+      .ui__section-field
+        h1 h1
+        h2 h2
+        h3 h3
+        p paragraph
+
+        span.main-title .main-title
+        span.base-title .base-title
+        span.base-subtitle .base-subtitle
+        span.base-text .base-text
+
+
+    .ui__section
+      .base-title Кнопки
+
+      .ui__section-field
+        span.base-text .burger
+          include ../../components/_ui/buttons/burger/burger
+
+      .ui__section-field
+        span.base-text .main-btn
+        +main-btn({
+          title: 'Мужчинам',
+          cls: '',
+          iconBefore: true
+        })
+      .ui__section-field
+        span.base-text .main-btn.wide
+        +main-btn({
+          title: 'Мужчинам',
+          cls: 'wide',
+          iconBefore: true
+        })
+
+      .ui__section-field
+        span.base-text .main-btn.outined.light
+        +main-btn({
+          title: 'Женщинам',
+          cls: 'outlined light',
+          iconAfter: true
+        })
+      .ui__section-field
+        span.base-text .main-btn.outined.light
+        +main-btn({
+          title: 'Мужчинам',
+          cls: 'outlined light wide',
+          iconBefore: true
+        })
+
+      .ui__section-field
+        span.base-text .main-btn.outined.dark
+        +main-btn({
+          title: 'Мужчинам',
+          cls: 'outlined dark',
+          iconBefore: true
+        })
+
+      .ui__section-field
+        span.base-text .main-btn.outined.wide
+        +main-btn({
+          title: 'Мужчинам',
+          cls: 'outlined wide',
+          iconBefore: true
+        })
+      .ui__section-field
+        span.base-text .main-btn.transparent
+        +main-btn({
+          title: 'Мужчинам',
+          cls: 'transparent',
+          iconBefore: true
+        })
+      .ui__section-field
+        span.base-text .main-btn.transparent
+        +main-btn({
+          title: 'Мужчинам',
+          cls: 'transparent',
+        })
+
+      
+  
+  

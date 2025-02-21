@@ -1,2 +1,30 @@
+include ../../components/_ui/buttons/main-btn/main-btn
+
 header.header
-  span Header
+  .container
+    .header__grid
+      .header__grid-item.header__grid-item--left
+        include ../../components/_ui/buttons/burger/burger
+        +main-btn({
+          title: 'Женщинам',
+          cls: 'transparent',
+        })
+        +main-btn({
+          title: 'Мужчинам',
+          cls: 'transparent',
+        })
+      .header__grid-item.header__grid-item--center
+        include ../../components/_ui/logos/main-logo/main-logo
+      .header__grid-item.header__grid-item--right
+        button.main-btn.transparent.search-opener-btn
+          svg(width='20' height='20' role='img' aria-hidden='true' focusable='false')
+            use(xlink:href='./assets/sprite.svg#sprite-icon-search')
+        button.main-btn.transparent.auth-btn
+          svg(width='20' height='20' role='img' aria-hidden='true' focusable='false')
+            use(xlink:href='./assets/sprite.svg#sprite-icon-search')
+        button.main-btn.transparent
+          svg(width='20' height='20' role='img' aria-hidden='true' focusable='false')
+            use(xlink:href='./assets/sprite.svg#sprite-icon-search')
+        button.main-btn.transparent
+          svg(width='20' height='20' role='img' aria-hidden='true' focusable='false')
+            use(xlink:href='./assets/sprite.svg#sprite-icon-search')

@@ -48,7 +48,7 @@ export default defineConfig({
 					{
 						name: "removeAttrs",
 						params: {
-							attrs: "(fill|height|width)",
+							attrs: "(fill|height|width|stroke)",
 						},
 					},
 				],

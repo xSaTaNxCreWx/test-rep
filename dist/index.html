@@ -4,54 +4,68 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>impress</title>
+    <title>Urban</title>
     <meta name="description" content=""/>
-    <script type="module" crossorigin src="./assets/index.pug-iYLjVyxA.js"></script>
+    <script type="module" crossorigin src="./assets/main-CuQaTSdZ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/css/main.css">
     <link rel="stylesheet" crossorigin href="./assets/css/index.css">
   </head>
 </html>
-<header class="header"><span>Header</span></header>
-<main>
-  <section class="hero">
-    <div class="container">
-      <div class="content-block">
-        <h1>Заголовок H1</h1>
-        <h2>Заголовок H2</h2>
-        <h3>Заголовок H3</h3>
-        <h4>Заголовок H4</h4>
-        <h5>Заголовок H5</h5>
-        <h6>Заголовок H6</h6>
-        <p>Параграф текста</p>
-        <p>Параграф текста с <a href="#">ссылкой</a> и <strong>выделенным текстом</strong></p><span>Текст не несущий смысловой нагрузки ( span )</span>
-        <table>
-          <thead>
-            <tr>
-              <td>Это </td>
-              <td>базовая</td>
-              <td>таблица</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Ячейка 1</td>
-              <td>Ячейка 2</td>
-              <td>Ячейка 3</td>
-            </tr>
-            <tr>
-              <td>Ячейка 1</td>
-              <td>Ячейка 2</td>
-              <td>Ячейка 3</td>
-            </tr>
-            <tr>
-              <td>Ячейка 1</td>
-              <td>Ячейка 2</td>
-              <td>Ячейка 3</td>
-            </tr>
-          </tbody>
-        </table>
-        <blockquote><span>Какая то очень важная заметка</span></blockquote>
+<header class="header">
+  <div class="container">
+    <div class="header__grid">
+      <div class="header__grid-item header__grid-item--left">
+        <button class="burger" aria-label="Открыть меню"><span class="burger__line burger__line--top" aria-hidden="true"> </span><span class="burger__line burger__line--bottom" aria-hidden="true"> </span></button>
+        <button class="main-btn transparent"><span>Женщинам</span>
+        </button>
+        <button class="main-btn transparent"><span>Мужчинам</span>
+        </button>
+      </div>
+      <div class="header__grid-item header__grid-item--center"><a class="main-logo" href="/" aria-label="Urban"> <img src="./assets/img/main-logo.svg" alt="UB" width="60" height="30"></a></div>
+      <div class="header__grid-item header__grid-item--right">
+        <button class="main-btn transparent search-opener-btn">
+          <svg width="20" height="20" role="img" aria-hidden="true" focusable="false">
+            <use xlink:href="./assets/sprite.svg#sprite-icon-search"></use>
+          </svg>
+        </button>
+        <button class="main-btn transparent auth-btn">
+          <svg width="20" height="20" role="img" aria-hidden="true" focusable="false">
+            <use xlink:href="./assets/sprite.svg#sprite-icon-search"></use>
+          </svg>
+        </button>
+        <button class="main-btn transparent">
+          <svg width="20" height="20" role="img" aria-hidden="true" focusable="false">
+            <use xlink:href="./assets/sprite.svg#sprite-icon-search"></use>
+          </svg>
+        </button>
+        <button class="main-btn transparent">
+          <svg width="20" height="20" role="img" aria-hidden="true" focusable="false">
+            <use xlink:href="./assets/sprite.svg#sprite-icon-search"></use>
+          </svg>
+        </button>
       </div>
     </div>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="container-fluid">
+      <div class="top-banner">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./assets/img/top-banner@1x.png" alt="новая коллекция’25" width="1920" height="1080"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="base-section catalog-preview">
+    <div class="container">
+      <div class="base-section__header">
+        <h2 class="base-title">новинки</h2>
+      </div>
+    </div>
+    <div class="container-fluid"></div>
   </section>
 </main>
 <footer class="footer"><span>Footer</span></footer>
