@@ -1,1 +1,1 @@
-// import "@pug/components/_ui/.../...";
+import "@pug/sections/top-banner/top-banner";
