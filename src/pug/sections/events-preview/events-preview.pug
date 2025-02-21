@@ -1,0 +1,55 @@
+extends ../../layouts/base-section/base-section.pug
+block variables
+  - sectionClass = 'events-preview'
+  - sectionContainerClass = ''
+  - sectionTitle = 'События'
+block content
+  include ../../components/_ui/cards/base-card/base-card
+
+  .events-preview__grid
+    .events-preview__grid-item 
+      +base-card({
+        img: {
+          name: 'banner-mock',
+          width: 120,
+          height: 120
+        },
+
+        headline: '1 марта 2025',
+
+        btn: {
+          title: 'Открытие UB в ТЦ, г. Москва',
+          cls: 'light transparent base-card__link',
+          iconBefore: true
+        }
+      })
+    .events-preview__grid-item.events-preview__grid-item--side
+      .base-grid
+        +base-card({
+          cls: 'base-card--column',
+          img: {
+            name: 'banner-mock',
+            width: 120,
+            height: 120
+          },
+
+          headline: '1 марта 2025',
+          title: 'новая коллекция'
+        })
+        +base-card({
+          cls: 'base-card--column',
+          img: {
+            name: 'banner-mock',
+            width: 120,
+            height: 120
+          },
+
+          headline: '1 марта 2025',
+          title: 'весенняя распродажа'
+        })
+      
+      include ../../components/blocks/subscribe-block/subscribe-block
+      
+
+  
+  

@@ -20,16 +20,16 @@
 		background-color var(--main-transition), border-color var(--main-transition),
 		opacity var(--main-transition);
 
-	@media (hover: hover) {
-		&:hover {
-			background-color: #4e5254;
-			color: var(--light);
+	// @media (hover: hover) {
+	// 	&:hover {
+	// 		background-color: #4e5254;
+	// 		color: var(--light);
 
-			svg {
-				fill: var(--light);
-			}
-		}
-	}
+	// 		svg {
+	// 			fill: var(--light);
+	// 		}
+	// 	}
+	// }
 
 	svg {
 		fill: var(--light);
@@ -45,16 +45,16 @@
 			fill: var(--primary);
 		}
 
-		@media (hover: hover) {
-			&:hover {
-				background-color: var(--light);
-				color: var(--primary);
+		// @media (hover: hover) {
+		// 	&:hover {
+		// 		background-color: var(--light);
+		// 		color: var(--primary);
 
-				svg {
-					fill: var(--primary);
-				}
-			}
-		}
+		// 		svg {
+		// 			fill: var(--primary);
+		// 		}
+		// 	}
+		// }
 	}
 
 	&.light {

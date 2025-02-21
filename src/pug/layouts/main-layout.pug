@@ -7,11 +7,12 @@ block variables
 html(lang="ru")
  +main-head(title, description)
 
-include ./header/header
+body
+  include ./header/header
 
-main
-  block content
+  main
+    block content
 
-include ./footer/footer
+  include ./footer/footer
 
-block modals
+  block modals

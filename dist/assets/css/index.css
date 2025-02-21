@@ -1,4 +1,4 @@
-.top-banner{
+.subscribe, .subscribe form, .events-preview__grid-item, .top-banner{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
@@ -6,9 +6,6 @@
   -webkit-box-direction:normal;
       -ms-flex-direction:column;
           flex-direction:column;
-  gap:20px;
-  height:100%;
-  padding:80px 20px;
 }
 
 .top-banner__content, .top-banner__footer{
@@ -23,15 +20,13 @@
           justify-content:center;
 }
 
-.top-banner-slider .swiper-pagination{
+.subscribe form fieldset, .top-banner-slider .swiper-pagination{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
   -webkit-box-align:center;
       -ms-flex-align:center;
           align-items:center;
-  gap:clamp(2px, 0.6vw, 10px);
-  padding:20px 0;
 }
 
 .top-banner-slider .swiper-slide{
@@ -40,6 +35,10 @@
   height:100vh;
   height:100dvh;
   max-height:1080px;
+}
+.top-banner-slider .swiper-pagination{
+  gap:clamp(2px, 0.6vw, 10px);
+  padding:20px 0;
 }
 .top-banner-slider .swiper-pagination-bullet{
   -webkit-box-flex:1;
@@ -52,6 +51,12 @@
 }
 .top-banner-slider .swiper-pagination-bullet-active{
   background-color:var(--primary);
+}
+
+.top-banner{
+  gap:20px;
+  height:100%;
+  padding:80px 20px;
 }
 .top-banner img{
   position:absolute;
@@ -77,4 +82,73 @@
 }
 .top-banner__footer{
   gap:10px;
+}
+
+.events-preview{
+  container:event-preview/inline-size;
+}
+.events-preview__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+}
+@container event-preview (min-width: 769px ){
+  .events-preview__grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+.events-preview__grid-item{
+  gap:20px;
+}
+.events-preview__grid-item .subscribe{
+  margin-top:auto;
+}
+
+.subscribe form fieldset{
+  margin:0;
+  padding:0;
+  border:none;
+}
+
+.subscribe{
+  background-color:var(--light);
+  padding:clamp(20px, 2.4vw, 40px);
+  gap:clamp(10px, 3vw, 20px);
+}
+.subscribe form{
+  gap:10px;
+}
+.subscribe form fieldset .main-control{
+  font-weight:400;
+  font-size:16px;
+  width:100%;
+  padding:20px;
+  border:none;
+  background-color:var(--white);
+  color:var(--primary);
+}
+.subscribe form fieldset .main-control::-webkit-input-placeholder{
+  font-weight:400;
+  font-size:16px;
+  color:var(--primary);
+}
+.subscribe form fieldset .main-control::-moz-placeholder{
+  font-weight:400;
+  font-size:16px;
+  color:var(--primary);
+}
+.subscribe form fieldset .main-control:-ms-input-placeholder{
+  font-weight:400;
+  font-size:16px;
+  color:var(--primary);
+}
+.subscribe form fieldset .main-control::-ms-input-placeholder{
+  font-weight:400;
+  font-size:16px;
+  color:var(--primary);
+}
+.subscribe form fieldset .main-control::placeholder{
+  font-weight:400;
+  font-size:16px;
+  color:var(--primary);
 }

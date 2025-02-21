@@ -1,0 +1,28 @@
+@forward "@styles/_extends/flexbox.scss";
+// @forward '@styles/_extends/effects.scss';
+// @forward '@styles/_extends/resets.scss';
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.events-preview {
+	container: event-preview / inline-size;
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 20px;
+
+		@include container-up("event-preview", $tablet-width) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		&-item {
+			@extend %flex-column;
+			gap: 20px;
+
+			.subscribe {
+				margin-top: auto;
+			}
+		}
+	}
+}

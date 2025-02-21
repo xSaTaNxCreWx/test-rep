@@ -2,9 +2,9 @@ mixin main-btn(data)
   button.main-btn(class= data.cls ? data.cls : null)
     if data.iconBefore
       svg(width='14' height='14' role='img' aria-hidden='true' focusable='false')
-        use(xlink:href='./assets/sprite.svg#sprite-icon-arrow-up')
+        use(xlink:href='./assets/sprite.svg#icon-arrow-up')
     span!= data.title
 
     if data.iconAfter
       svg(width='14' height='14' role='img' aria-hidden='true' focusable='false')
-        use(xlink:href='./assets/sprite.svg#sprite-icon-arrow-up')
+        use(xlink:href='./assets/sprite.svg#icon-arrow-up')

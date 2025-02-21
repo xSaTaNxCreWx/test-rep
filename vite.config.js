@@ -6,7 +6,8 @@ import pug from "@vituum/vite-plugin-pug";
 import pages from "vituum/plugins/pages.js";
 import imports from "vituum/plugins/imports.js";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
-import VitePluginSvgSpritemap from "@spiriit/vite-plugin-svg-spritemap";
+// import VitePluginSvgSpritemap from "@spiriit/vite-plugin-svg-spritemap";
+import { svgBuilder } from "./svgBuilder";
 
 import { getFileName } from "./app.config";
 
@@ -29,36 +30,32 @@ export default defineConfig({
 			root: "./",
 			normalizeBasePath: true,
 		}),
-		VitePluginSvgSpritemap("./src/assets/sprite/*.svg", {
-			styles: false,
-			injectSVGOnDev: false,
+		// svgBuilder("./src/assets/sprite/"),
+		// VitePluginSvgSpritemap("./src/assets/sprite/*.svg", {
+		// 	styles: false,
+		// 	injectSVGOnDev: true,
 
-			prefix: "sprite-", // префикс перед иконкой use(xlink:href='./sprite.svg#{PREFIX}icon-chevron-down')
-			route: "assets/sprite.svg", // название файла спрайта use(xlink:href='./{ROUTE}#icon-chevron-down')
-			output: {
-				filename: "[name][extname]", // название файла спрайта на выходе
-				name: "sprite.svg",
-				view: false,
-				use: true,
-			},
-			idefy: (name, svg) => {
-				console.log(name, svg);
-				return `icon-${name}`;
-			},
-			svgo: {
-				plugins: [
-					{
-						name: "removeStyleElement",
-					},
-					{
-						name: "removeAttrs",
-						params: {
-							attrs: "(fill|height|width|stroke)",
-						},
-					},
-				],
-			},
-		}),
+		// 	prefix: "sprite-", // префикс перед иконкой use(xlink:href='./sprite.svg#{PREFIX}icon-chevron-down')
+		// 	route: "../assets/sprite.svg", // название файла спрайта use(xlink:href='./{ROUTE}#icon-chevron-down')
+		// 	output: {
+		// 		filename: "sprite.svg", // название файла спрайта на выходе
+		// 		view: true,
+		// 		use: true,
+		// 	},
+		// 	svgo: {
+		// 		plugins: [
+		// 			{
+		// 				name: "removeStyleElement",
+		// 			},
+		// 			{
+		// 				name: "removeAttrs",
+		// 				params: {
+		// 					attrs: "(fill|height|width)",
+		// 				},
+		// 			},
+		// 		],
+		// 	},
+		// }),
 		ViteImageOptimizer({
 			test: /\.(jpe?g|png|svg)$/i,
 			includePublic: true,

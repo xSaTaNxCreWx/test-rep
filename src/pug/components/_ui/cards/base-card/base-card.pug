@@ -1,0 +1,12 @@
+include ../../buttons/main-btn/main-btn
+
+mixin base-card(data)
+  .base-card(class= data.cls ? data.cls : null)
+    img(src=`./assets/img/${data.img.name}.png` alt= data.title width= data.img.width height= data.img.height)
+    .base-card__footer
+      if data.headline
+        span.base-card__headline!= data.headline
+      if data.title
+        span.base-card__title!= data.title
+      if data.btn
+        +main-btn(data.btn)

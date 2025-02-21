@@ -108,7 +108,7 @@ h2,
 h3,
 .base-subtitle{
   display:block;
-  font-size:14px;
+  font-size:16px;
   font-weight:700;
   text-transform:uppercase;
   color:var(--primary);
@@ -253,6 +253,22 @@ img{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
+}
+
+.base-card__footer{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  width:100%;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  gap:10px;
+  padding:10px 16px;
 }
 
 .main-logo, .burger{
@@ -419,23 +435,60 @@ img{
   fill:var(--primary);
 }
 
+.base-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+}
+
+.base-card{
+  position:relative;
+}
+.base-card img{
+  width:100%;
+  height:auto;
+  -o-object-fit:cover;
+     object-fit:cover;
+  aspect-ratio:1/1;
+}
+.base-card__footer:not(.base-card--column .base-card__footer){
+  position:absolute;
+  bottom:0;
+  left:0;
+  padding:20px 40px;
+}
+.base-card__headline{
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  color:var(--primary);
+}
+.base-card__headline:not(.base-card--column .base-card__headline){
+  color:var(--light);
+}
+.base-card .base-card__title{
+  font-size:14px;
+  font-weight:400;
+  text-transform:uppercase;
+  text-align:center;
+  color:var(--primary);
+}
+.base-card .base-card__title:not(.base-card--column .base-card__title){
+  color:var(--light);
+}
+.base-card .base-card__link{
+  height:-webkit-fit-content;
+  height:-moz-fit-content;
+  height:fit-content;
+  padding:10px;
+  color:var(--primary);
+}
+.base-card .base-card__link:not(.base-card--column .base-card__link){
+  color:var(--light);
+}
+
 @media (hover: hover){
   .main-logo:hover{
     opacity:0.6;
-  }
-  .main-btn:hover{
-    background-color:#4e5254;
-    color:var(--light);
-  }
-  .main-btn:hover svg{
-    fill:var(--light);
-  }
-  .main-btn.outlined:hover{
-    background-color:var(--light);
-    color:var(--primary);
-  }
-  .main-btn.outlined:hover svg{
-    fill:var(--primary);
   }
 }@font-face{
   font-family:'swiper-icons';
