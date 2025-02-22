@@ -2,7 +2,7 @@
 import fs from "node:fs";
 import { readFileSync, readdirSync } from "fs";
 
-let idPerfix = "";
+let idPrefix = "";
 const svgTitle = /<svg([^>+].*?)>/;
 const clearHeightWidth = /(width|height)="([^>+].*?)"/g;
 
@@ -42,7 +42,7 @@ function findSvgFile(dir) {
 				})
 				.replace(
 					"</svg>",
-					`<use xlink:href="#${dirent.name.replace(".svg", "")}"/></symbol>`,
+					`</symbol><use xlink:href="#${dirent.name.replace(".svg", "")}"/>`,
 				);
 			svgRes.push(svg);
 		}
@@ -50,9 +50,22 @@ function findSvgFile(dir) {
 	return svgRes;
 }
 
-const fileName = "./dist/assets/sprite.svg";
+const MODE = process.env.NODE_ENV || "development";
+
+// const fileName =
+// 	MODE === "production"
+// 		? "./dist/assets/sprite.svg"
+// 		: "./src/assets/sprite.svg";
+
+console.log("MODE:", MODE);
 
 function fileHandler(data) {
+	const fileName =
+		MODE === "production"
+			? "./dist/assets/sprite.svg"
+			: "./src/assets/sprite.svg";
+	console.log(fileName);
+	console.log("TEST");
 	fs.open(fileName, "w", (err) => {
 		if (err) throw err;
 		console.log("Sprite.svg created");
@@ -64,9 +77,9 @@ function fileHandler(data) {
 	});
 }
 
-export const svgBuilder = (path, perfix) => {
+export const svgBuilder = (path, prefix) => {
 	if (path === "") return;
-	idPerfix = perfix;
+	idPrefix = prefix;
 	const res = findSvgFile(path);
 
 	fileHandler(
@@ -75,3 +88,5 @@ export const svgBuilder = (path, perfix) => {
     </svg>`,
 	);
 };
+
+// svgBuilder("./src/assets/sprite/");

@@ -6,8 +6,9 @@ import pug from "@vituum/vite-plugin-pug";
 import pages from "vituum/plugins/pages.js";
 import imports from "vituum/plugins/imports.js";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
-// import VitePluginSvgSpritemap from "@spiriit/vite-plugin-svg-spritemap";
-import { svgBuilder } from "./svgBuilder";
+import VitePluginSvgSpritemap from "@spiriit/vite-plugin-svg-spritemap";
+// import { svgBuilder } from "./svgBuilder";
+// svgBuilder("./src/assets/sprite/"),
 
 import { getFileName } from "./app.config";
 
@@ -30,56 +31,62 @@ export default defineConfig({
 			root: "./",
 			normalizeBasePath: true,
 		}),
-		// svgBuilder("./src/assets/sprite/"),
-		// VitePluginSvgSpritemap("./src/assets/sprite/*.svg", {
-		// 	styles: false,
-		// 	injectSVGOnDev: true,
 
-		// 	prefix: "sprite-", // префикс перед иконкой use(xlink:href='./sprite.svg#{PREFIX}icon-chevron-down')
-		// 	route: "../assets/sprite.svg", // название файла спрайта use(xlink:href='./{ROUTE}#icon-chevron-down')
-		// 	output: {
-		// 		filename: "sprite.svg", // название файла спрайта на выходе
-		// 		view: true,
-		// 		use: true,
-		// 	},
-		// 	svgo: {
-		// 		plugins: [
-		// 			{
-		// 				name: "removeStyleElement",
-		// 			},
-		// 			{
-		// 				name: "removeAttrs",
-		// 				params: {
-		// 					attrs: "(fill|height|width)",
-		// 				},
-		// 			},
-		// 		],
-		// 	},
-		// }),
+		VitePluginSvgSpritemap("./src/assets/sprite/*.svg", {
+			styles: false,
+			injectSVGOnDev: true,
+
+			prefix: "", // префикс перед иконкой use(xlink:href='./sprite.svg#{PREFIX}icon-chevron-down')
+			route: "assets/sprite.svg", // название файла спрайта use(xlink:href='./{ROUTE}#icon-chevron-down')
+			output: {
+				filename: "sprite.svg", // название файла спрайта на выходе
+				view: true,
+				use: true,
+			},
+			svgo: {
+				plugins: [
+					{
+						name: "removeStyleElement",
+					},
+					{
+						name: "removeAttrs",
+						params: {
+							attrs: "(fill|height|width|stroke)",
+						},
+					},
+				],
+			},
+		}),
+
 		ViteImageOptimizer({
-			test: /\.(jpe?g|png|svg)$/i,
+			test: /img\.(jpe?g|svg|png)$/i,
 			includePublic: true,
 			logStats: true,
 			ansiColors: true,
 			svg: {
-				multipass: true,
+				multipass: false,
 				plugins: [
 					{
 						name: "preset-default",
 						params: {
 							overrides: {
 								cleanupNumericValues: false,
-								convertPathData: {
-									floatPrecision: 2,
-									forceAbsolutePath: false,
-									utilizeAbsolute: false,
-								},
 								removeViewBox: false, // https://github.com/svg/svgo/issues/1128
-								cleanupIds: false,
 							},
+							cleanupIDs: {
+								minify: false,
+								remove: false,
+							},
+							convertPathData: false,
 						},
 					},
-					"removeDimensions",
+					"sortAttrs",
+					{
+						name: "addAttributesToSVGElement",
+						params: {
+							attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
+						},
+					},
 				],
 			},
 			png: {

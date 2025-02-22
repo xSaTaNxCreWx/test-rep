@@ -8,6 +8,7 @@
 		"build": "vite build --emptyOutDir",
 		"preview": "vite preview",
 		"img-convert": "node img-converter.js",
+		"sprite": "node svgBuilder.js",
 		"w3c": "html-validator dest --quiet"
 	},
 	"devDependencies": {
