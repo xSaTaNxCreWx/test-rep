@@ -2,8 +2,58 @@ extends ../../layouts/base-section/base-section.pug
 block variables
   - sectionClass = 'catalog-preview'
   - sectionContainerClass = ''
-  - sectionTitle = 'новинки'
+  - sectionTitle = 'Подборки'
+  - hideSectionHeader = false
 block content
+  include ../../components/_ui/sliders/base-slider/base-slider
+  include ../../components/_ui/buttons/btn-primary/btn-primary
+  .catalog-preview__content
+    +base-slider({
+      items: [
+        {
+          cls: 'base-card--column',
+          img: {
+            name: 'mock-img-1',
+            width: 920,
+            height: 920
+          }
+        },
+        {
+          cls: 'base-card--column',
+          img: {
+            name: 'mock-img-2',
+            width: 920,
+            height: 920
+          }
+        },
+        {
+          cls: 'base-card--column',
+          img: {
+            name: 'mock-img-1',
+            width: 920,
+            height: 920
+          }
+        },
+        {
+          cls: 'base-card--column',
+          img: {
+            name: 'mock-img-2',
+            width: 920,
+            height: 920
+          }
+        },
+        
+      ]
+    })
+
+    //- +btn-primary({
+    //-   tag: 'span',
+    //-   title: 'Показать все подборки',
+    //-   cls: 'outlined dark',
+    //-   iconAfter: true
+    //- })
+
+  
   
 
   

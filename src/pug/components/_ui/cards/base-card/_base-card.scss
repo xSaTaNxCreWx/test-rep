@@ -5,13 +5,16 @@
 @use "@styles/_vars/scoped" as *;
 
 .base-grid {
+	// TEMP
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: 1fr;
+	@include container-up("main", $mobile-width) {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 .base-card {
 	position: relative;
-	// outline: 1px solid red;
 
 	img {
 		width: 100%;

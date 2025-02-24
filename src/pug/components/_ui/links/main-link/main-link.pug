@@ -1,0 +1,6 @@
+mixin main-link(data)
+  a(href="").main-link
+    if data.icon
+      svg(width='14' height='14' role='img' aria-hidden='true' focusable='false')
+        use(xlink:href='./assets/sprite.svg#icon-arrow-up')
+    span!= data.title

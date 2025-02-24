@@ -1,4 +1,4 @@
-.subscribe, .subscribe form, .events-preview__grid-item, .top-banner{
+.subscribe, .subscribe form, .events-preview__grid-item, .catalog-preview__content, .top-banner{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
@@ -47,7 +47,7 @@
   height:2px;
   margin:0;
   border-radius:0;
-  background-color:var(--gray);
+  background-color:var(--muted);
 }
 .top-banner-slider .swiper-pagination-bullet-active{
   background-color:var(--primary);
@@ -84,6 +84,19 @@
   gap:10px;
 }
 
+.subscribe form fieldset{
+  margin:0;
+  padding:0;
+  border:none;
+}
+
+.catalog-preview__content{
+  gap:20px;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+}
+
 .events-preview{
   container:event-preview/inline-size;
 }
@@ -95,19 +108,18 @@
 @container event-preview (min-width: 769px ){
   .events-preview__grid{
     grid-template-columns:repeat(2, 1fr);
+    gap:40px;
   }
 }
 .events-preview__grid-item{
   gap:20px;
+  min-width:0;
 }
 .events-preview__grid-item .subscribe{
   margin-top:auto;
 }
-
-.subscribe form fieldset{
-  margin:0;
-  padding:0;
-  border:none;
+.events-preview__grid-item .swiper{
+  width:100%;
 }
 
 .subscribe{

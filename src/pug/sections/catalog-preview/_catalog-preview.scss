@@ -1,2 +1,13 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/effects.scss";
+@forward "@styles/_extends/resets.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
 .catalog-preview {
+	&__content {
+		@extend %flex-column;
+		gap: 20px;
+		align-items: center;
+	}
 }

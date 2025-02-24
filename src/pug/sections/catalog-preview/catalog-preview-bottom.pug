@@ -1,0 +1,44 @@
+extends ../../layouts/base-section/base-section.pug
+block variables
+  - sectionClass = 'catalog-preview'
+  - sectionContainerClass = ''
+  - sectionTitle = ''
+  - hideSectionHeader = true
+block content
+  include ../../components/_ui/cards/base-card/base-card
+  include ../../components/_ui/buttons/btn-primary/btn-primary
+
+  .base-grid
+    +base-card({
+      img: {
+        name: 'mock-img-5',
+        width: 920,
+        height: 920
+      },
+
+      btn: {
+        title: 'Женщинам',
+        cls: 'light transparent base-card__link',
+        iconBefore: true
+      }
+    })
+
+    +base-card({
+      img: {
+        name: 'mock-img-6',
+        width: 920,
+        height: 920
+      },
+
+      btn: {
+        title: 'Мужчинам',
+        cls: 'light transparent base-card__link',
+        iconBefore: true
+      }
+    })
+
+  
+  
+
+  
+  

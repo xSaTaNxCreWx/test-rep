@@ -4799,3 +4799,24 @@ if (slider) {
     }
   });
 }
+const sliders = document.querySelectorAll(".base-slider");
+if (sliders.length) {
+  sliders.forEach((slider2) => {
+    const pagination = slider2.querySelector(".swiper-pagination");
+    const btnNext = slider2.querySelector(".swiper-button-next");
+    const btnPrev = slider2.querySelector(".swiper-button-prev");
+    new Swiper(slider2, {
+      modules: [Navigation, Pagination],
+      slidesPerView: 2,
+      navigation: {
+        nextEl: btnNext ? btnNext : null,
+        prevEl: btnPrev ? btnPrev : null
+      },
+      pagination: {
+        el: pagination ? pagination : null,
+        clickable: true
+        // dynamicBullets: true,
+      }
+    });
+  });
+}

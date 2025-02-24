@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Urban</title>
     <meta name="description" content=""/>
-    <script type="module" crossorigin src="./assets/main-BerOppsC.js"></script>
+    <script type="module" crossorigin src="./assets/main-MziEme1H.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/css/main.css">
     <link rel="stylesheet" crossorigin href="./assets/css/ui.css">
   </head>
@@ -17,33 +17,33 @@
       <div class="header__grid">
         <div class="header__grid-item header__grid-item--left">
           <button class="burger" aria-label="Открыть меню"><span class="burger__line burger__line--top" aria-hidden="true"> </span><span class="burger__line burger__line--bottom" aria-hidden="true"> </span></button>
-            <button class="main-btn transparent"><span>Женщинам</span>
-            </button>
-            <button class="main-btn transparent"><span>Мужчинам</span>
-            </button>
+            <a class="btn btn-transparent" href="#"><span>Женщинам</span>
+            </a>
+            <a class="btn btn-transparent" href="#"><span>Мужчинам</span>
+            </a>
         </div>
         <div class="header__grid-item header__grid-item--center"><a class="main-logo" href="/" aria-label="Urban"> <img src="./assets/img/main-logo.svg" alt="UB" width="60" height="30"></a></div>
         <div class="header__grid-item header__grid-item--right">
-          <button class="main-btn transparent search-opener-btn">
-            <svg width="20" height="20" role="img" aria-hidden="true" focusable="false">
-              <use xlink:href="./assets/sprite.svg#icon-search"></use>
-            </svg>
-          </button>
-          <button class="main-btn transparent auth-btn">
-            <svg width="20" height="20" role="img" aria-hidden="true" focusable="false">
-              <use xlink:href="./assets/sprite.svg#icon-search"></use>
-            </svg>
-          </button>
-          <button class="main-btn transparent">
-            <svg width="20" height="20" role="img" aria-hidden="true" focusable="false">
-              <use xlink:href="./assets/sprite.svg#icon-search"></use>
-            </svg>
-          </button>
-          <button class="main-btn transparent">
-            <svg width="20" height="20" role="img" aria-hidden="true" focusable="false">
-              <use xlink:href="./assets/sprite.svg#icon-search"></use>
-            </svg>
-          </button>
+            <a class="btn btn-search search-opener" href="#">
+              <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
+                <use xlink:href="./assets/sprite.svg#icon-search"></use>
+              </svg>
+            </a>
+            <a class="btn btn-user" href="#">
+              <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
+                <use xlink:href="./assets/sprite.svg#icon-user"></use>
+              </svg>
+            </a>
+            <a class="btn btn-fav" href="#">
+              <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
+                <use xlink:href="./assets/sprite.svg#icon-fav"></use>
+              </svg>
+            </a>
+            <a class="btn btn-cart" href="#">
+              <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
+                <use xlink:href="./assets/sprite.svg#icon-cart"></use>
+              </svg>
+            </a>
         </div>
       </div>
     </div>
@@ -69,59 +69,152 @@
           <div class="ui__section">
             <div class="base-title">Кнопки</div>
             <div class="ui__section-field"><span class="base-text">.burger
-                <button class="burger" aria-label="Открыть меню"><span class="burger__line burger__line--top" aria-hidden="true"> </span><span class="burger__line burger__line--bottom" aria-hidden="true"> </span></button></span></div>
-            <div class="ui__section-field"><span class="base-text">.main-btn</span>
-                      <button class="main-btn">
+                <button class="burger" aria-label="Открыть меню"><span class="burger__line burger__line--top" aria-hidden="true"> </span><span class="burger__line burger__line--bottom" aria-hidden="true"> </span></button></span></div><span class="base-subtitle">Кнопки действия</span>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-search</span>
+                      <a class="btn btn-search" href="#">
                         <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg><span>Мужчинам</span>
-                      </button>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.main-btn.wide</span>
-                      <button class="main-btn wide">
+                          <use xlink:href="./assets/sprite.svg#icon-search"></use>
+                        </svg>
+                      </a><span class="base-text">.btn .btn-cart</span>
+                      <a class="btn btn-cart" href="#">
                         <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg><span>Мужчинам</span>
-                      </button>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.main-btn.outined.light</span>
-                      <button class="main-btn outlined light"><span>Женщинам</span>
+                          <use xlink:href="./assets/sprite.svg#icon-cart"></use>
+                        </svg>
+                      </a><span class="base-text">.btn .btn-user</span>
+                      <a class="btn btn-user" href="#">
+                        <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
+                          <use xlink:href="./assets/sprite.svg#icon-user"></use>
+                        </svg>
+                      </a><span class="base-text">.btn .btn-fav</span>
+                      <a class="btn btn-fav" href="#">
+                        <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
+                          <use xlink:href="./assets/sprite.svg#icon-fav"></use>
+                        </svg>
+                      </a>
+            </div><span class="base-subtitle">.btn-transparent</span>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-transparent</span>
+                      <a class="btn btn-transparent" href="#"><span>Мужчинам</span>
                         <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
                           <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
                         </svg>
-                      </button>
+                      </a>
             </div>
-            <div class="ui__section-field"><span class="base-text">.main-btn.outined.light</span>
-                      <button class="main-btn outlined light wide">
+            <div class="ui__section-field"><span class="base-text">.btn .btn-transparent</span>
+                      <a class="btn btn-transparent" href="#"><span>Мужчинам</span>
+                      </a>
+            </div>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-transparent .wide</span>
+                      <a class="btn btn-transparent wide" href="#"><span>Мужчинам</span>
+                      </a>
+            </div>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-transparent .reversed</span>
+                      <a class="btn btn-transparent reversed" href="#"><span>Мужчинам</span>
                         <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
                           <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg><span>Мужчинам</span>
-                      </button>
+                        </svg>
+                      </a>
             </div>
-            <div class="ui__section-field"><span class="base-text">.main-btn.outined.dark</span>
-                      <button class="main-btn outlined dark">
+            <div class="ui__section-field"><span class="base-text">.btn .btn-light</span>
+                      <a class="btn btn-light" href="#"><span>Мужчинам</span>
                         <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
                           <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg><span>Мужчинам</span>
-                      </button>
+                        </svg>
+                      </a>
             </div>
-            <div class="ui__section-field"><span class="base-text">.main-btn.outined.wide</span>
-                      <button class="main-btn outlined wide">
+            <div class="ui__section-field"><span class="base-text">.btn .btn-light</span>
+                      <a class="btn btn-light" href="#"><span>Мужчинам</span>
+                      </a>
+            </div>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-light .wide</span>
+                      <a class="btn btn-light wide" href="#"><span>Мужчинам</span>
+                      </a>
+            </div>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-light .reversed</span>
+                      <a class="btn btn-light reversed" href="#"><span>Мужчинам</span>
                         <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
                           <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg><span>Мужчинам</span>
-                      </button>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.main-btn.transparent</span>
-                      <button class="main-btn transparent">
+                        </svg>
+                      </a>
+            </div><span class="base-subtitle">.btn-primary</span>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-primary</span>
+                      <a class="btn btn-primary" href="#"><span>Мужчинам</span>
                         <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
                           <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg><span>Мужчинам</span>
-                      </button>
+                        </svg>
+                      </a>
             </div>
-            <div class="ui__section-field"><span class="base-text">.main-btn.transparent</span>
-                      <button class="main-btn transparent"><span>Мужчинам</span>
-                      </button>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-primary .reversed</span>
+                      <a class="btn btn-primary reversed" href="#"><span>Мужчинам</span>
+                        <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
+                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
+                        </svg>
+                      </a>
+            </div>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-primary .wide</span>
+                      <a class="btn btn-primary wide" href="#"><span>Мужчинам</span>
+                        <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
+                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
+                        </svg>
+                      </a>
+            </div>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-primary .wide</span>
+                      <a class="btn btn-primary wide" href="#"><span>Мужчинам</span>
+                      </a>
+            </div>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-primary .disabled</span>
+                      <a class="btn btn-primary disabled" href="#"><span>Мужчинам</span>
+                      </a>
+            </div><span class="base-subtitle">.btn-secondary</span>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-secondary</span>
+                      <a class="btn btn-secondary" href="#"><span>Мужчинам</span>
+                        <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
+                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
+                        </svg>
+                      </a>
+            </div>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-secondary .reversed</span>
+                      <a class="btn btn-secondary reversed" href="#"><span>Мужчинам</span>
+                        <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
+                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
+                        </svg>
+                      </a>
+            </div>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-secondary .disabled</span>
+                      <a class="btn btn-secondary disabled" href="#"><span>Мужчинам</span>
+                      </a>
+            </div>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-secondary .wide</span>
+                      <a class="btn btn-secondary wide" href="#"><span>Мужчинам</span>
+                        <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
+                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
+                        </svg>
+                      </a>
+            </div>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-primary .wide</span>
+                      <a class="btn btn-secondary wide" href="#"><span>Мужчинам</span>
+                      </a>
+            </div><span class="base-subtitle">.btn-thin</span>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-thin</span>
+                      <a class="btn btn-thin" href="#"><span>Показать еще</span>
+                        <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
+                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
+                        </svg>
+                      </a>
+            </div>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-thin .reversed</span>
+                      <a class="btn btn-thin reversed" href="#"><span>Показать еще</span>
+                        <svg width="14" height="14" role="img" aria-hidden="true" focusable="false">
+                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
+                        </svg>
+                      </a>
+            </div>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-thin .underlined</span>
+                      <a class="btn btn-thin underlined" href="#"><span>Показать еще</span>
+                      </a>
+            </div>
+            <div class="ui__section-field"><span class="base-text">.btn .btn-thin .underlined-hover</span>
+                      <a class="btn btn-thin underlined-hover" href="#"><span>Показать еще</span>
+                      </a>
             </div>
           </div>
         </div>

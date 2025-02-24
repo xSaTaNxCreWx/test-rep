@@ -3,16 +3,18 @@ block variables
   - sectionClass = 'events-preview'
   - sectionContainerClass = ''
   - sectionTitle = 'События'
+  - hideSectionHeader = false
 block content
+  include ../../components/_ui/sliders/base-slider/base-slider
   include ../../components/_ui/cards/base-card/base-card
 
   .events-preview__grid
-    .events-preview__grid-item 
+    .events-preview__grid-item
       +base-card({
         img: {
           name: 'banner-mock',
-          width: 120,
-          height: 120
+          width: 920,
+          height: 920
         },
 
         headline: '1 марта 2025',
@@ -24,29 +26,54 @@ block content
         }
       })
     .events-preview__grid-item.events-preview__grid-item--side
-      .base-grid
-        +base-card({
-          cls: 'base-card--column',
-          img: {
-            name: 'banner-mock',
-            width: 120,
-            height: 120
-          },
+      +base-slider({
+        items: [
+          {
+            cls: 'base-card--column',
+            img: {
+              name: 'mock-img-3',
+              width: 480,
+              height: 480
+            },
 
-          headline: '1 марта 2025',
-          title: 'новая коллекция'
-        })
-        +base-card({
-          cls: 'base-card--column',
-          img: {
-            name: 'banner-mock',
-            width: 120,
-            height: 120
+            headline: '1 марта 2025',
+            title: 'новая коллекция'
           },
+          {
+            cls: 'base-card--column',
+            img: {
+              name: 'mock-img-4',
+              width: 480,
+              height: 480
+            },
 
-          headline: '1 марта 2025',
-          title: 'весенняя распродажа'
-        })
+            headline: '1 марта 2025',
+            title: 'весенняя распродажа'
+          },
+          {
+            cls: 'base-card--column',
+            img: {
+              name: 'mock-img-3',
+              width: 480,
+              height: 480
+            },
+
+            headline: '1 марта 2025',
+            title: 'новая коллекция'
+          },
+          {
+            cls: 'base-card--column',
+            img: {
+              name: 'mock-img-4',
+              width: 480,
+              height: 480
+            },
+
+            headline: '1 марта 2025',
+            title: 'весенняя распродажа'
+          }
+        ]
+      })
       
       include ../../components/blocks/subscribe-block/subscribe-block
       

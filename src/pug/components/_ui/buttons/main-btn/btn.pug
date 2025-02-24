@@ -1,0 +1,7 @@
+mixin main-btn(data)
+  #{data.tag}.btn(class= data.cls ? data.cls : 'btn-primary' href= data.href ? data.href : null )
+    if data.title
+      span!= data.title
+    if data.icon
+      svg(width='14' height='14' role='img' aria-hidden='true' focusable='false')
+        use(xlink:href=`./assets/sprite.svg#icon-${data.icon}`)

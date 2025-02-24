@@ -1,4 +1,4 @@
-include ../../components/_ui/buttons/main-btn/main-btn
+include ../../components/_ui/buttons/main-btn/btn
 
 header.header
   .container
@@ -6,25 +6,41 @@ header.header
       .header__grid-item.header__grid-item--left
         include ../../components/_ui/buttons/burger/burger
         +main-btn({
+          tag: 'a',
+          href: "#",
           title: 'Женщинам',
-          cls: 'transparent',
+          cls: 'btn-transparent'
         })
         +main-btn({
+          tag: 'a',
+          href: "#",
           title: 'Мужчинам',
-          cls: 'transparent',
+          cls: 'btn-transparent'
         })
       .header__grid-item.header__grid-item--center
         include ../../components/_ui/logos/main-logo/main-logo
       .header__grid-item.header__grid-item--right
-        button.main-btn.transparent.search-opener-btn
-          svg(width='20' height='20' role='img' aria-hidden='true' focusable='false')
-            use(xlink:href='./assets/sprite.svg#icon-search')
-        button.main-btn.transparent.auth-btn
-          svg(width='20' height='20' role='img' aria-hidden='true' focusable='false')
-            use(xlink:href='./assets/sprite.svg#icon-search')
-        button.main-btn.transparent
-          svg(width='20' height='20' role='img' aria-hidden='true' focusable='false')
-            use(xlink:href='./assets/sprite.svg#icon-search')
-        button.main-btn.transparent
-          svg(width='20' height='20' role='img' aria-hidden='true' focusable='false')
-            use(xlink:href='./assets/sprite.svg#icon-search')
+        +main-btn({
+          tag: 'a',
+          href: "#",
+          cls: 'btn-search search-opener',
+          icon: 'search'
+        })
+        +main-btn({
+          tag: 'a',
+          href: "#",
+          cls: 'btn-user',
+          icon: 'user'
+        })
+        +main-btn({
+          tag: 'a',
+          href: "#",
+          cls: 'btn-fav',
+          icon: 'fav'
+        })
+        +main-btn({
+          tag: 'a',
+          href: "#",
+          cls: 'btn-cart',
+          icon: 'cart'
+        })

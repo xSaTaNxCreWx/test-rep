@@ -1,3 +1,26 @@
-// %section-afterline {
+@forward "@styles/_extends/flexbox.scss";
 
-// }
+%btn {
+	@extend %flex-align;
+	justify-content: center;
+	gap: 8px;
+	width: 100%;
+	max-width: fit-content;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 20px 24px;
+	border: 1px solid transparent;
+	transition: color var(--main-transition),
+		background-color var(--main-transition), border-color var(--main-transition),
+		opacity var(--main-transition);
+
+	span {
+		line-height: 1;
+	}
+
+	svg {
+		transition: fill var(--main-transition);
+	}
+}

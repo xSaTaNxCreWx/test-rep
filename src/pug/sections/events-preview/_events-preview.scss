@@ -14,14 +14,20 @@
 
 		@include container-up("event-preview", $tablet-width) {
 			grid-template-columns: repeat(2, 1fr);
+			gap: 40px;
 		}
 
 		&-item {
 			@extend %flex-column;
 			gap: 20px;
+			min-width: 0; // Нужно чтобы свайпер работал в гридах !!!
 
 			.subscribe {
 				margin-top: auto;
+			}
+
+			.swiper {
+				width: 100%;
 			}
 		}
 	}

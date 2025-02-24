@@ -5,12 +5,12 @@
 @use "@styles/_vars/scoped" as *;
 
 .header {
+	container: header / inline-size;
 	position: fixed;
 	width: 100%;
 	top: 0;
-	container: header / inline-size;
-	// outline: 1px solid red;
 	background-color: transparent;
+	backdrop-filter: blur(10px);
 	z-index: 99;
 
 	.container {
@@ -26,10 +26,15 @@
 
 		&-item {
 			@extend %flex-align;
-			// outline: 1px solid red;
 
 			&--left {
 				justify-content: flex-start;
+
+				&:has(.btn-thin) {
+					.btn-thin {
+						margin-right: 12px;
+					}
+				}
 
 				@include container-down("header", $tablet-width) {
 					.main-btn {
