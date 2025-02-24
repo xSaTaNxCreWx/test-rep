@@ -6,7 +6,7 @@ block variables
   - hideSectionHeader = false
 block content
   include ../../components/_ui/sliders/base-slider/base-slider
-  include ../../components/_ui/buttons/btn-primary/btn-primary
+  include ../../components/_ui/buttons/main-btn/btn
   .catalog-preview__content
     +base-slider({
       items: [
@@ -46,12 +46,12 @@ block content
       ]
     })
 
-    //- +btn-primary({
-    //-   tag: 'span',
-    //-   title: 'Показать все подборки',
-    //-   cls: 'outlined dark',
-    //-   iconAfter: true
-    //- })
+    +main-btn({
+      tag: 'span',
+      title: 'Показать все подборки',
+      cls: 'btn-secondary',
+      icon: 'arrow-up'
+    })
 
   
   

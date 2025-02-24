@@ -7,13 +7,19 @@ const sliders = document.querySelectorAll(".base-slider");
 
 if (sliders.length) {
 	sliders.forEach((slider) => {
-		const pagination = slider.querySelector(".swiper-pagination");
+		const pagination = document.querySelector(
+			".base-slider + .swiper-wrapper + .swiper-pagination",
+		);
 		const btnNext = slider.querySelector(".swiper-button-next");
 		const btnPrev = slider.querySelector(".swiper-button-prev");
 
+		const isProductCardSlider = slider.classList.contains(
+			"product-card-slider",
+		);
+
 		new Swiper(slider, {
 			modules: [Navigation, Pagination],
-			slidesPerView: 2,
+			slidesPerView: isProductCardSlider ? 1 : 2,
 
 			navigation: {
 				nextEl: btnNext ? btnNext : null,
@@ -23,8 +29,23 @@ if (sliders.length) {
 			pagination: {
 				el: pagination ? pagination : null,
 				clickable: true,
-				// dynamicBullets: true,
 			},
+
+			breakpoints: isProductCardSlider
+				? {
+						375: {
+							slidesPerView: 2,
+						},
+
+						768: {
+							slidesPerView: 3,
+						},
+
+						1024: {
+							slidesPerView: 4,
+						},
+				  }
+				: null,
 		});
 	});
 }

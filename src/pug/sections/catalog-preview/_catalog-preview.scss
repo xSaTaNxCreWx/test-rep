@@ -4,6 +4,9 @@
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
+// убрать при сборке если будет использоваться отдельный компонент
+@use "@pug/components/_ui/cards/product-card/product-card";
+
 .catalog-preview {
 	&__content {
 		@extend %flex-column;

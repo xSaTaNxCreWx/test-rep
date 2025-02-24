@@ -1,0 +1,33 @@
+include ../../buttons/main-btn/btn
+mixin product-card(data)
+  .product-card
+    .product-card__header
+      if data.badge
+        .badge(class= data.badge.cls ? data.badge.cls : null)!= data.badge.text
+
+      +main-btn({
+        tag: 'button',
+        cls: 'btn-fav',
+        icon: 'fav' 
+      })
+      .swiper.product-card-inner-slider
+        .swiper-wrapper
+          each path in data.images
+            .swiper-slide
+              img(src=`./assets/img/${path}.png` alt= data.title width="480" height="705")
+        .swiper-pagination
+    
+    .product-card__main
+      span.base-text.product-card__title!= data.title
+      .product-card__price-wrapper
+        if data.oldPrice
+          span.product-card__price.product-card__price--old!= data.price
+        span.product-card__price!= data.price
+    
+    .product-card__footer
+      button(type="button" aria-label="Черный").color-picker-btn
+        span.color-picker-btn__inner(aria-hidden="true" style="background-color: #000000;")
+      button(type="button" aria-label="Фиолетовый").color-picker-btn.active
+        span.color-picker-btn__inner(aria-hidden="true" style="background-color:#d743e8;")
+      button(type="button" aria-label="Красный").color-picker-btn
+        span.color-picker-btn__inner(aria-hidden="true" style="background-color:#ed5353;")

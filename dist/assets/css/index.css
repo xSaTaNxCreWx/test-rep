@@ -1,4 +1,4 @@
-.subscribe, .subscribe form, .events-preview__grid-item, .catalog-preview__content, .top-banner{
+.subscribe, .subscribe form, .events-preview__grid-item, .catalog-preview__content, .product-card, .product-card__main, .top-banner{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
@@ -8,7 +8,7 @@
           flex-direction:column;
 }
 
-.top-banner__content, .top-banner__footer{
+.badge, .color-picker-btn, .top-banner__content, .top-banner__footer{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
@@ -20,7 +20,7 @@
           justify-content:center;
 }
 
-.subscribe form fieldset, .top-banner-slider .swiper-pagination{
+.subscribe form fieldset, .product-card-inner-slider.swiper .swiper-pagination, .product-card__footer, .product-card__price-wrapper, .top-banner-slider .swiper-pagination{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
@@ -78,16 +78,136 @@
 }
 .top-banner__content > *{
   margin:0;
+  text-align:center;
   color:var(--light);
 }
 .top-banner__footer{
   gap:10px;
 }
 
+.color-picker-btn{
+  padding:0;
+  background-color:transparent;
+  width:32px;
+  height:32px;
+  aspect-ratio:1/1;
+  border:1px solid transparent;
+}
+
 .subscribe form fieldset{
   margin:0;
   padding:0;
   border:none;
+}
+
+.badge{
+  width:-webkit-fit-content;
+  width:-moz-fit-content;
+  width:fit-content;
+  min-width:60px;
+  min-height:40px;
+}
+.badge-accent{
+  font-size:16px;
+  font-weight:700;
+  color:var(--light);
+  background-color:var(--accent);
+}
+.color-picker-btn__inner{
+  width:10px;
+  height:10px;
+  aspect-ratio:1/1;
+  background-color:var(--primary);
+  border:1px solid var(--muted);
+}
+.color-picker-btn.active{
+  border-color:var(--primary);
+}
+
+.product-card{
+  gap:10px;
+  height:100%;
+}
+.product-card-inner-slider.swiper .swiper-slide{
+  height:auto;
+}
+.product-card-inner-slider.swiper .swiper-slide img{
+  width:100%;
+  height:100%;
+  -o-object-fit:cover;
+     object-fit:cover;
+}
+.product-card-inner-slider.swiper .swiper-pagination{
+  gap:5px;
+  top:0;
+  left:0;
+  width:100%;
+  height:18px;
+}
+.product-card-inner-slider.swiper .swiper-pagination-bullet{
+  -webkit-box-flex:1;
+      -ms-flex-positive:1;
+          flex-grow:1;
+  height:2px;
+  margin:0;
+  border-radius:0;
+  background-color:var(--muted);
+}
+.product-card-inner-slider.swiper .swiper-pagination-bullet-active{
+  background-color:var(--primary);
+}
+.product-card__header{
+  position:relative;
+  margin-bottom:10px;
+}
+.product-card__header .badge{
+  position:absolute;
+  top:20px;
+  left:20px;
+  z-index:11;
+}
+.product-card__header .btn-fav{
+  position:absolute;
+  top:0;
+  right:0;
+  z-index:11;
+}
+.product-card__main{
+  gap:5px;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  text-align:center;
+  padding:0 10px;
+  -webkit-box-flex:1;
+      -ms-flex-positive:1;
+          flex-grow:1;
+}
+.product-card__footer{
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  padding:0 10px;
+}
+.product-card__title{
+  text-transform:uppercase;
+  margin-bottom:auto;
+}
+.product-card__price{
+  font-style:16px;
+  font-weight:700;
+  color:var(--primary);
+}
+.product-card__price-wrapper{
+  gap:10px;
+}
+.product-card__price--old{
+  color:var(--accent);
+}
+.product-card__price--old + .product-card__price{
+  font-size:14px;
+  font-weight:400;
+  text-decoration:line-through;
 }
 
 .catalog-preview__content{
@@ -115,6 +235,11 @@
   gap:20px;
   min-width:0;
 }
+.events-preview__grid-item:nth-child(1) .base-card img{
+  -webkit-box-flex:1;
+      -ms-flex-positive:1;
+          flex-grow:1;
+}
 .events-preview__grid-item .subscribe{
   margin-top:auto;
 }
@@ -123,9 +248,12 @@
 }
 
 .subscribe{
-  background-color:var(--light);
-  padding:clamp(20px, 2.4vw, 40px);
   gap:clamp(10px, 3vw, 20px);
+  padding:clamp(20px, 2.4vw, 40px);
+  background-color:var(--primary);
+}
+.subscribe > *{
+  color:var(--white);
 }
 .subscribe form{
   gap:10px;
@@ -135,9 +263,11 @@
   font-size:16px;
   width:100%;
   padding:20px;
-  border:none;
   background-color:var(--white);
   color:var(--primary);
+  border:none;
+  min-height:60px;
+  outline:none;
 }
 .subscribe form fieldset .main-control::-webkit-input-placeholder{
   font-weight:400;
@@ -163,4 +293,13 @@
   font-weight:400;
   font-size:16px;
   color:var(--primary);
+}
+.subscribe form .btn[type=submit]{
+  border:1px solid var(--white);
+}
+.subscribe form small{
+  color:var(--light);
+}
+.subscribe form small a{
+  color:var(--light);
 }

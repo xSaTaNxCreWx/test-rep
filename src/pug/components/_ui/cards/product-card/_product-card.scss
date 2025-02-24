@@ -1,0 +1,139 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/resets.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+// вынести в отдельный компонент!!
+.badge {
+	@extend %flex-center;
+	width: fit-content;
+	min-width: 60px;
+	min-height: 40px;
+
+	&-accent {
+		font-size: 16px;
+		font-weight: 700;
+		color: var(--light);
+		background-color: var(--accent);
+	}
+}
+
+.color-picker-btn {
+	@extend %btn-reset;
+	width: 32px;
+	height: 32px;
+	aspect-ratio: 1/1;
+	border: 1px solid transparent;
+
+	&__inner {
+		width: 10px;
+		height: 10px;
+		aspect-ratio: 1/1;
+		background-color: var(--primary);
+		border: 1px solid var(--muted);
+	}
+
+	&.active {
+		border-color: var(--primary);
+	}
+}
+
+.product-card {
+	@extend %flex-column;
+	gap: 10px;
+	height: 100%;
+
+	&-inner-slider.swiper {
+		.swiper-slide {
+			height: auto;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		.swiper-pagination {
+			@extend %flex-align;
+			gap: 5px;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 18px;
+			// переделать псевдоэлементом на всю высоту карточки!
+
+			&-bullet {
+				flex-grow: 1;
+				height: 2px;
+				margin: 0;
+				border-radius: 0;
+				background-color: var(--muted);
+
+				&-active {
+					background-color: var(--primary);
+				}
+			}
+		}
+	}
+
+	&__header {
+		position: relative;
+		margin-bottom: 10px;
+
+		.badge {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			z-index: 11;
+		}
+
+		.btn-fav {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 11;
+		}
+	}
+
+	&__main {
+		@extend %flex-column;
+		gap: 5px;
+		align-items: center;
+		text-align: center;
+		padding: 0 10px;
+		flex-grow: 1;
+	}
+
+	&__footer {
+		@extend %flex-align;
+		justify-content: center;
+		padding: 0 10px;
+	}
+
+	&__title {
+		text-transform: uppercase;
+		margin-bottom: auto;
+	}
+
+	&__price {
+		font-style: 16px;
+		font-weight: 700;
+		color: var(--primary);
+
+		&-wrapper {
+			@extend %flex-align;
+			gap: 10px;
+		}
+
+		&--old {
+			color: var(--accent);
+
+			& + .product-card__price {
+				font-size: 14px;
+				font-weight: 400;
+				text-decoration: line-through;
+			}
+		}
+	}
+}

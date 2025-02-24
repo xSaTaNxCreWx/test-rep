@@ -6,7 +6,7 @@ block variables
   - hideSectionHeader = true
 block content
   include ../../components/_ui/cards/base-card/base-card
-  include ../../components/_ui/buttons/btn-primary/btn-primary
+  include ../../components/_ui/buttons/main-btn/btn
 
   .base-grid
     +base-card({
@@ -16,11 +16,10 @@ block content
         height: 920
       },
 
-      btn: {
-        title: 'Женщинам',
-        cls: 'light transparent base-card__link',
-        iconBefore: true
-      }
+      title: {
+        text: 'Женщинам',
+        icon: true
+      },
     })
 
     +base-card({
@@ -29,12 +28,10 @@ block content
         width: 920,
         height: 920
       },
-
-      btn: {
-        title: 'Мужчинам',
-        cls: 'light transparent base-card__link',
-        iconBefore: true
-      }
+      title: {
+        text: 'Мужчинам',
+        icon: true
+      },
     })
 
   

@@ -22,6 +22,12 @@
 			gap: 20px;
 			min-width: 0; // Нужно чтобы свайпер работал в гридах !!!
 
+			&:nth-child(1) {
+				.base-card img {
+					flex-grow: 1;
+				}
+			}
+
 			.subscribe {
 				margin-top: auto;
 			}

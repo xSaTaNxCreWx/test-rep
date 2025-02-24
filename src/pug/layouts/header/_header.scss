@@ -37,7 +37,7 @@
 				}
 
 				@include container-down("header", $tablet-width) {
-					.main-btn {
+					.btn {
 						display: none;
 					}
 				}
@@ -50,8 +50,8 @@
 			&--right {
 				justify-content: flex-end;
 
-				.auth-btn,
-				.search-opener-btn {
+				.fav-btn,
+				.auth-btn {
 					display: none;
 				}
 			}
