@@ -3,12 +3,22 @@ block variables
   - sectionClass = ''
   - sectionContainerClass = ''
   - sectionTitle = ''
+  - showSliderNavigation = ''
 
 section.base-section(class= sectionClass)
   if !hideSectionHeader
     .container(class= sectionContainerClass)
       .base-section__header
         h2.base-title!= sectionTitle
+
+        if showSliderNavigation
+          .swiper-navigation
+            button(type="button" aria-label="Назад").swiper-button.swiper-button-prev
+              svg(width='16' height='16' role='img' aria-hidden='true' focusable='false')
+                use(xlink:href=`./assets/sprite.svg#icon-slider-arrow`)
+            button(type="button" aria-label="Вперед").swiper-button.swiper-button-next
+              svg(width='16' height='16' role='img' aria-hidden='true' focusable='false')
+                use(xlink:href=`./assets/sprite.svg#icon-slider-arrow`)
 
   .container-fluid
     block content

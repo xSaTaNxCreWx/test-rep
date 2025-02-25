@@ -4,15 +4,6 @@
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
-.base-grid {
-	// TEMP
-	display: grid;
-	grid-template-columns: 1fr;
-	@include container-up("main", $mobile-width) {
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
-
 .base-card {
 	display: flex;
 	flex-direction: column;
@@ -35,14 +26,15 @@
 		width: 100%;
 		@extend %flex-column;
 		align-items: center;
-		gap: 10px;
+
 		padding: 10px 16px;
 
 		&:not(.base-card--column .base-card__footer) {
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			padding: 40px;
+			padding: 40px 20px;
+			gap: 10px;
 		}
 	}
 
@@ -59,7 +51,7 @@
 
 	.base-card__title {
 		@extend %flex-align;
-		gap: 5px;
+		gap: 8px;
 
 		font-size: 14px;
 		font-weight: 400;

@@ -4,13 +4,14 @@ block variables
   - sectionContainerClass = ''
   - sectionTitle = 'События'
   - hideSectionHeader = false
+  - showSliderNavigation = true
 block content
   include ../../components/_ui/sliders/base-slider/base-slider
   include ../../components/_ui/cards/base-card/base-card
 
   .events-preview__grid
-    .events-preview__grid-item
-      //+base-card({
+    .events-preview__grid-item.events-preview__grid-item--banner
+      +base-card({
         img: {
           name: 'banner-mock',
           width: 920,
@@ -22,10 +23,11 @@ block content
         title: {
           text: 'Открытие UB в ТЦ, г. Москва'
         }
-        })
+      })
       
     .events-preview__grid-item.events-preview__grid-item--side
-      //+base-slider({
+      +base-slider({
+        cls: 'events-preview-slider',
         items: [
           {
             cls: 'base-card--column',
@@ -79,7 +81,6 @@ block content
               text: 'Весенняя распродажа'
             }
           },
-          
         ]
         })
       

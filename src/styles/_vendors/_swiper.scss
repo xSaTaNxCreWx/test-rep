@@ -1,7 +1,42 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/resets.scss";
+
 .swiper {
 	width: 100%;
 
 	.swiper-slide {
 		height: auto;
+	}
+}
+
+.swiper-navigation {
+	@extend %flex-align;
+	gap: 5px;
+
+	.swiper-button {
+		@extend %btn-reset;
+		@extend %flex-center;
+		width: 40px;
+		height: 40px;
+		background-color: var(--light);
+		border: 1px solid #f4f4f4;
+
+		svg {
+			width: 18px;
+			height: auto;
+			fill: var(--primary);
+			object-fit: contain;
+			transition: fill var(--main-transition);
+		}
+
+		&-prev {
+			transform: rotate(-180deg);
+		}
+
+		&-disabled {
+			svg {
+				fill: var(--gray);
+			}
+		}
 	}
 }

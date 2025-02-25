@@ -4,45 +4,61 @@ block variables
   - sectionContainerClass = ''
   - sectionTitle = 'Подборки'
   - hideSectionHeader = false
+  - showSliderNavigation = true
+  
 block content
   include ../../components/_ui/sliders/base-slider/base-slider
   include ../../components/_ui/buttons/main-btn/btn
   .catalog-preview__content
     +base-slider({
+      cls: 'events-preview-slider',
       items: [
         {
-          cls: 'base-card--column',
           img: {
             name: 'mock-img-1',
             width: 920,
             height: 920
+          },
+          title: {
+            text: 'Весенняя подборка',
+            icon: true
           }
+          
         },
         {
-          cls: 'base-card--column',
           img: {
             name: 'mock-img-2',
             width: 920,
             height: 920
+          },
+          title: {
+            text: 'Зимняя подборка',
+            icon: true
           }
         },
         {
-          cls: 'base-card--column',
           img: {
             name: 'mock-img-1',
             width: 920,
             height: 920
+          },
+          title: {
+            text: 'Весенняя подборка',
+            icon: true
           }
+          
         },
         {
-          cls: 'base-card--column',
           img: {
             name: 'mock-img-2',
             width: 920,
             height: 920
+          },
+          title: {
+            text: 'Зимняя подборка',
+            icon: true
           }
         },
-        
       ]
     })
 

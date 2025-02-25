@@ -1,2 +1,37 @@
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
 .base-slider {
+	&.auto-fill-slider {
+		width: 100%;
+		.swiper-slide {
+			width: 30vw;
+			width: 30dvw;
+			max-width: 370px;
+			min-width: 225px;
+
+			.base-card {
+				img {
+					aspect-ratio: 2/3;
+
+					@include container-up("main", $mobile-width) {
+						aspect-ratio: 3/5;
+					}
+				}
+
+				&__footer {
+					padding: 20px;
+				}
+				&__title {
+					font-size: 14px;
+					color: var(--primary);
+
+					svg {
+						width: 12px;
+						height: 12px;
+						fill: var(--primary);
+					}
+				}
+			}
+		}
+	}
 }

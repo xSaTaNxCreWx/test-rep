@@ -4990,14 +4990,40 @@ if (sliders$1.length) {
     const pagination = document.querySelector(
       ".base-slider + .swiper-wrapper + .swiper-pagination"
     );
-    const btnNext = slider2.querySelector(".swiper-button-next");
-    const btnPrev = slider2.querySelector(".swiper-button-prev");
+    const btnNext = slider2.closest(".base-section").querySelector(".swiper-button-next");
+    const btnPrev = slider2.closest(".base-section").querySelector(".swiper-button-prev");
     const isProductCardSlider = slider2.classList.contains(
       "product-card-slider"
     );
+    const isAutoFillSlider = slider2.classList.contains("auto-fill-slider");
+    const isEventsPreviewSlider = slider2.classList.contains(
+      "events-preview-slider"
+    );
+    const breakpoints2 = isProductCardSlider ? {
+      375: {
+        slidesPerView: 2
+      },
+      768: {
+        slidesPerView: 3
+      },
+      1024: {
+        slidesPerView: 4
+      }
+    } : isEventsPreviewSlider ? {
+      375: {
+        slidesPerView: 2
+      }
+    } : !isAutoFillSlider ? {
+      768: {
+        slidesPerView: 2
+      }
+    } : null;
+    const spaceBetween = isAutoFillSlider ? 2 : null;
+    const slidesPerView = isProductCardSlider ? 1 : isEventsPreviewSlider ? 1 : isAutoFillSlider ? "auto" : 1;
     new Swiper(slider2, {
       modules: [Navigation, Pagination],
-      slidesPerView: isProductCardSlider ? 1 : 2,
+      slidesPerView,
+      spaceBetween,
       navigation: {
         nextEl: btnNext ? btnNext : null,
         prevEl: btnPrev ? btnPrev : null
@@ -5006,17 +5032,7 @@ if (sliders$1.length) {
         el: pagination ? pagination : null,
         clickable: true
       },
-      breakpoints: isProductCardSlider ? {
-        375: {
-          slidesPerView: 2
-        },
-        768: {
-          slidesPerView: 3
-        },
-        1024: {
-          slidesPerView: 4
-        }
-      } : null
+      breakpoints: breakpoints2
     });
   });
 }

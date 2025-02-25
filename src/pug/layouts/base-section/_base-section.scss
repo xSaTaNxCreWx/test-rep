@@ -2,4 +2,16 @@
 
 .base-section {
 	padding: clamp(30px, 2.6vw, 40px) 0;
+
+	&__header {
+		@extend %flex-align;
+		width: 100%;
+		gap: 20px;
+		justify-content: space-between;
+		margin-bottom: 25px;
+
+		& > * {
+			margin-bottom: 0;
+		}
+	}
 }
