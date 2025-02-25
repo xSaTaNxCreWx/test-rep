@@ -29,6 +29,10 @@
           align-items:center;
 }
 
+.top-banner-slider{
+  width:100%;
+  max-width:100vw;
+}
 .top-banner-slider .swiper-slide{
   position:relative;
   width:100%;
@@ -64,9 +68,7 @@
   top:0;
   left:0;
   width:100%;
-  height:100vh;
-  height:-webkit-fill-available;
-  height:100svh;
+  height:100%;
   max-height:1080px;
   -o-object-fit:cover;
      object-fit:cover;
