@@ -33,6 +33,7 @@
   position:relative;
   width:100%;
   height:100vh;
+  height:-webkit-fill-available;
   height:100svh;
   max-height:1080px;
 }
@@ -64,7 +65,8 @@
   left:0;
   width:100%;
   height:100vh;
-  height:100dvh;
+  height:-webkit-fill-available;
+  height:100svh;
   max-height:1080px;
   -o-object-fit:cover;
      object-fit:cover;
