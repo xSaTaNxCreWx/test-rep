@@ -1,0 +1,5 @@
+include ../main-btn/btn
+mixin button-row(data)
+  .button-row
+    each btn in data.items
+      +main-btn(btn)

@@ -1,0 +1,27 @@
+@forward "@styles/_extends/resets.scss";
+
+.color-picker-btn {
+	@extend %btn-reset;
+	width: 32px;
+	height: 32px;
+	aspect-ratio: 1/1;
+	border: 1px solid transparent;
+
+	&-row {
+		@extend %flex-align;
+		justify-content: center;
+		padding: 0 10px;
+	}
+
+	&__inner {
+		width: 10px;
+		height: 10px;
+		aspect-ratio: 1/1;
+		background-color: var(--primary);
+		border: 1px solid var(--muted);
+	}
+
+	&.active {
+		border-color: var(--primary);
+	}
+}

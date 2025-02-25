@@ -3,40 +3,10 @@
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
+@use "@pug/components/_ui/badge/badge";
+@use "@pug/components/_ui/buttons/color-picker-btn-row/color-picker-btn-row";
+
 // вынести в отдельный компонент!!
-.badge {
-	@extend %flex-center;
-	width: fit-content;
-	min-width: 60px;
-	min-height: 40px;
-
-	&-accent {
-		font-size: 16px;
-		font-weight: 700;
-		color: var(--light);
-		background-color: var(--accent);
-	}
-}
-
-.color-picker-btn {
-	@extend %btn-reset;
-	width: 32px;
-	height: 32px;
-	aspect-ratio: 1/1;
-	border: 1px solid transparent;
-
-	&__inner {
-		width: 10px;
-		height: 10px;
-		aspect-ratio: 1/1;
-		background-color: var(--primary);
-		border: 1px solid var(--muted);
-	}
-
-	&.active {
-		border-color: var(--primary);
-	}
-}
 
 .product-card {
 	@extend %flex-column;
@@ -46,6 +16,7 @@
 	&-inner-slider.swiper {
 		.swiper-slide {
 			height: auto;
+			container: product-card-slider / inline-size;
 
 			img {
 				width: 100%;
@@ -55,24 +26,94 @@
 		}
 
 		.swiper-pagination {
-			@extend %flex-align;
-			gap: 5px;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 18px;
-			// переделать псевдоэлементом на всю высоту карточки!
+			display: none;
+			@include container-up("main", $mobile-width) {
+				display: flex;
+				align-items: center;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 10;
 
-			&-bullet {
-				flex-grow: 1;
-				height: 2px;
-				margin: 0;
-				border-radius: 0;
-				background-color: var(--muted);
+				&-bullet {
+					position: relative;
+					flex-grow: 1;
+					height: 100%;
+					margin: 0;
+					border-radius: 0;
+					background-color: transparent;
 
-				&-active {
-					background-color: var(--primary);
+					&::before {
+						position: absolute;
+						top: 10px;
+						left: 0;
+						width: 100%;
+						height: 2px;
+						content: "";
+						margin: 0;
+						border-radius: 0;
+						background-color: var(--muted);
+					}
+
+					&-active::before {
+						background-color: var(--primary);
+					}
 				}
+			}
+		}
+	}
+
+	&__add-cart-btn.btn {
+		// Убрать в отдельный компоненет со всеми состояниями!
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 11;
+		background-color: transparent;
+
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: transparent;
+			stroke: var(--primary);
+		}
+
+		span {
+			display: none;
+		}
+
+		transition: none;
+		@media (hover: hover) {
+			&:hover {
+				background-color: transparent;
+			}
+		}
+		&:focus {
+			background-color: transparent;
+		}
+
+		@include container-down("main", $tablet-width) {
+			svg {
+				stroke: var(--primary);
+			}
+		}
+
+		@include container-up("main", $tablet-width) {
+			bottom: 20px;
+			left: 20px;
+			z-index: 12;
+			width: 100%;
+			max-width: calc(100% - 40px);
+			background-color: rgba(53, 56, 58, 0.8);
+			color: var(--light);
+
+			svg {
+				display: none;
+			}
+
+			span {
+				display: flex;
 			}
 		}
 	}
@@ -80,6 +121,8 @@
 	&__header {
 		position: relative;
 		margin-bottom: 10px;
+		background-color: var(--light);
+		overflow: hidden;
 
 		.badge {
 			position: absolute;
@@ -94,6 +137,15 @@
 			right: 0;
 			z-index: 11;
 		}
+
+		// @include container-up("main", $tablet-width) {
+
+		@media (hover: hover) {
+			& > .product-cart__add-cart-btn.btn {
+				bottom: 0 !important;
+			}
+		}
+		// }
 	}
 
 	&__main {
@@ -103,12 +155,6 @@
 		text-align: center;
 		padding: 0 10px;
 		flex-grow: 1;
-	}
-
-	&__footer {
-		@extend %flex-align;
-		justify-content: center;
-		padding: 0 10px;
 	}
 
 	&__title {

@@ -1,0 +1,17 @@
+@forward "@styles/_extends/flexbox.scss";
+
+.badge {
+	@extend %flex-center;
+	width: fit-content;
+	min-width: 60px;
+	min-height: 40px;
+	font-size: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	z-index: 9;
+
+	&-accent {
+		color: var(--light);
+		background-color: var(--accent);
+	}
+}

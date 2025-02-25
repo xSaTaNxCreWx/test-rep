@@ -1,15 +1,28 @@
 include ../../buttons/main-btn/btn
+include ../../badge/badge
+include ../../buttons/color-picker-btn-row/color-picker-btn-row
+
 mixin product-card(data)
   .product-card
     .product-card__header
       if data.badge
-        .badge(class= data.badge.cls ? data.badge.cls : null)!= data.badge.text
-
+        +badge({
+          cls: data.badge.cls ? data.badge.cls : null,
+          text: data.badge.text
+        })
       +main-btn({
         tag: 'button',
         cls: 'btn-fav',
         icon: 'fav' 
       })
+
+      +main-btn({
+        tag: 'button',
+        cls: 'btn-primary product-card__add-cart-btn',
+        title: 'Добавить в корзину',
+        icon: 'cart' 
+      })
+
       .swiper.product-card-inner-slider
         .swiper-wrapper
           each path in data.images
@@ -25,9 +38,20 @@ mixin product-card(data)
         span.product-card__price!= data.price
     
     .product-card__footer
-      button(type="button" aria-label="Черный").color-picker-btn
-        span.color-picker-btn__inner(aria-hidden="true" style="background-color: #000000;")
-      button(type="button" aria-label="Фиолетовый").color-picker-btn.active
-        span.color-picker-btn__inner(aria-hidden="true" style="background-color:#d743e8;")
-      button(type="button" aria-label="Красный").color-picker-btn
-        span.color-picker-btn__inner(aria-hidden="true" style="background-color:#ed5353;")
+      +color-picker-btn-row({
+        items: [
+          {
+            label: 'Черный',
+            hex: '#000000',
+            isActive: true
+          },
+          {
+            label: 'Фиолетовый',
+            hex: '#d743e8'
+          },
+          {
+            label: 'Красный',
+            hex: '#ed5353'
+          },
+        ]
+      })

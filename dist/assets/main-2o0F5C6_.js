@@ -5030,8 +5030,12 @@ if (sliders.length) {
       pagination: {
         el: pagination ? pagination : null,
         clickable: true
-        // dynamicBullets: true,
       }
     });
+    slider2.querySelectorAll(".swiper-pagination-bullet").forEach(
+      (el) => el.addEventListener("mouseover", () => {
+        el.click();
+      })
+    );
   });
 }
