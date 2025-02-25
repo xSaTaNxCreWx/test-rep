@@ -10,7 +10,7 @@
 
 // up
 @mixin container-up($name, $width) {
-	@container #{$name} (min-width: #{calc($width + 1px)} ) {
+	@container #{$name} (min-width: #{$width} ) {
 		@content;
 	}
 }

@@ -35,6 +35,14 @@
     fetch(link.href, fetchOpts);
   }
 })();
+const favBtns = document.querySelectorAll("button.btn-fav");
+if (favBtns.length) {
+  favBtns.forEach((btn) => {
+    btn.addEventListener("click", (evt) => {
+      evt.currentTarget.classList.toggle("active");
+    });
+  });
+}
 function isObject$1(obj) {
   return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
 }
@@ -5021,7 +5029,6 @@ if (sliders.length) {
     new Swiper(slider2, {
       modules: [Navigation, Pagination, EffectFade],
       slidesPerView: 1,
-      // nested: true,
       effect: "fade",
       navigation: {
         nextEl: btnNext ? btnNext : null,
@@ -5037,5 +5044,42 @@ if (sliders.length) {
         el.click();
       })
     );
+  });
+}
+const btns$1 = document.querySelectorAll(".product-card .btn-cart-wide");
+if (btns$1.length) {
+  const onClickShowSizeBlock = (evt) => {
+    const target = evt.currentTarget;
+    const props = target.parentNode.querySelector(".product-cart__props-row");
+    !props.classList.contains("active") ? props.classList.add("active") : null;
+  };
+  btns$1.forEach((btn) => {
+    btn.addEventListener("click", onClickShowSizeBlock);
+  });
+}
+const btns = document.querySelectorAll(".product-card .size-chooser-btn");
+if (btns.length) {
+  const onClickSetActiveSize = (evt) => {
+    const target = evt.currentTarget;
+    if (target.classList.contains("active")) return;
+    target.parentNode.querySelector(".size-chooser-btn.active").classList.remove("active");
+    target.classList.add("active");
+  };
+  btns.forEach((btn) => {
+    btn.addEventListener("click", onClickSetActiveSize);
+  });
+}
+const pickers = document.querySelectorAll(
+  ".color-picker-btn-row .color-picker-btn"
+);
+if (pickers.length) {
+  const onClickSetActiveSize = (evt) => {
+    const target = evt.currentTarget;
+    if (target.classList.contains("active")) return;
+    target.parentNode.querySelector(".color-picker-btn.active").classList.remove("active");
+    target.classList.add("active");
+  };
+  pickers.forEach((picker) => {
+    picker.addEventListener("click", onClickSetActiveSize);
   });
 }

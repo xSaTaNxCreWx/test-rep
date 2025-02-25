@@ -17,11 +17,33 @@ mixin product-card(data)
       })
 
       +main-btn({
-        tag: 'button',
+        tag: 'button', 
         cls: 'btn-cart-wide',
         title: 'Добавить в корзину',
         icon: 'cart' 
       })
+
+      .product-cart__props-row
+        +main-btn({
+          tag: 'button', 
+          cls: 'size-chooser-btn',
+          title: 'XS',
+        })
+        +main-btn({
+          tag: 'button', 
+          cls: 'size-chooser-btn active',
+          title: 'S',
+        })
+        +main-btn({
+          tag: 'button', 
+          cls: 'size-chooser-btn',
+          title: 'M',
+        })
+        +main-btn({
+          tag: 'button', 
+          cls: 'size-chooser-btn',
+          title: 'L',
+        })
 
       .swiper.product-card-inner-slider
         .swiper-wrapper

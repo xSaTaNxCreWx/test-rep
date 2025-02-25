@@ -14,7 +14,6 @@ if (sliders.length) {
 		new Swiper(slider, {
 			modules: [Navigation, Pagination, EffectFade],
 			slidesPerView: 1,
-			// nested: true,
 
 			effect: "fade",
 
