@@ -5010,7 +5010,7 @@ if (sliders$1.length) {
         slidesPerView: 4
       }
     } : isEventsPreviewSlider ? {
-      375: {
+      720: {
         slidesPerView: 2
       }
     } : !isAutoFillSlider ? {

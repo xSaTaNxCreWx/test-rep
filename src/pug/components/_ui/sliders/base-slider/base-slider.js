@@ -43,7 +43,7 @@ if (sliders.length) {
 			  }
 			: isEventsPreviewSlider
 			? {
-					375: {
+					720: {
 						slidesPerView: 2,
 					},
 			  }
