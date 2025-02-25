@@ -27,6 +27,9 @@ if (sliders.length) {
 			"events-preview-slider",
 		);
 
+		const isCollectionPreviewSlider =
+			slider.classList.contains("сollections-slider");
+
 		const breakpoints = isProductCardSlider
 			? {
 					375: {
@@ -41,9 +44,15 @@ if (sliders.length) {
 						slidesPerView: 4,
 					},
 			  }
-			: isEventsPreviewSlider
+			: isCollectionPreviewSlider
 			? {
 					720: {
+						slidesPerView: 2,
+					},
+			  }
+			: isEventsPreviewSlider
+			? {
+					375: {
 						slidesPerView: 2,
 					},
 			  }
