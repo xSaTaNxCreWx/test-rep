@@ -1,0 +1,29 @@
+@forward "@styles/_extends/flexbox.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.toggler {
+	@extend %flex-center;
+	padding: 10px;
+	border: 1px solid #f4f4f4;
+	background-color: var(--light);
+
+	@include container-down("base-section-header", $tablet-width) {
+		width: 100%;
+		order: 10;
+	}
+
+	.btn {
+		min-height: 40px;
+		padding: 10px 20px;
+
+		@include container-down("base-section-header", $tablet-width) {
+			max-width: revert;
+		}
+
+		&.active {
+			background-color: var(--primary);
+			color: var(--light);
+		}
+	}
+}

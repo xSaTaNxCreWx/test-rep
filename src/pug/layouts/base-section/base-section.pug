@@ -1,15 +1,36 @@
+include ../../components/_ui/buttons/toggler/toggler
+
 block variables
   - hideSectionHeader = ''
   - sectionClass = ''
   - sectionContainerClass = ''
   - sectionTitle = ''
   - showSliderNavigation = ''
+  - showCategoriesToogler = '' 
 
 section.base-section(class= sectionClass)
   if !hideSectionHeader
     .container(class= sectionContainerClass)
       .base-section__header
         h2.base-title!= sectionTitle
+
+        if showCategoriesToogler
+          +toggler({
+            cls: 'categories-toggler',
+            items: [
+              {
+                tag: 'button',
+                title: 'Мужчинам',
+                cls: 'btn-transparent active',
+              },
+              {
+                tag: 'button',
+                title: 'Женщинам',
+                cls: 'btn-transparent',
+              },
+            ]
+          })
+
 
         if showSliderNavigation
           .swiper-navigation
@@ -22,4 +43,10 @@ section.base-section(class= sectionClass)
 
   .container-fluid
     block content
-      
+
+- hideSectionHeader = ''
+- sectionClass = ''
+- sectionContainerClass = ''
+- sectionTitle = ''
+- showSliderNavigation = ''
+- showCategoriesToogler = ''

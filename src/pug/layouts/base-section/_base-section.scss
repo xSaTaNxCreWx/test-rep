@@ -5,13 +5,18 @@
 
 	&__header {
 		@extend %flex-align;
+		flex-wrap: wrap;
 		width: 100%;
-		gap: 20px;
-		justify-content: space-between;
+		gap: clamp(20px, 3.2vw, 40vw);
 		margin-bottom: 25px;
+		container: base-section-header / inline-size;
 
 		& > * {
 			margin-bottom: 0;
+		}
+
+		.swiper-navigation {
+			margin-left: auto;
 		}
 	}
 }

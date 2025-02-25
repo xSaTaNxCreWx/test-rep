@@ -271,7 +271,7 @@ img{
   padding:10px 16px;
 }
 
-.main-logo, .burger, .swiper-navigation .swiper-button{
+.toggler, .main-logo, .burger, .swiper-navigation .swiper-button{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
@@ -418,15 +418,45 @@ img{
   padding:clamp(30px, 2.6vw, 40px) 0;
 }
 .base-section__header{
+  -ms-flex-wrap:wrap;
+      flex-wrap:wrap;
   width:100%;
-  gap:20px;
-  -webkit-box-pack:justify;
-      -ms-flex-pack:justify;
-          justify-content:space-between;
+  gap:clamp(20px, 3.2vw, 40vw);
   margin-bottom:25px;
+  container:base-section-header/inline-size;
 }
 .base-section__header > *{
   margin-bottom:0;
+}
+.base-section__header .swiper-navigation{
+  margin-left:auto;
+}
+
+.toggler{
+  padding:10px;
+  border:1px solid #f4f4f4;
+  background-color:var(--light);
+}
+@container base-section-header (max-width: 767px){
+  .toggler{
+    width:100%;
+    -webkit-box-ordinal-group:11;
+        -ms-flex-order:10;
+            order:10;
+  }
+}
+.toggler .btn{
+  min-height:40px;
+  padding:10px 20px;
+}
+@container base-section-header (max-width: 767px){
+  .toggler .btn{
+    max-width:revert;
+  }
+}
+.toggler .btn.active{
+  background-color:var(--primary);
+  color:var(--light);
 }
 
 .btn{

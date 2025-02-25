@@ -1,10 +1,10 @@
 extends ../../layouts/base-section/base-section.pug
 block variables
   - sectionClass = 'catalog-preview categories'
-  - sectionContainerClass = ''
   - sectionTitle = 'Категории'
-  - hideSectionHeader = false
   - showSliderNavigation = true
+  - showCategoriesToogler = true
+
 block content
   include ../../components/_ui/sliders/base-slider/base-slider
   include ../../components/_ui/buttons/main-btn/btn
@@ -133,8 +133,132 @@ block content
             text: 'Платья',
             icon: true
           }
-        },
-        
-        
+        }
       ]
     })
+    //- +base-slider({
+    //-   cls: 'auto-fill-slider',
+    //-   items: [
+    //-     {
+    //-       img: {
+    //-         name: 'section-mock-img-1',
+    //-         width: 370,
+    //-         height: 500
+    //-       },
+    //-       title: {
+    //-         text: 'Верхняя одежда',
+    //-         icon: true
+    //-       }
+    //-     },
+    //-     {
+    //-       img: {
+    //-         name: 'section-mock-img-2',
+    //-         width: 370,
+    //-         height: 500
+    //-       },
+    //-       title: {
+    //-         text: 'Боди',
+    //-         icon: true
+    //-       }
+    //-     },
+    //-     {
+    //-       img: {
+    //-         name: 'section-mock-img-3',
+    //-         width: 370,
+    //-         height: 500
+    //-       },
+    //-       title: {
+    //-         text: 'Костюмы',
+    //-         icon: true
+    //-       }
+    //-     },
+    //-     {
+    //-       img: {
+    //-         name: 'section-mock-img-4',
+    //-         width: 370,
+    //-         height: 500
+    //-       },
+    //-       title: {
+    //-         text: 'Футболки',
+    //-         icon: true
+    //-       }
+    //-     },
+    //-     {
+    //-       img: {
+    //-         name: 'section-mock-img-5',
+    //-         width: 370,
+    //-         height: 500
+    //-       },
+    //-       title: {
+    //-         text: 'Платья',
+    //-         icon: true
+    //-       }
+    //-     },
+    //-     {
+    //-       img: {
+    //-         name: 'section-mock-img-1',
+    //-         width: 370,
+    //-         height: 500
+    //-       },
+    //-       title: {
+    //-         text: 'Платья',
+    //-         icon: true
+    //-       }
+    //-     },
+    //-     {
+    //-       img: {
+    //-         name: 'section-mock-img-4',
+    //-         width: 370,
+    //-         height: 500
+    //-       },
+    //-       title: {
+    //-         text: 'Верхняя одежда',
+    //-         icon: true
+    //-       }
+    //-     },
+    //-     {
+    //-       img: {
+    //-         name: 'section-mock-img-2',
+    //-         width: 370,
+    //-         height: 500
+    //-       },
+    //-       title: {
+    //-         text: 'Боди',
+    //-         icon: true
+    //-       }
+    //-     },
+    //-     {
+    //-       img: {
+    //-         name: 'section-mock-img-3',
+    //-         width: 370,
+    //-         height: 500
+    //-       },
+    //-       title: {
+    //-         text: 'Костюмы',
+    //-         icon: true
+    //-       }
+    //-     },
+    //-     {
+    //-       img: {
+    //-         name: 'section-mock-img-4',
+    //-         width: 370,
+    //-         height: 500
+    //-       },
+    //-       title: {
+    //-         text: 'Футболки',
+    //-         icon: true
+    //-       }
+    //-     },
+    //-     {
+    //-       img: {
+    //-         name: 'section-mock-img-5',
+    //-         width: 370,
+    //-         height: 500
+    //-       },
+    //-       title: {
+    //-         text: 'Платья',
+    //-         icon: true
+    //-       }
+    //-     }
+    //-   ]
+    //- })
