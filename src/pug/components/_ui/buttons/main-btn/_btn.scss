@@ -1,5 +1,8 @@
 @forward "@styles/_extends/utils.scss";
 
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
 $btn-hover-color: #454c51;
 $btn-disabled-color: #b6b6b6;
 
@@ -291,6 +294,41 @@ $btn-thin-hover-color: #606b80;
 			height: 24px;
 			stroke: var(--primary);
 			fill: transparent;
+		}
+	}
+
+	&-cart-wide {
+		transition: none;
+
+		svg {
+			width: 24px;
+			height: 24px;
+			stroke: var(--primary);
+			fill: transparent;
+		}
+
+		@include container-down("main", $tablet-width) {
+			width: 60px;
+			aspect-ratio: 1/1;
+			height: 60px;
+			padding: 12px;
+			background-color: transparent;
+			span {
+				display: none;
+			}
+		}
+
+		@include container-up("main", $tablet-width) {
+			flex-grow: 1;
+			width: 100%;
+			background-color: rgba(53, 56, 58, 0.8);
+			color: var(--light);
+			svg {
+				display: none;
+			}
+			span {
+				display: flex;
+			}
 		}
 	}
 

@@ -83,17 +83,16 @@
 			display: none;
 		}
 
-		transition: none;
-		@media (hover: hover) {
-			&:hover {
+		@include container-down("main", $tablet-width) {
+			transition: none;
+			@media (hover: hover) {
+				&:hover {
+					background-color: transparent;
+				}
+			}
+			&:focus {
 				background-color: transparent;
 			}
-		}
-		&:focus {
-			background-color: transparent;
-		}
-
-		@include container-down("main", $tablet-width) {
 			svg {
 				stroke: var(--primary);
 			}
@@ -114,6 +113,15 @@
 
 			span {
 				display: flex;
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					background-color: transparent;
+				}
+			}
+			&:focus {
+				background-color: transparent;
 			}
 		}
 	}
@@ -138,14 +146,18 @@
 			z-index: 11;
 		}
 
-		// @include container-up("main", $tablet-width) {
+		& .btn-cart-wide {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			z-index: 11;
 
-		@media (hover: hover) {
-			& > .product-cart__add-cart-btn.btn {
-				bottom: 0 !important;
+			@include container-up("main", $tablet-width) {
+				bottom: 20px;
+				right: 20px;
+				max-width: calc(100% - 40px);
 			}
 		}
-		// }
 	}
 
 	&__main {

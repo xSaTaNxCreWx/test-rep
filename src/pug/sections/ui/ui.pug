@@ -38,12 +38,20 @@ block content
           icon: 'search'
         })
       .ui__section-field
-        span.base-text .btn .btn-cart
+        span.base-text .btn .btn-cart-wide
+        +main-btn({
+          tag: 'button',
+          cls: 'btn-cart-wide',
+          title: 'Добавить в корзину',
+          icon: 'cart' 
+        })
+      .ui__section-field
+        span.base-text .btn .btn-search
         +main-btn({
           tag: 'a',
           href: '#',
-          cls: 'btn-cart',
-          icon: 'cart'
+          cls: 'btn-search',
+          icon: 'search'
         })
       .ui__section-field
         span.base-text .btn .btn-user
