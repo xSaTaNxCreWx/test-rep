@@ -12,6 +12,12 @@
 		@extend %flex-column;
 		gap: 20px;
 		align-items: center;
+
+		@include container-down("main", $mobile-width) {
+			& > .btn {
+				max-width: calc(100% - 20px);
+			}
+		}
 	}
 
 	&--grid {

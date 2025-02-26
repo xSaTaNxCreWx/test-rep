@@ -463,7 +463,7 @@ img{
   -webkit-box-pack:center;
       -ms-flex-pack:center;
           justify-content:center;
-  gap:8px;
+  gap:6px;
   width:100%;
   max-width:-webkit-fit-content;
   max-width:-moz-fit-content;

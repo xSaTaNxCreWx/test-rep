@@ -33,6 +33,9 @@
   width:100%;
   max-width:100vw;
 }
+.top-banner-slider .swiper{
+  position:relative;
+}
 .top-banner-slider .swiper-slide{
   position:relative;
   width:100%;
@@ -57,6 +60,26 @@
 .top-banner-slider .swiper-pagination-bullet-active{
   background-color:var(--primary);
 }
+@container main (min-width: 768px ){
+  .top-banner-slider .swiper-navigation .swiper-button{
+    position:absolute;
+    top:50%;
+    background-color:var(--white);
+    z-index:11;
+  }
+  .top-banner-slider .swiper-navigation .swiper-button-next{
+    right:40px;
+    -webkit-transform:translateY(-50%);
+        -ms-transform:translateY(-50%);
+            transform:translateY(-50%);
+  }
+  .top-banner-slider .swiper-navigation .swiper-button-prev{
+    left:40px;
+    -webkit-transform:translateY(-50%) rotate(-180deg);
+        -ms-transform:translateY(-50%) rotate(-180deg);
+            transform:translateY(-50%) rotate(-180deg);
+  }
+}
 
 .top-banner{
   gap:20px;
@@ -69,12 +92,12 @@
   left:0;
   width:100%;
   height:100%;
-  max-height:1080px;
   -o-object-fit:cover;
      object-fit:cover;
   -o-object-position:top;
      object-position:top;
   z-index:-1;
+  will-change:auto;
 }
 .top-banner__content{
   gap:12px;
@@ -229,6 +252,9 @@
   }
 }
 @container main (min-width: 768px ){
+  .product-card__header:hover .btn-cart-wide{
+    bottom:20px;
+  }
   .product-card__header:focus .btn-cart-wide{
     bottom:20px;
   }
@@ -262,6 +288,11 @@
 }
 .product-card .product-cart__props-row .btn.active{
   background-color:var(--white);
+}
+@container main (max-width: 533px){
+  .product-card .product-cart__props-row{
+    display:none;
+  }
 }
 .product-card:has(.product-cart__props-row.active) .btn-cart-wide{
   -webkit-transform:translateY(140px);
@@ -305,6 +336,11 @@
   -webkit-box-align:center;
       -ms-flex-align:center;
           align-items:center;
+}
+@container main (max-width: 533px){
+  .catalog-preview__content > .btn{
+    max-width:calc(100% - 20px);
+  }
 }
 .catalog-preview--grid .container, .catalog-preview--grid .container-fluid{
   display:grid;
@@ -413,9 +449,4 @@
 }
 .subscribe form small a{
   color:var(--light);
-}
-@media (hover: hover){
-    .product-card__header:hover .btn-cart-wide{
-      bottom:20px;
-    }
 }

@@ -9,11 +9,12 @@ if (slider) {
 	const pagination = slider.querySelector(".swiper-pagination");
 	const btnNext = slider.querySelector(".swiper-button-next");
 	const btnPrev = slider.querySelector(".swiper-button-prev");
+	console.log(btnNext);
 
 	new Swiper(slider, {
 		modules: [Navigation, Pagination],
 		slidesPerView: "auto",
-		spaceBetween: 20,
+		// spaceBetween: 20,
 		slidesPerView: 1,
 
 		navigation: {

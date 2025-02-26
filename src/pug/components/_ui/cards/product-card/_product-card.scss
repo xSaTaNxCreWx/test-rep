@@ -98,11 +98,9 @@
 		}
 
 		@include container-up("main", $tablet-width) {
-			@media (hover: hover) {
-				&:hover {
-					.btn-cart-wide {
-						bottom: 20px;
-					}
+			&:hover {
+				.btn-cart-wide {
+					bottom: 20px;
 				}
 			}
 
@@ -147,6 +145,10 @@
 			&.active {
 				background-color: var(--white);
 			}
+		}
+
+		@include container-down("main", $mobile-width) {
+			display: none; // TEMP!!
 		}
 	}
 
