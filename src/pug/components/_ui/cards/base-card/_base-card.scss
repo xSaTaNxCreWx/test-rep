@@ -69,11 +69,11 @@
 			color: var(--light);
 		}
 		&:has(svg) {
-			line-height: 1;
+			// line-height: 1;
 		}
 		svg {
-			width: 16px;
-			height: 16px;
+			width: 11px;
+			height: 10px;
 			fill: var(--light);
 		}
 	}

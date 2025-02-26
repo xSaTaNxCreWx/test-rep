@@ -550,7 +550,7 @@ img{
   color:var(--primary);
 }
 .btn-thin span{
-  line-height:1;
+  line-height:1.3;
 }
 .btn-thin svg{
   fill:var(--primary);
@@ -792,12 +792,9 @@ img{
   font-weight:700;
   color:var(--light);
 }
-.base-card .base-card__title:has(svg){
-  line-height:1;
-}
 .base-card .base-card__title svg{
-  width:16px;
-  height:16px;
+  width:11px;
+  height:10px;
   fill:var(--light);
 }
 
@@ -826,8 +823,8 @@ img{
   color:var(--primary);
 }
 .base-slider.auto-fill-slider .swiper-slide .base-card__title svg{
-  width:12px;
-  height:12px;
+  width:11px;
+  height:10px;
   fill:var(--primary);
 }
 
