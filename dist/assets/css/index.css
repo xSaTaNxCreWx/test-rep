@@ -60,7 +60,13 @@
 .top-banner-slider .swiper-pagination-bullet-active{
   background-color:var(--primary);
 }
+.top-banner-slider .swiper-navigation{
+  display:none;
+}
 @container main (min-width: 768px ){
+  .top-banner-slider .swiper-navigation{
+    display:block;
+  }
   .top-banner-slider .swiper-navigation .swiper-button{
     position:absolute;
     top:50%;

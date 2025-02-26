@@ -34,8 +34,13 @@
 			}
 		}
 
+		&-navigation {
+			display: none;
+		}
+
 		@include container-up("main", $tablet-width) {
 			&-navigation {
+				display: block;
 				.swiper-button {
 					position: absolute;
 					top: 50%;
