@@ -49,7 +49,7 @@ $btn-thin-hover-color: #606b80;
 	}
 
 	&-secondary {
-		border-color: var(--muted);
+		border-color: transparent;
 		background-color: var(--light);
 		color: var(--primary);
 
@@ -60,7 +60,7 @@ $btn-thin-hover-color: #606b80;
 		&:not(.disabled) {
 			&:focus {
 				color: $btn-hover-color;
-				border: 1px solid $btn-hover-color;
+				border: 1px solid transparent;
 
 				svg {
 					fill: $btn-hover-color;
@@ -70,7 +70,7 @@ $btn-thin-hover-color: #606b80;
 			@media (hover: hover) {
 				&:hover {
 					color: $btn-hover-color;
-					border: 1px solid $btn-hover-color;
+					border: 1px solid transparent;
 
 					svg {
 						fill: $btn-hover-color;

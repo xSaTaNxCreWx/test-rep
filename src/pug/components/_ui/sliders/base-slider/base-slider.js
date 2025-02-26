@@ -63,7 +63,7 @@ if (sliders.length) {
 					},
 			  }
 			: null;
-		const spaceBetween = isAutoFillSlider ? 2 : null;
+		const spaceBetween = isAutoFillSlider ? 2 : 2;
 
 		const slidesPerView = isProductCardSlider
 			? 1

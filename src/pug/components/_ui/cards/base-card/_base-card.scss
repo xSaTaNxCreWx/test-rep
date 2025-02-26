@@ -50,7 +50,7 @@
 	}
 
 	.base-card__title {
-		@extend %flex-align;
+		display: flex;
 		gap: 8px;
 
 		font-size: 14px;
@@ -61,20 +61,25 @@
 			font-weight: 700;
 		}
 
-		line-height: 1.3;
+		align-items: flex-end;
+		line-height: 17px;
 		text-transform: uppercase;
 		text-align: center;
 		color: var(--primary);
+
 		&:not(.base-card--column .base-card__title) {
 			color: var(--light);
 		}
-		&:has(svg) {
-			// line-height: 1;
-		}
-		svg {
-			width: 11px;
-			height: 10px;
-			fill: var(--light);
+
+		position: relative;
+		&::after {
+			position: relative;
+			content: "";
+			width: 16px;
+			height: 16px;
+			background-image: url("@img/icon-arrow-white.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
 		}
 	}
 }

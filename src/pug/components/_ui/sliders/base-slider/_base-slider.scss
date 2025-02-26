@@ -23,12 +23,15 @@
 				}
 				&__title {
 					font-size: 14px;
+					line-height: 11px;
+					gap: 6px;
+					align-items: flex-start;
 					color: var(--primary);
 
-					svg {
+					&::after {
 						width: 11px;
-						height: 10px;
-						fill: var(--primary);
+						height: 11px;
+						background-image: url("@img/icon-arrow.svg");
 					}
 				}
 			}

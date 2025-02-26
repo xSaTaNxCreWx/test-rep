@@ -8,7 +8,7 @@ mixin base-card(data)
         if data.title
           span.base-card__title
             != data.title.text
-            if data.title.icon
+            //if data.title.icon
               svg(width='14' height='14' role='img' aria-hidden='true' focusable='false')
                 use(xlink:href=`./assets/sprite.svg#icon-arrow-up`)
       
