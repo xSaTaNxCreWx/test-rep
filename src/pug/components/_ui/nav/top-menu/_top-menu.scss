@@ -1,0 +1,32 @@
+.top-menu {
+	// position: absolute;
+	// background-color: red;
+
+	&__grid {
+		padding: calc(var(--container-offset) + 16px) 40px;
+		padding-right: 0;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		outline: 1px solid red;
+		width: 100%;
+		height: calc(100svh - 60px);
+		background-color: var(--light);
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		gap: 20px;
+
+		display: none;
+
+		.catalog-preview {
+			grid-column: 2/5;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+
+			.product-card {
+				width: 100%;
+				max-width: 480px;
+			}
+		}
+	}
+}

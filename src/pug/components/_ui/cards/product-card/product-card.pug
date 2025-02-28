@@ -1,6 +1,7 @@
 include ../../buttons/main-btn/btn
 include ../../badge/badge
 include ../../buttons/color-picker-btn-row/color-picker-btn-row
+include ../../price-row/price-row
 
 mixin product-card(data)
   .product-card
@@ -55,9 +56,14 @@ mixin product-card(data)
     .product-card__main
       span.base-text.product-card__title!= data.title
       .product-card__price-wrapper
-        if data.oldPrice
-          span.product-card__price.product-card__price--old!= data.price
-        span.product-card__price!= data.price
+        //- заменить на компонент из детальной товара!!
+        +price-row ({ 
+          old: '25 490 ₽',
+          current: '11 490 ₽'
+        })
+        //- if data.oldPrice
+        //-   span.product-card__price.product-card__price--old!= data.price
+        //- span.product-card__price!= data.price
     
     .product-card__footer
       +color-picker-btn-row({

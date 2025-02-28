@@ -1,0 +1,9 @@
+mixin dialog(data)
+  dialog( id= data.id class= data.cls ? data.cls : null).dialog
+    .dialog-inner
+      button(onclick=`window.${data.id}.close()` aria-label="Закрыть").dialog-closer
+        svg(width='16' height='16' role='img' aria-hidden='true' focusable='false')
+          use(xlink:href='./assets/sprite.svg#icon-close')
+      .dialog-content!= content
+        
+      

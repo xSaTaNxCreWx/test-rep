@@ -1,0 +1,5 @@
+mixin price-row(data)
+  .price-row
+    span.price-row__item!= data.current
+    if data.old
+      span.price-row__item.price-row__item--old!= data.old

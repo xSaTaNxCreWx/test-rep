@@ -1,0 +1,82 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/effects.scss";
+@forward "@styles/_extends/offsets.scss";
+
+/* purgecss start ignore */
+
+$inner-padding: 14px 0;
+
+.accordeon {
+	@extend %flex-column;
+
+	&-item {
+		@extend %flex-column;
+
+		border-radius: 0;
+		background-color: transparent;
+
+		&.expanded {
+			.accordeon-body {
+				opacity: 1;
+				grid-template-rows: 1fr;
+			}
+
+			.content-block {
+				padding: 20px 0;
+			}
+
+			.accordeon-opener {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+	&-header {
+		position: relative;
+		@extend %flex-align;
+		justify-content: space-between;
+		gap: 24px;
+		// padding: $inner-padding;
+		border-bottom: 1px solid var(--gray);
+		cursor: pointer;
+	}
+
+	&-opener {
+		width: 40px;
+		min-width: 40px;
+		height: 40px;
+		@extend %flex-center;
+		border-radius: 50%;
+		background-color: var(--secondary);
+		will-change: auto;
+		transition: transform var(--main-transition);
+
+		svg {
+			width: 16px;
+			height: 16px;
+			fill: var(--primary);
+		}
+	}
+
+	&-body {
+		display: grid;
+		grid-template-rows: 0fr;
+		opacity: 0;
+		// padding: 0 $inner-padding;
+		will-change: auto;
+		transition: grid-template-rows var(--main-transition),
+			opacity 0.4s 0.2s linear;
+
+		& > .content-block {
+			margin: 0;
+			overflow: hidden;
+			// transition: padding var(--main-transition);
+
+			& > * {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+/* purgecss end ignore */

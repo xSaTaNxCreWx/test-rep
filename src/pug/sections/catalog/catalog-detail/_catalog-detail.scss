@@ -1,0 +1,117 @@
+@forward "@styles/_extends/flexbox.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+@use "@pug/components/_ui/price-row/price-row";
+
+.catalog-detail {
+	container: catalog-detail / inline-size;
+
+	&__title {
+		font-weight: 400;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 40px;
+		margin-bottom: 60px;
+
+		@include container-up("catalog-detail", $mobile-width) {
+			grid-template-columns: repeat(2, 1fr);
+			margin-bottom: 80px;
+		}
+
+		&-item {
+			height: fit-content;
+
+			.swiper-slide,
+			.swiper {
+				width: 100% !important;
+			}
+
+			&--main {
+				padding: 0 var(--container-offset);
+
+				@include container-up("catalog-detail", $mobile-width) {
+					padding: 0;
+				}
+			}
+
+			&--gallery {
+				@include container-up("catalog-detail", $mobile-width) {
+					.swiper-wrapper {
+						display: grid;
+						grid-template-columns: repeat(2, 1fr);
+					}
+				}
+
+				img {
+					width: 100%;
+					height: auto;
+					object-fit: contain;
+					border: 1px solid var(--white);
+				}
+			}
+		}
+	}
+
+	&__section {
+		@extend %flex-column;
+		gap: 20px;
+		align-items: center;
+		width: 100%;
+
+		@include container-up("catalog-detail", $mobile-width) {
+			align-items: flex-start;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 80px;
+		}
+
+		&-field {
+			@extend %flex-column;
+			gap: 10px 30px;
+			text-align: center;
+
+			@include container-up("catalog-detail", $mobile-width) {
+				text-align: left;
+			}
+
+			&--head {
+				display: grid;
+				grid-template-columns: auto 60px;
+				gap: 0 20px;
+				align-items: center;
+				text-align: left;
+				width: 100%;
+
+				.catalog-detail__price-row {
+					grid-row: 2/3;
+					grid-column: -1/1;
+
+					@include container-down("catalog-detail", $mobile-width) {
+						display: none;
+					}
+				}
+			}
+
+			@include container-down("catalog-detail", $mobile-width) {
+				.main-picker {
+					.main-picker__headline {
+						justify-content: center;
+					}
+					&.colorpicker {
+						.main-picker__headline {
+							display: none;
+						}
+					}
+				}
+			}
+
+			& > * {
+				margin: 0;
+			}
+		}
+	}
+}

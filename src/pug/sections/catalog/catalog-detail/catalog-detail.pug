@@ -1,0 +1,168 @@
+
+include ../../../components/_ui/buttons/main-btn/btn
+include ../../../components/_ui/price-row/price-row
+include ../../../components/_ui/accordeon/accordeon
+include ../../../components/_ui/main-picker/main-picker
+
+
+section.catalog-detail
+  .container-fluid
+    .catalog-detail__grid
+      .catalog-detail__grid-item.catalog-detail__grid-item--gallery
+        .swiper.catalog-detail-slider
+          .swiper-wrapper
+            .swiper-slide
+              img(src="./assets/img/catalog-detail-mock-1.png" alt="брюки спортивные" width="480" height="800")
+            .swiper-slide
+              img(src="./assets/img/catalog-detail-mock-2.png" alt="брюки спортивные" width="480" height="800")
+            .swiper-slide
+              img(src="./assets/img/catalog-detail-mock-3.png" alt="брюки спортивные" width="480" height="800")
+            .swiper-slide
+              img(src="./assets/img/catalog-detail-mock-4.png" alt="брюки спортивные" width="480" height="800")
+            .swiper-slide
+              img(src="./assets/img/catalog-detail-mock-5.png" alt="брюки спортивные" width="480" height="800")
+          .swiper-pagination
+      .catalog-detail__grid-item.catalog-detail__grid-item--main
+        form(action="#").catalog-detail__section
+          .catalog-detail__section-field.catalog-detail__section-field--head
+            h2.base-title.catalog-detail__title Брюки спортивные
+            .catalog-detail__price-row
+              +price-row ({ 
+                old: '25 490 ₽',
+                current: '11 490 ₽'
+              })
+            +main-btn({
+              tag: 'button',
+              cls: 'btn-fav',
+              icon: 'fav' 
+            })
+          .catalog-detail__section-field
+            +main-picker({
+              cls: 'colorpicker',
+              title: 'Цвет:',
+              value: 'графитовый',
+              pickerItemCls: 'main-picker__item--colorpicker',
+              items: [
+                `
+                  <label style="background-color: #0b131e;">
+                    <input type="radio" name="colorpicker-item" value="Графитовый" checked>
+                  </label>
+                `,
+
+                `
+                  <label style="background-color: #d0d0d0;">
+                    <input type="radio" name="colorpicker-item" value="Серый">
+                  </label>
+                `,
+
+                `
+                  <label style="background-color: #ffffff;">
+                    <input type="radio" name="colorpicker-item" value="Белый">
+                  </label>
+                `
+              ]
+            })
+
+          .catalog-detail__section-field
+            +main-picker({
+              title: 'Размер:',
+              value: 'M',
+              pickerItemCls: 'main-picker__item--sizepicker',
+              items: [
+                `
+                  <label>
+                    <span>XS</span>
+                    <input type="radio" name="sizepicker-item" value="XS">
+                  </label>
+                `,
+
+                `
+                  <label>
+                    <span>S</span>
+                    <input type="radio" name="sizepicker-item" value="S">
+                  </label>
+                `,
+
+                `
+                  <label>
+                    <span>M</span>
+                    <input type="radio" name="sizepicker-item" value="M" checked>
+                  </label>
+                `,
+                `
+                  <label>
+                    <span>L</span>
+                    <input type="radio" name="sizepicker-item" value="L">
+                  </label>
+                `
+              ]
+            })
+            +main-btn({
+              tag: 'button',
+              cls: 'btn-thin underlined',
+              title: 'Таблица размеров'
+            })
+          .catalog-detail__section-field
+            +main-btn({
+              tag: 'button',
+              type: 'submit',
+              cls: 'btn-primary wide',
+              title: 'добавить в корзину <span>11 490 ₽</span>'
+            })
+          .catalog-detail__section-field
+            small Артикул: URB/-FPNT-1-FEM
+            small на модели размер: M
+            small параметры модели: рост 180 см. 86/60/91
+        .catalog-detail__section
+          .catalog-detail__description
+            p.catalog-detail__preview-text Широкие брюки из толстого футера. Сужаются к талии. По талии сзади заложены вытачки для лучшей посадки. Брендирование - квадратный силиконовый шеврон в виде штрих-кода. Брендированные молнии.
+            +main-btn({
+              tag: 'button',
+              cls: 'btn-thin underlined',
+              title: 'Еще'
+            })
+            
+          +accordeon([
+            {
+              title: 'состав и уход',
+              content: `
+                Материал/состав:<br>
+                Верх - Футер 470г/м 100% хлопок<br>
+                Подкладка - отсутствует<br>
+                Размеры - S, M, L, XL <br>
+                Артикул - URB/-FPNT-1-FEM<br>
+                Цвет - черный, графит
+              `
+            },
+            {
+              title: 'доставка',
+              content: `
+                <p>Доставка товаров осуществляется транспортными компаниями СДЭК, Boxberry, OZON и Почтой России. Ваш заказ будет отправлен в ближайшее время. Сроки и стоимость зависят от региона. Точную информацию о сроках и стоимости доставки вы можете уточнить у менеджеров интернет-магазина.</p>
+              `
+            },
+            {
+              title: 'наличие в магазинах',
+              content: `
+                <div class="catalog-detail__store">
+                  <div class="catalog-detail__store-field">
+                  <span>г. Санкт-Питербург, пр-кт Большой П.С. 69А, помещение 5-Н</span>
+                  <span>Размеры - S, M, L, XL</span>
+                  </div>
+                  <a href="tel:+74991161343" class="btn btn-thin underlined"><span>+7 499 116 13 43</span></a>
+                </div>
+                <div class="catalog-detail__store">
+                  <div class="catalog-detail__store-field">
+                  <span>г. Санкт-Питербург, пр-кт Большой П.С. 69А, помещение 5-Н</span>
+                  <span>Размеры - S, M, L, XL</span>
+                  </div>
+                  <a href="tel:+74991161343" class="btn btn-thin underlined"><span>+7 499 116 13 43</span></a>
+                </div>
+              `
+            },
+          ])
+
+
+
+
+    
+  

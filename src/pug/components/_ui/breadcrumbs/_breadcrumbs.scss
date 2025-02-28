@@ -1,0 +1,26 @@
+@forward "@styles/_extends/flexbox.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.breadcrumbs {
+	width: 100%;
+	margin: 20px 0;
+
+	.container {
+		@extend %flex-align;
+	}
+
+	&__item {
+		a span {
+			color: var(--primary);
+		}
+
+		span {
+			color: var(--gray);
+		}
+	}
+
+	& + * {
+		padding-top: 0;
+	}
+}

@@ -2,9 +2,13 @@
 @use "./_ui/buttons/burger/burger";
 @use "./_ui/logos/main-logo/main-logo";
 @use "@pug/layouts/base-section/base-section";
-@use "./_ui/buttons/toggler/toggler";
+@use "./_ui/buttons/toggler/toggler"; // ?? вынести ??
 @use "./_ui/buttons/main-btn/btn";
 @use "./_ui/cards/base-card/base-card";
 @use "./_ui/sliders/base-slider/base-slider";
+@use "./_ui/modals/dialog/dialog";
+@use "./_ui/accordeon/accordeon";
+@use "./_ui/main-picker/main-picker";
 @use "./blocks/content-block/content-block";
+
 /* purgecss end ignore */

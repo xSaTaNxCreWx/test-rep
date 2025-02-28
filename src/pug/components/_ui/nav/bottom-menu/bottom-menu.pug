@@ -1,0 +1,7 @@
+mixin bottom-menu(data)
+  nav.bottom-menu
+    span.base-subtitle!= data.title
+    ul(class= data.cls ? data.cls : null)
+      each item in data.items
+        li
+          a(href="#").base-text!= item.title 

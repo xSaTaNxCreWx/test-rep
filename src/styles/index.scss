@@ -2,3 +2,13 @@
 @use "@pug/sections/catalog-preview/catalog-preview";
 @use "@pug/sections/events-preview/events-preview";
 @use "@pug/components/blocks/subscribe-block/subscribe-block";
+
+@use "@pug/components/_ui/nav/top-menu/top-menu";
+@use "@pug/components/_ui/nav/bottom-menu/bottom-menu";
+
+// catalog-main
+
+@use "@pug/components/_ui/breadcrumbs/breadcrumbs";
+@use "@pug/components/_ui/pagination/pagination";
+@use "@pug/sections/catalog/catalog-section/catalog-section";
+@use "@pug/sections/catalog/catalog-detail/catalog-detail";

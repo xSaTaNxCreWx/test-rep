@@ -1,0 +1,115 @@
+extends ../../layouts/base-section/base-section.pug
+block variables
+  - sectionClass = 'catalog-preview'
+  - sectionTitle = 'Недавно смотрели'
+  - showSliderNavigation = true
+block content
+  include ../../components/_ui/sliders/base-slider/base-slider
+  include ../../components/_ui/buttons/main-btn/btn
+  .catalog-preview__content
+    +base-slider({
+      cls: 'product-card-slider',
+      type: 'product-card-slider',
+      items: [
+        {
+          images: [
+            'product-card-mock-1',
+            'product-card-mock-2',
+            'product-card-mock-3',
+            'product-card-mock-4',
+          ],
+          badge: {
+            cls: 'badge-accent',
+            text: '-25%'
+          },
+          title: 'Брюки спортивные летние с двумя карманами',
+          price: '9999 ₽',
+          oldPrice: '19990 ₽'
+        },
+        {
+          images: [
+            'product-card-mock-2',
+            'product-card-mock-3',
+            'product-card-mock-4',
+            'product-card-mock-1',
+          ],
+          badge: {
+            text: 'Новинка'
+          },
+          title: 'Брюки спортивные',
+          price: '99999 ₽'
+        },
+        {
+          images: [
+            'product-card-mock-3',
+            'product-card-mock-4',
+            'product-card-mock-1',
+            'product-card-mock-2',
+          ],
+          badge: {
+            text: 'Хит'
+          },
+          title: 'Брюки спортивные',
+          price: '99999 ₽'
+        },
+        {
+          images: [
+            'product-card-mock-4',
+            'product-card-mock-1',
+            'product-card-mock-2',
+            'product-card-mock-3',
+          ],
+          badge: {
+            text: 'Предзаказ'
+          },
+          title: 'Брюки спортивные',
+          price: '99999 ₽'
+        },
+        {
+          images: [
+            'product-card-mock-1',
+            'product-card-mock-2',
+            'product-card-mock-3',
+            'product-card-mock-4',
+          ],
+          title: 'Брюки спортивные',
+          price: '99999 ₽'
+        },
+        {
+          images: [
+            'product-card-mock-2',
+            'product-card-mock-3',
+            'product-card-mock-4',
+            'product-card-mock-1',
+          ],
+          title: 'Брюки спортивные',
+          price: '99999 ₽'
+        },
+        {
+          images: [
+            'product-card-mock-3',
+            'product-card-mock-4',
+            'product-card-mock-1',
+            'product-card-mock-2',
+          ],
+          title: 'Брюки спортивные',
+          price: '99999 ₽'
+        },
+        {
+          images: [
+            'product-card-mock-4',
+            'product-card-mock-1',
+            'product-card-mock-2',
+            'product-card-mock-3',
+          ],
+          title: 'Брюки спортивные',
+          price: '99999 ₽'
+        },
+      ]
+    })
+
+  
+  
+
+  
+  

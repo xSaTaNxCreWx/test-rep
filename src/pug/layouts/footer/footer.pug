@@ -1,2 +1,62 @@
+include ../../components/_ui/nav/bottom-menu/bottom-menu
+
 footer.footer
-  span Footer
+  .container-fluid
+    .footer__grid
+      .footer__grid-item.footer__grid-item--nav
+        +bottom-menu({
+          title: 'каталог',
+          items: [
+            { title: 'женщинам' },
+            { title: 'мужчинам' },
+            { title: 'аксессуары' },
+            { title: 'весеняя подборка' },
+            { title: 'базовый гардероб' },
+            { title: 'зимняя подборка' },
+          ]
+        })
+
+        +bottom-menu({
+          title: 'покупателям',
+          items: [
+            { title: 'доставка и оплата' },
+            { title: 'обмен и возврат' },
+            { title: 'состав и уход' },
+            { title: 'программа лояльности' },
+            { title: 'подарочный сертификат' }
+          ]
+        })
+
+        +bottom-menu({
+          title: 'О нас',
+          items: [
+            { title: 'о бренде' },
+            { title: 'события' },
+            { title: 'вакансии' },
+            { title: 'офлайн магазины' }
+          ]
+        })
+      .footer__grid-item.footer__grid-item--contacts
+        .footer__grid-item-field
+          span.base-subtitle Контакты
+          a(href="tel:88047007474").base-text 8 (804) 700 74 74
+          a(href="mailto:support@urbanboris.com").base-text support@urbanboris.com
+
+        .footer__grid-item-field
+          span.base-subtitle Социальные сети
+          a(href="#").base-text telegram
+          a(href="#").base-text вконтакте
+
+      .footer__grid-item.footer__grid-item--side
+        include ../../components/blocks/royalty/royalty
+      .footer__grid-item.footer__grid-item--info
+        .footer__grid-item-field
+          a(href="#") Карта сайта
+          span ©UB 2020-2025
+        .footer__grid-item-field
+          a(href="#") Дизайн
+          a(href="#") Создание сайта
+        .footer__grid-item-field
+          a(href="#") Политика конфиденциальности
+          a(href="#") Оферта
+    

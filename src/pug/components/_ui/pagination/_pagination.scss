@@ -1,0 +1,27 @@
+@forward "@styles/_extends/flexbox.scss";
+
+.pagination {
+	@extend %flex-center;
+	gap: 5px;
+	margin-top: 40px;
+	&__btn {
+		@extend %flex-center;
+		width: 40px;
+		height: 40px;
+		font-size: 12px;
+		line-height: 1;
+		font-weight: 700;
+		background-color: var(--light);
+		color: var(--primary);
+
+		&--prev {
+			transform: rotate(-180deg);
+		}
+
+		&--selected {
+			pointer-events: none;
+			background-color: var(--primary);
+			color: var(--light);
+		}
+	}
+}

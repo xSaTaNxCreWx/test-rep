@@ -4,13 +4,27 @@
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
+body:has(.top-banner) .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
 .header {
 	container: header / inline-size;
-	position: fixed;
-	width: 100%;
+	position: sticky;
 	top: 0;
+	width: 100%;
 	background-color: transparent;
 	backdrop-filter: blur(10px);
+	will-change: auto;
+
+	// &:has(.top-menu .btn:hover),
+	// &:has(.top-menu .btn:focus) {
+	// 	background-color: var(--light);
+	// 	backdrop-filter: none;
+	// }
+
 	z-index: 99;
 
 	.container {

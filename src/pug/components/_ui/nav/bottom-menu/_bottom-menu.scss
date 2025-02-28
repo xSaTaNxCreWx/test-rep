@@ -1,0 +1,22 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/resets.scss";
+
+.bottom-menu {
+	@extend %flex-column;
+	gap: 10px;
+
+	ul {
+		@extend %list-reset;
+		@extend %flex-column;
+		gap: 10px;
+
+		li {
+			display: flex;
+			line-height: 18px;
+			a {
+				text-transform: uppercase;
+				line-height: 18px;
+			}
+		}
+	}
+}

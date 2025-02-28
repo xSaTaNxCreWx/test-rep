@@ -5,6 +5,7 @@
 
 @use "@pug/components/_ui/badge/badge";
 @use "@pug/components/_ui/buttons/color-picker-btn-row/color-picker-btn-row";
+@use "@pug/components/_ui/price-row/price-row";
 
 .product-card {
 	position: relative;
@@ -15,6 +16,7 @@
 	&-inner-slider.swiper {
 		z-index: 10;
 		.swiper-slide {
+			width: 100% !important;
 			height: auto;
 			container: product-card-slider / inline-size;
 
@@ -148,7 +150,7 @@
 		}
 
 		@include container-down("main", $mobile-width) {
-			display: none; // TEMP!!
+			display: none; // TEMP!! должна быть модалка
 		}
 	}
 
@@ -168,26 +170,5 @@
 	&__title {
 		text-transform: uppercase;
 		margin-bottom: auto;
-	}
-
-	&__price {
-		font-style: 16px;
-		font-weight: 700;
-		color: var(--primary);
-
-		&-wrapper {
-			@extend %flex-align;
-			gap: 10px;
-		}
-
-		&--old {
-			color: var(--accent);
-
-			& + .product-card__price {
-				font-size: 14px;
-				font-weight: 400;
-				text-decoration: line-through;
-			}
-		}
 	}
 }

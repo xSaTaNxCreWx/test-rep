@@ -1,0 +1,22 @@
+@forward "@styles/_extends/flexbox.scss";
+
+.price-row {
+	@extend %flex-align;
+	gap: 10px;
+
+	&:has(.price-row__item--old) &__item:not(.price-row__item--old) {
+		color: var(--accent);
+	}
+
+	&__item {
+		font-style: 16px;
+		font-weight: 700;
+		color: var(--primary);
+
+		&--old {
+			font-size: 14px;
+			font-weight: 400;
+			text-decoration: line-through;
+		}
+	}
+}
