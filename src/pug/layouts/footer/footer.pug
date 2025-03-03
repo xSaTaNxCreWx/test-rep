@@ -15,7 +15,7 @@ footer.footer
             { title: 'зимняя подборка' },
           ]
         })
-
+      .footer__grid-item.footer__grid-item--nav
         +bottom-menu({
           title: 'покупателям',
           items: [
@@ -26,7 +26,7 @@ footer.footer
             { title: 'подарочный сертификат' }
           ]
         })
-
+      .footer__grid-item.footer__grid-item--nav
         +bottom-menu({
           title: 'О нас',
           items: [
@@ -51,12 +51,12 @@ footer.footer
         include ../../components/blocks/royalty/royalty
       .footer__grid-item.footer__grid-item--info
         .footer__grid-item-field
-          a(href="#") Карта сайта
-          span ©UB 2020-2025
+          a(href="#").base-text Карта сайта
+          span.base-text ©UB 2020-2025
         .footer__grid-item-field
-          a(href="#") Дизайн
-          a(href="#") Создание сайта
+          a(href="#").base-text Дизайн
+          a(href="#").base-text Создание сайта
         .footer__grid-item-field
-          a(href="#") Политика конфиденциальности
-          a(href="#") Оферта
+          a(href="#").base-text Политика конфиденциальности
+          a(href="#").base-text Оферта
     
