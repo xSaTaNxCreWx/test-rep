@@ -27,42 +27,39 @@
 			}
 		}
 
-		.swiper-pagination {
-			display: none;
-			@include container-up("main", $mobile-width) {
-				display: flex;
-				align-items: center;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
+		// .swiper-pagination {
+		// 	display: flex;
+		// 	align-items: center;
+		// 	top: 0;
+		// 	left: 0;
+		// 	width: 100%;
+		// 	height: 100%;
 
-				&-bullet {
-					position: relative;
-					flex-grow: 1;
-					height: 100%;
-					margin: 4px;
-					border-radius: 0;
-					background-color: transparent;
+		// 	&-bullet {
+		// 		position: relative;
+		// 		flex-grow: 1;
+		// 		height: 100%;
+		// 		margin: 4px;
+		// 		border-radius: 0;
+		// 		background-color: transparent;
 
-					&::before {
-						position: absolute;
-						top: 10px;
-						left: 0;
-						width: 100%;
-						height: 2px;
-						content: "";
-						margin: 0;
-						border-radius: 0;
-						background-color: var(--gray);
-					}
+		// 		&::before {
+		// 			position: absolute;
+		// 			top: 10px;
+		// 			left: 0;
+		// 			width: 100%;
+		// 			height: 2px;
+		// 			content: "";
+		// 			margin: 0;
+		// 			border-radius: 0;
+		// 			background-color: var(--gray);
+		// 		}
 
-					&-active::before {
-						background-color: var(--primary);
-					}
-				}
-			}
-		}
+		// 		&-active::before {
+		// 			background-color: var(--primary);
+		// 		}
+		// 	}
+		// }
 	}
 
 	&__header {

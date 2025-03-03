@@ -6,43 +6,38 @@ import "swiper/css/pagination";
 const slider = document.querySelector(".catalog-detail-slider");
 
 if (slider) {
-	const pagination = slider.querySelector(".swiper-pagination");
-	console.log(pagination);
+	let mediaQuery = window.matchMedia("(max-width: 534px)");
+	let isInited = false;
+	let swiper = null;
 
-	// let mql = window.matchMedia("(max-width: 534px)");
+	const sliderInit = () => {
+		return new Swiper(".catalog-detail-slider", {
+			modules: [Navigation, Pagination],
+			slidesPerView: 1,
+			pagination: {
+				el: ".catalog-detail-slider .swiper-pagination",
+				clickable: true,
+			},
+		});
+	};
 
-	// let swiper = null;
+	const checkSliderInit = () => {
+		if (mediaQuery.matches) {
+			if (!isInited) {
+				swiper = sliderInit();
+				isInited = !isInited;
+			}
+		} else {
+			if (isInited) {
+				swiper.destroy(true, true);
+				isInited = !isInited;
+			}
+		}
+	};
 
-	// window.addEventListener("resize", () => {
-	// 	if (mql.matches) {
-	// 		swiper = new Swiper(".catalog-detail-slider", {
-	// 			modules: [Navigation, Pagination],
-	// 			slidesPerView: 1,
-	// 			pagination: {
-	// 				el: ".catalog-detail-slider .swiper-pagination",
-	// 			},
-	// 		});
-	// 	} else {
-	// 		if (swiper) {
-	// 			swiper.destroy(true, true);
-	// 		}
-	// 	}
-	// });
+	checkSliderInit();
 
-	// window.addEventListener("resize", () => {
-	// 	if (mql.matches) {
-	// 		swiper = new Swiper(slider, {
-	// 			modules: [Navigation, Pagination],
-	// 			slidesPerView: 1,
-	// 			pagination: {
-	// 				el: pagination ? pagination : null,
-	// 				clickable: true,
-	// 			},
-	// 		});
-	// 	} else {
-	// 		console.log(swiper);
-	// 		swiper.destroy(true, true);
-	// 		console.log(swiper);
-	// 	}
-	// });
+	window.addEventListener("resize", () => {
+		checkSliderInit();
+	});
 }

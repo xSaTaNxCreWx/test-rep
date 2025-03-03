@@ -3,7 +3,7 @@ include ../../components/_ui/nav/bottom-menu/bottom-menu
 footer.footer
   .container-fluid
     .footer__grid
-      .footer__grid-item.footer__grid-item--nav
+      .footer__grid-item
         +bottom-menu({
           title: 'каталог',
           items: [
@@ -15,7 +15,7 @@ footer.footer
             { title: 'зимняя подборка' },
           ]
         })
-      .footer__grid-item.footer__grid-item--nav
+      .footer__grid-item
         +bottom-menu({
           title: 'покупателям',
           items: [
@@ -26,7 +26,7 @@ footer.footer
             { title: 'подарочный сертификат' }
           ]
         })
-      .footer__grid-item.footer__grid-item--nav
+      .footer__grid-item
         +bottom-menu({
           title: 'О нас',
           items: [

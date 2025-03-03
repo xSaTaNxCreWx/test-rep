@@ -1,3 +1,6 @@
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
 h1,
 h2,
 h3,
@@ -19,10 +22,18 @@ h1,
 
 h2,
 .base-title {
-	font-size: 24px;
+	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
 	color: var(--primary);
+
+	@include container-up("main", 375px) {
+		font-size: 16px;
+	}
+
+	@include container-up("main", 440px) {
+		font-size: 24px;
+	}
 }
 
 h3,
@@ -34,7 +45,6 @@ h3,
 	color: var(--primary);
 }
 
-p,
 .base-text {
 	display: inline-block;
 	font-size: 14px;

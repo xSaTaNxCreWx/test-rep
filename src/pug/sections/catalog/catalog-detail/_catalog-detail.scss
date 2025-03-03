@@ -6,14 +6,21 @@
 .catalog-detail {
 	container: catalog-detail / inline-size;
 
+	.container-fluid {
+		@include container-up("catalog-detail", $mobile-width) {
+			padding-right: var(--container-offset);
+		}
+	}
+
 	&__title {
 		font-weight: 400;
 	}
 
 	&__grid {
+		// грид сетка
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 40px;
+		gap: 0 clamp(20px, 3vw, 40px);
 		margin-bottom: 60px;
 
 		@include container-up("catalog-detail", $mobile-width) {
@@ -22,14 +29,18 @@
 		}
 
 		&-item {
+			// элемент грид сетки
 			height: fit-content;
 
-			.swiper-slide,
-			.swiper {
-				width: 100% !important;
+			&-wrapper form,
+			&-wrapper {
+				@extend %flex-column;
 			}
 
 			&--main {
+				position: relative;
+				@extend %flex-column;
+				gap: clamp(40px, 4vw, 80px);
 				padding: 0 var(--container-offset);
 
 				@include container-up("catalog-detail", $mobile-width) {
@@ -38,9 +49,25 @@
 			}
 
 			&--gallery {
-				@include container-up("catalog-detail", $mobile-width) {
-					.swiper-wrapper {
+				.swiper-slide,
+				.swiper {
+					width: 100% !important;
+				}
+
+				.swiper {
+					.badge {
+						position: absolute;
+						top: 20px;
+						left: 20px;
+					}
+				}
+
+				.swiper-wrapper {
+					@include container-up("catalog-detail", $mobile-width) {
 						display: grid;
+						grid-template-columns: 1fr;
+					}
+					@include container-up("catalog-detail", $tablet-width) {
 						grid-template-columns: repeat(2, 1fr);
 					}
 				}
@@ -55,62 +82,107 @@
 		}
 	}
 
-	&__section {
-		@extend %flex-column;
-		gap: 20px;
-		align-items: center;
-		width: 100%;
+	&__field {
+		// поле с информацией
 
-		@include container-up("catalog-detail", $mobile-width) {
-			align-items: flex-start;
+		@extend %flex-column;
+		order: 2;
+		&:not(:last-child) {
+			margin-bottom: 20px;
 		}
 
-		&:not(:last-child) {
-			margin-bottom: 80px;
+		&--head {
+			position: relative;
+			@extend %flex-column;
+			gap: 5px 20px;
+			order: 1;
+
+			& > * {
+				margin: 0;
+			}
+
+			&:has(.btn-fav) {
+				min-height: 60px;
+				justify-content: flex-end;
+				padding-right: 75px;
+				.btn-fav {
+					position: absolute;
+					top: 0;
+					right: 0;
+				}
+			}
+		}
+
+		&--add-btn {
+			.btn {
+				padding: 20px 10px;
+			}
+
+			@include container-down("main", $mobile-width) {
+				order: 1;
+			}
+
+			@include container-down("main", 440px) {
+				position: absolute;
+				top: -80px;
+				left: 0;
+				width: 100%;
+				padding: 10px 20px;
+				background: rgba(249, 249, 249, 0.8);
+				backdrop-filter: blur(2px);
+				z-index: 11;
+			}
+		}
+
+		&--sizepicker {
+			@extend %flex-column;
+			gap: 10px;
+
+			@include container-down("main", $mobile-width) {
+				align-items: center;
+			}
+		}
+
+		&--props {
+			@extend %flex-column;
+			font-size: 14px;
+
+			@include container-down("main", $mobile-width) {
+				align-items: center;
+				text-align: center;
+			}
+		}
+	}
+
+	&__store {
+		container: store-field / inline-size;
+
+		&-wrapper {
+			@extend %flex-column;
+			gap: 5px 40px;
+			padding: 20px 0;
+			border-bottom: 1px solid var(--gray);
+
+			@include container-up("store-field", 440px) {
+				display: grid;
+				grid-template-columns: auto auto;
+			}
+		}
+
+		&:first-child .catalog-detail__store-field-wrapper {
+			padding-top: 0;
 		}
 
 		&-field {
 			@extend %flex-column;
-			gap: 10px 30px;
-			text-align: center;
+			gap: 5px;
 
-			@include container-up("catalog-detail", $mobile-width) {
-				text-align: left;
+			.base-subtitle {
+				font-size: 14px;
 			}
 
-			&--head {
-				display: grid;
-				grid-template-columns: auto 60px;
-				gap: 0 20px;
-				align-items: center;
-				text-align: left;
-				width: 100%;
-
-				.catalog-detail__price-row {
-					grid-row: 2/3;
-					grid-column: -1/1;
-
-					@include container-down("catalog-detail", $mobile-width) {
-						display: none;
-					}
-				}
-			}
-
-			@include container-down("catalog-detail", $mobile-width) {
-				.main-picker {
-					.main-picker__headline {
-						justify-content: center;
-					}
-					&.colorpicker {
-						.main-picker__headline {
-							display: none;
-						}
-					}
-				}
-			}
-
-			& > * {
-				margin: 0;
+			.base-text {
+				font-size: 16px;
 			}
 		}
 	}

@@ -1,0 +1,19 @@
+@forward "@styles/_extends/flexbox.scss";
+
+.text-collapsed-block {
+	font-size: 16px;
+	margin-bottom: 20px;
+
+	&-content {
+		display: flex;
+		flex-direction: column;
+
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&-expander {
+		margin-top: 5px;
+	}
+}

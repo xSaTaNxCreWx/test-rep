@@ -1,7 +1,7 @@
 mixin main-picker(data)
   .main-picker(class= data.cls ? data.cls : null)
     span.base-text.main-picker__headline!= data.title
-      span.base-text.main-picker__value!= data.value       
+      span!= data.value       
       
     .main-picker__content
       each item in data.items

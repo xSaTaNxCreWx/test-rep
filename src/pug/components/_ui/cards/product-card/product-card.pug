@@ -51,7 +51,7 @@ mixin product-card(data)
           each path in data.images
             .swiper-slide
               img(src=`./assets/img/${path}.png` alt= data.title width="480" height="705")
-        .swiper-pagination
+        .swiper-pagination.swiper-pagination--main
     
     .product-card__main
       span.base-text.product-card__title!= data.title

@@ -36,7 +36,6 @@ $inner-padding: 14px 0;
 		@extend %flex-align;
 		justify-content: space-between;
 		gap: 24px;
-		// padding: $inner-padding;
 		border-bottom: 1px solid var(--gray);
 		cursor: pointer;
 	}
@@ -62,15 +61,11 @@ $inner-padding: 14px 0;
 		display: grid;
 		grid-template-rows: 0fr;
 		opacity: 0;
-		// padding: 0 $inner-padding;
 		will-change: auto;
-		transition: grid-template-rows var(--main-transition),
-			opacity 0.4s 0.2s linear;
 
 		& > .content-block {
 			margin: 0;
 			overflow: hidden;
-			// transition: padding var(--main-transition);
 
 			& > * {
 				margin-top: 0;
