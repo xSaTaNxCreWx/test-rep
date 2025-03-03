@@ -100,7 +100,7 @@ h1,
 
 h2,
 .base-title{
-  font-size:14px;
+  font-size:16px;
   font-weight:700;
   text-transform:uppercase;
   color:var(--primary);
@@ -121,10 +121,16 @@ h2,
 h3,
 .base-subtitle{
   display:block;
-  font-size:16px;
+  font-size:14px;
   font-weight:700;
   text-transform:uppercase;
   color:var(--primary);
+}
+@container main (min-width: 375px ){
+  h3,
+  .base-subtitle{
+    font-size:16px;
+  }
 }
 
 .base-text{
@@ -474,7 +480,7 @@ body:has(.top-banner) .header{
   -ms-flex-wrap:wrap;
       flex-wrap:wrap;
   width:100%;
-  gap:clamp(20px, 3.2vw, 40vw);
+  gap:clamp(16px, 3.2vw, 40vw);
   margin-bottom:25px;
   container:base-section-header/inline-size;
 }

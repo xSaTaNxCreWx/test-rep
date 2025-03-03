@@ -22,7 +22,7 @@ h1,
 
 h2,
 .base-title {
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 700;
 	text-transform: uppercase;
 	color: var(--primary);
@@ -39,10 +39,14 @@ h2,
 h3,
 .base-subtitle {
 	display: block;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
 	color: var(--primary);
+
+	@include container-up("main", 375px) {
+		font-size: 16px;
+	}
 }
 
 .base-text {

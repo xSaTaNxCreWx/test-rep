@@ -1,0 +1,17 @@
+include ../../_ui/buttons/main-btn/btn
+
+mixin empty-section(data)
+  section.empty-section(class= data.cls ? data.cls : null)
+    .container
+      .empty-section__grid
+        h2.base-title!= data.title
+        .empty-section__content
+          span.base-subtitle!= data.subtitle
+          span.base-text!= data.text
+
+          +main-btn({
+            tag: 'a',
+            href: "catalog-main.html",
+            cls: 'btn-primary',
+            title: 'Перейти в каталог'
+          })

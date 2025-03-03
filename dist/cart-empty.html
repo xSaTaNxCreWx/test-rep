@@ -8,7 +8,7 @@
     <meta name="description" content=""/>
     <script type="module" crossorigin src="./assets/main-_VzN9l3m.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/css/main.css">
-    <link rel="stylesheet" crossorigin href="./assets/css/ui.css">
+    <link rel="stylesheet" crossorigin href="./assets/css/index.css">
   </head>
 </html>
 <body>
@@ -184,187 +184,129 @@
     </div>
   </header>
   <main>
-    <section class="base-section ui">
+        <section class="empty-section base-section cart cart--empty">
+          <div class="container">
+            <div class="empty-section__grid">
+              <h2 class="base-title">корзина</h2>
+              <div class="empty-section__content"><span class="base-subtitle">Вы пока что еще ничего не добавили в корзину</span><span class="base-text">Перейдите в каталог или воспользуйтесь поиском</span>
+                    <a class="btn btn-primary" href="catalog-main.html"><span>Перейти в каталог</span>
+                    </a>
+              </div>
+            </div>
+          </div>
+        </section>
+    <section class="base-section catalog-preview">
       <div class="container">
         <div class="base-section__header">
-          <h2 class="base-title">Компоненты</h2>
+          <h2 class="base-title">Недавно смотрели</h2>
+          <div class="swiper-navigation">
+            <button class="swiper-button swiper-button-prev" type="button" aria-label="Назад">
+              <svg width="16" height="16" role="img" aria-hidden="true" focusable="false">
+                <use xlink:href="./assets/sprite.svg#icon-slider-arrow"></use>
+              </svg>
+            </button>
+            <button class="swiper-button swiper-button-next" type="button" aria-label="Вперед">
+              <svg width="16" height="16" role="img" aria-hidden="true" focusable="false">
+                <use xlink:href="./assets/sprite.svg#icon-slider-arrow"></use>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
       <div class="container-fluid">
-        <div class="container">
-          <div class="ui__section">
-            <div class="base-title">Типографика</div>
-            <div class="ui__section-field">
-              <h1>h1</h1>
-              <h2>h2</h2>
-              <h3>h3</h3>
-              <p>paragraph</p><span class="main-title">.main-title</span><span class="base-title">.base-title</span><span class="base-subtitle">.base-subtitle</span><span class="base-text">.base-text</span>
-            </div>
-          </div>
-          <div class="ui__section">
-            <div class="base-title">Кнопки</div>
-            <div class="ui__section-field"><span class="base-text">.burger
-                <button class="burger" aria-label="Открыть меню"><span class="burger__line burger__line--top" aria-hidden="true"> </span><span class="burger__line burger__line--bottom" aria-hidden="true"> </span></button></span></div><span class="base-subtitle">Кнопки действия</span>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-search</span>
-                      <a class="btn btn-search" href="#">
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-search"></use>
-                        </svg>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-cart-wide</span>
-                      <button class="btn btn-cart-wide"><span>Добавить в корзину</span>
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-cart"></use>
-                        </svg>
-                      </button>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-search</span>
-                      <a class="btn btn-search" href="#">
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-search"></use>
-                        </svg>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-user</span>
-                      <a class="btn btn-user" href="#">
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-user"></use>
-                        </svg>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-fav</span>
-                      <a class="btn btn-fav" href="#">
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-fav"></use>
-                        </svg>
-                      </a>
-            </div><span class="base-subtitle">.btn-transparent</span>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-transparent</span>
-                      <a class="btn btn-transparent" href="#"><span>Мужчинам</span>
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-transparent</span>
-                      <a class="btn btn-transparent" href="#"><span>Мужчинам</span>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-transparent .wide</span>
-                      <a class="btn btn-transparent wide" href="#"><span>Мужчинам</span>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-transparent .reversed</span>
-                      <a class="btn btn-transparent reversed" href="#"><span>Мужчинам</span>
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg>
-                      </a>
-            </div><span class="base-subtitle">.btn-light</span>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-light</span>
-                      <a class="btn btn-light" href="#"><span>Мужчинам</span>
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-light</span>
-                      <a class="btn btn-light" href="#"><span>Мужчинам</span>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-light .wide</span>
-                      <a class="btn btn-light wide" href="#"><span>Мужчинам</span>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-light .reversed</span>
-                      <a class="btn btn-light reversed" href="#"><span>Мужчинам</span>
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg>
-                      </a>
-            </div><span class="base-subtitle">.btn-primary</span>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-primary</span>
-                      <a class="btn btn-primary" href="#"><span>Мужчинам</span>
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-primary .reversed</span>
-                      <a class="btn btn-primary reversed" href="#"><span>Мужчинам</span>
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-primary .wide</span>
-                      <a class="btn btn-primary wide" href="#"><span>Мужчинам</span>
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-primary .wide</span>
-                      <a class="btn btn-primary wide" href="#"><span>Мужчинам</span>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-primary .disabled</span>
-                      <a class="btn btn-primary disabled" href="#"><span>Мужчинам</span>
-                      </a>
-            </div><span class="base-subtitle">.btn-secondary</span>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-secondary</span>
-                      <a class="btn btn-secondary" href="#"><span>Мужчинам</span>
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-secondary .reversed</span>
-                      <a class="btn btn-secondary reversed" href="#"><span>Мужчинам</span>
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-secondary .disabled</span>
-                      <a class="btn btn-secondary disabled" href="#"><span>Мужчинам</span>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-secondary .wide</span>
-                      <a class="btn btn-secondary wide" href="#"><span>Мужчинам</span>
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-primary .wide</span>
-                      <a class="btn btn-secondary wide" href="#"><span>Мужчинам</span>
-                      </a>
-            </div><span class="base-subtitle">.btn-thin</span>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-thin</span>
-                      <a class="btn btn-thin" href="#"><span>Показать еще</span>
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-thin .reversed</span>
-                      <a class="btn btn-thin reversed" href="#"><span>Показать еще</span>
-                        <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                          <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
-                        </svg>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-thin .underlined</span>
-                      <a class="btn btn-thin underlined" href="#"><span>Показать еще</span>
-                      </a>
-            </div>
-            <div class="ui__section-field"><span class="base-text">.btn .btn-thin .underlined-hover</span>
-                      <a class="btn btn-thin underlined-hover" href="#"><span>Показать еще</span>
-                      </a>
-            </div>
-          </div>
+        <div class="catalog-preview__content">
+                  <div class="swiper base-slider product-card-slider">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                                <div class="product-card">
+                                  <div class="product-card__header">
+                                            <div class="badge badge-accent">-25%</div>
+                                            <button class="btn btn-cart-wide"><span>Добавить в корзину</span>
+                                              <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
+                                                <use xlink:href="./assets/sprite.svg#icon-cart"></use>
+                                              </svg>
+                                            </button>
+                                    <div class="product-cart__props-row">
+                                              <button class="btn size-chooser-btn"><span>XS</span>
+                                              </button>
+                                              <button class="btn size-chooser-btn active"><span>S</span>
+                                              </button>
+                                              <button class="btn size-chooser-btn"><span>M</span>
+                                              </button>
+                                              <button class="btn size-chooser-btn"><span>L</span>
+                                              </button>
+                                    </div>
+                                    <div class="swiper product-card-inner-slider">
+                                      <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./assets/img/product-card-mock-1.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                                        <div class="swiper-slide"><img src="./assets/img/product-card-mock-2.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                                        <div class="swiper-slide"><img src="./assets/img/product-card-mock-3.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                                        <div class="swiper-slide"><img src="./assets/img/product-card-mock-4.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                                      </div>
+                                      <div class="swiper-pagination swiper-pagination--main"></div>
+                                    </div>
+                                  </div>
+                                  <div class="product-card__main"><span class="base-text product-card__title">Брюки спортивные летние с двумя карманами</span>
+                                    <div class="product-card__price-wrapper">
+                                              <div class="price-row"><span class="price-row__item">11 490 ₽</span><span class="price-row__item price-row__item--old">25 490 ₽</span>
+                                              </div>
+                                    </div>
+                                  </div>
+                                  <div class="product-card__footer">
+                                            <div class="color-picker-btn-row">
+                                              <button class="active color-picker-btn" type="button" aria-label="Белый"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #ffffff;"></span></button>
+                                              <button class="color-picker-btn" type="button" aria-label="Синий"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #363ef1;"></span></button>
+                                              <button class="color-picker-btn" type="button" aria-label="Черный"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #000000;"></span></button>
+                                            </div>
+                                  </div>
+                                </div>
+                      </div>
+                      <div class="swiper-slide">
+                                <div class="product-card">
+                                  <div class="product-card__header">
+                                            <div class="badge">Новинка</div>
+                                            <button class="btn btn-cart-wide"><span>Добавить в корзину</span>
+                                              <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
+                                                <use xlink:href="./assets/sprite.svg#icon-cart"></use>
+                                              </svg>
+                                            </button>
+                                    <div class="product-cart__props-row">
+                                              <button class="btn size-chooser-btn"><span>XS</span>
+                                              </button>
+                                              <button class="btn size-chooser-btn active"><span>S</span>
+                                              </button>
+                                              <button class="btn size-chooser-btn"><span>M</span>
+                                              </button>
+                                              <button class="btn size-chooser-btn"><span>L</span>
+                                              </button>
+                                    </div>
+                                    <div class="swiper product-card-inner-slider">
+                                      <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./assets/img/product-card-mock-2.png" alt="Брюки спортивные" width="480" height="705"></div>
+                                        <div class="swiper-slide"><img src="./assets/img/product-card-mock-3.png" alt="Брюки спортивные" width="480" height="705"></div>
+                                        <div class="swiper-slide"><img src="./assets/img/product-card-mock-4.png" alt="Брюки спортивные" width="480" height="705"></div>
+                                        <div class="swiper-slide"><img src="./assets/img/product-card-mock-1.png" alt="Брюки спортивные" width="480" height="705"></div>
+                                      </div>
+                                      <div class="swiper-pagination swiper-pagination--main"></div>
+                                    </div>
+                                  </div>
+                                  <div class="product-card__main"><span class="base-text product-card__title">Брюки спортивные</span>
+                                    <div class="product-card__price-wrapper">
+                                              <div class="price-row"><span class="price-row__item">11 490 ₽</span><span class="price-row__item price-row__item--old">25 490 ₽</span>
+                                              </div>
+                                    </div>
+                                  </div>
+                                  <div class="product-card__footer">
+                                            <div class="color-picker-btn-row">
+                                              <button class="active color-picker-btn" type="button" aria-label="Белый"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #ffffff;"></span></button>
+                                              <button class="color-picker-btn" type="button" aria-label="Синий"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #363ef1;"></span></button>
+                                              <button class="color-picker-btn" type="button" aria-label="Черный"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #000000;"></span></button>
+                                            </div>
+                                  </div>
+                                </div>
+                      </div>
+                    </div>
+                  </div>
         </div>
       </div>
     </section>

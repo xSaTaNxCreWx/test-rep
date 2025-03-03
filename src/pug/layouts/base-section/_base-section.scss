@@ -7,7 +7,7 @@
 		@extend %flex-align;
 		flex-wrap: wrap;
 		width: 100%;
-		gap: clamp(20px, 3.2vw, 40vw);
+		gap: clamp(16px, 3.2vw, 40vw);
 		margin-bottom: 25px;
 		container: base-section-header / inline-size;
 

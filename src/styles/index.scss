@@ -12,3 +12,7 @@
 @use "@pug/components/_ui/pagination/pagination";
 @use "@pug/sections/catalog/catalog-section/catalog-section";
 @use "@pug/sections/catalog/catalog-detail/catalog-detail";
+
+//cart
+
+@use "@pug/sections/cart/cart";
