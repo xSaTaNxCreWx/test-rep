@@ -222,7 +222,8 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
-  scrollbar-gutter:stable;
+  -ms-scroll-chaining:none;
+      overscroll-behavior:contain;
 }
 
 body{
@@ -243,14 +244,14 @@ body{
   background-color:var(--site-bg-color);
   overflow-x:hidden !important;
   -webkit-font-smoothing:antialiased;
-  scrollbar-gutter:stable;
+  will-change:auto;
+  container:main/inline-size;
 }
 
 main{
   -webkit-box-flex:1;
       -ms-flex-positive:1;
           flex-grow:1;
-  container:main/inline-size;
 }
 
 footer{
@@ -395,6 +396,14 @@ body:has(.top-banner) .header{
   left:0;
 }
 
+body:has(.top-menu:hover) main,
+body:has(.top-menu:focus) main{
+  -webkit-filter:blur(2px);
+          filter:blur(2px);
+  background:-webkit-gradient(linear, left bottom, left top, from(rgba(53, 56, 58, 0.2)), to(rgba(53, 56, 58, 0.2)));
+  background:linear-gradient(0deg, rgba(53, 56, 58, 0.2), rgba(53, 56, 58, 0.2));
+}
+
 .header{
   container:header/inline-size;
   position:sticky;
@@ -404,7 +413,16 @@ body:has(.top-banner) .header{
   -webkit-backdrop-filter:blur(10px);
           backdrop-filter:blur(10px);
   will-change:auto;
+  -webkit-transition:background-color var(--main-transition), -webkit-backdrop-filter var(--main-transition);
+  transition:background-color var(--main-transition), -webkit-backdrop-filter var(--main-transition);
+  transition:backdrop-filter var(--main-transition), background-color var(--main-transition);
+  transition:backdrop-filter var(--main-transition), background-color var(--main-transition), -webkit-backdrop-filter var(--main-transition);
   z-index:99;
+}
+.header:has(.top-menu:hover), .header:has(.top-menu:focus){
+  background-color:var(--white);
+  -webkit-backdrop-filter:none;
+          backdrop-filter:none;
 }
 @container header (max-width: 767px){
   .header .container{

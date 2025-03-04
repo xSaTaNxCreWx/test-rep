@@ -1,6 +1,4 @@
 @forward "@styles/_extends/flexbox.scss";
-// @forward "@styles/_extends/effects.scss";
-// @forward "@styles/_extends/resets.scss";
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
@@ -8,6 +6,18 @@ body:has(.top-banner) .header {
 	position: fixed;
 	top: 0;
 	left: 0;
+}
+
+body:has(.top-menu:hover),
+body:has(.top-menu:focus) {
+	main {
+		filter: blur(2px);
+		background: linear-gradient(
+			0deg,
+			rgba(53, 56, 58, 0.2),
+			rgba(53, 56, 58, 0.2)
+		);
+	}
 }
 
 .header {
@@ -18,12 +28,14 @@ body:has(.top-banner) .header {
 	background-color: transparent;
 	backdrop-filter: blur(10px);
 	will-change: auto;
+	transition: backdrop-filter var(--main-transition),
+		background-color var(--main-transition);
 
-	// &:has(.top-menu .btn:hover),
-	// &:has(.top-menu .btn:focus) {
-	// 	background-color: var(--light);
-	// 	backdrop-filter: none;
-	// }
+	&:has(.top-menu:hover),
+	&:has(.top-menu:focus) {
+		background-color: var(--white);
+		backdrop-filter: none;
+	}
 
 	z-index: 99;
 

@@ -6,12 +6,83 @@ mixin top-menu(data)
       tag: 'a',
       href: "#",
       title: data.title,
-      cls: 'btn-thin'
+      cls: 'btn-thin top-menu-btn'
     })
 
     .top-menu__grid
-      .top-menu__grid-item
-        p menu
+      .top-menu__grid-item.top-menu__grid-item--main
+        .top-menu__section
+          .top-menu__section-field
+            span.base-subtitle Каталог
+            ul.top-menu__list
+              li.top-menu__list-item
+                a(href="#")
+                  span.base-text боди
+              li.top-menu__list-item
+                a(href="#")
+                  span.base-text верхняя одежда
+
+              li.top-menu__list-item
+                a(href="#")
+                  span.base-text толстовки
+              li.top-menu__list-item
+                a(href="#")
+                  span.base-text платья
+              li.top-menu__list-item
+                a(href="#")
+                  span.base-text футболки
+              li.top-menu__list-item
+                a(href="#")
+                  span.base-text костюмы
+              li.top-menu__list-item
+                a(href="#")
+                  span.base-text брюки
+              li.top-menu__list-item
+                a(href="#")
+                  span.base-text носки
+            
+            +main-btn({
+              tag: 'a',
+              href: 'catalog-main.html',
+              cls: 'btn-thin underlined',
+              title: 'Посмотреть все'
+            })
+          .top-menu__section-field
+            span.base-subtitle Подборки
+            ul.top-menu__list
+              li.top-menu__list-item
+                a(href="#")
+                  span.base-text новинки
+              li.top-menu__list-item
+                a(href="#")
+                  span.base-text бестеллеры
+              li.top-menu__list-item
+                a(href="#")
+                  span.base-text sale
+              li.top-menu__list-item
+                a(href="#")
+                  span.base-text базовый гардероб
+              li.top-menu__list-item
+                a(href="#")
+                  span.base-text зимняя подборка
+            
+            +main-btn({
+              tag: 'a',
+              href: 'catalog-main.html',
+              cls: 'btn-thin underlined',
+              title: 'Посмотреть все'
+            })
+
+        .top-menu__section
+          .top-menu__section-field
+            ul.top-menu__list
+              li.top-menu__list-item
+                a(href="#")
+                  span.base-text сумки
+              li.top-menu__list-item
+                a(href="#")
+                  span.base-text шапка
+
       .top-menu__grid-item.top-menu__grid-item--side
         .catalog-preview
           +product-card({
@@ -56,5 +127,5 @@ mixin top-menu(data)
             price: '99999 ₽'
           })
 
-    
+  
 
