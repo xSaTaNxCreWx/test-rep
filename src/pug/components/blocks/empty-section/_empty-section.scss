@@ -3,7 +3,9 @@
 @use "@styles/_vars/scoped" as *;
 
 .empty-section {
+	padding: var(--section-offset);
 	container: empty-section / inline-size;
+
 	&__grid {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -28,7 +30,7 @@
 		@include container-up("empty-section", $tablet-lg-width) {
 			align-items: center;
 			text-align: center;
-			padding-top: 3px;
+			padding-top: 4px;
 		}
 	}
 }

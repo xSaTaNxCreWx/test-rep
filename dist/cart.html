@@ -184,17 +184,52 @@
     </div>
   </header>
   <main>
-        <section class="empty-section base-section cart cart--empty">
-          <div class="container">
-            <div class="empty-section__grid">
-              <h1 class="base-title">корзина</h1>
-              <div class="empty-section__content"><span class="base-subtitle">Вы пока что еще ничего не добавили в корзину</span><span class="base-text">Перейдите в каталог или воспользуйтесь поиском</span>
-                    <a class="btn btn-primary" href="catalog-main.html"><span>Перейти в каталог</span>
-                    </a>
+    <div class="breadcrumbs">
+      <div class="container">
+        <div class="breadcrumbs__item"><a href="/"><span>Главная&nbsp;</span></a></div>
+        <div class="breadcrumbs__item"><a href="catalog-section.html"><span>/&nbsp;женщинам&nbsp;</span></a></div>
+        <div class="breadcrumbs__item"><span>/&nbsp;все товары</span></div>
+      </div>
+    </div>
+    <section class="cart">
+      <div class="container">
+        <div class="cart__grid">
+          <div class="cart__grid-item">
+            <h1 class="base-title">Корзина</h1>
+          </div>
+          <div class="cart__grid-item cart__grid-item--main">
+            <div class="cart-items">
+              <div class="cart-items__header">
+                <button class="btn btn-thin cart-select-all-btn" type="button">Выделить все</button><span class="base-text-xs cart-removed-items">Удалить <span>(1)</span></span>
+              </div>
+              <div class="cart-items__content">
+                <div class="cart-item">
+                  <p>1</p>
+                </div>
+                <div class="cart-item">
+                  <p>2</p>
+                </div>
+                <div class="cart-item">
+                  <p>3</p>
+                </div>
               </div>
             </div>
           </div>
-        </section>
+          <div class="cart__grid-item cart__grid-item--side">
+            <div class="cart-total"><span class="base-subtitle">Ваш заказ</span>
+              <div class="cart-total__row cart-total__row--count"><span class="base-text">Товары: 3 шт.</span><span class="base-text">31 500 ₽</span></div>
+              <div class="cart-total__row cart-total__row--promo">
+                    <button class="btn btn-thin underlined" type="submit"><span>Ввести промокод</span>
+                    </button>
+              </div>
+              <div class="cart-total__row cart-total__row--price"><span class="base-subtitle">ИТОГО</span><span class="base-subtitle">31 500 ₽ </span></div>
+                  <button class="btn btn-primary wide" type="submit"><span>Оформить заказ</span>
+                  </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="base-section catalog-preview">
       <div class="container">
         <div class="base-section__header">

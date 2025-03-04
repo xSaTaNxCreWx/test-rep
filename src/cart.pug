@@ -1,0 +1,14 @@
+extends ./pug/layouts/main-layout
+
+block variables
+  -
+    const title = "Urban"
+    const description = ""
+    const keywords = ""
+    const styles = ['./styles/template-styles','./styles/index']
+
+block content
+  include ./pug/components/_ui/breadcrumbs/breadcrumbs
+  include ./pug/sections/cart/cart
+  include ./pug/sections/catalog-preview/viewed 
+  

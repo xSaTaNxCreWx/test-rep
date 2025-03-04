@@ -1,0 +1,50 @@
+include ../../components/_ui/buttons/main-btn/btn
+
+section.cart
+  .container
+    .cart__grid
+      .cart__grid-item
+        h1.base-title Корзина
+      .cart__grid-item.cart__grid-item--main
+        .cart-items
+          .cart-items__header
+            button(type="button").btn.btn-thin.cart-select-all-btn Выделить все
+            span.base-text-xs.cart-removed-items Удалить <span>(1)</span>
+          .cart-items__content
+            .cart-item
+              p 1
+            .cart-item
+              p 2
+            .cart-item
+              p 3
+        
+      .cart__grid-item.cart__grid-item--side
+        .cart-total
+          span.base-subtitle Ваш заказ
+
+          .cart-total__row.cart-total__row--count
+            span.base-text Товары: 3 шт.
+            span.base-text 31 500 ₽
+
+          .cart-total__row.cart-total__row--promo
+            +main-btn({
+              tag: 'button',
+              type: 'submit',
+              cls: 'btn-thin underlined',
+              title: 'Ввести промокод'
+            })
+
+          .cart-total__row.cart-total__row--price
+            span.base-subtitle ИТОГО
+            span.base-subtitle 31 500 ₽ 
+
+          +main-btn({
+            tag: 'button',
+            type: 'submit',
+            cls: 'btn-primary wide',
+            title: 'Оформить заказ'
+          })
+
+
+
+

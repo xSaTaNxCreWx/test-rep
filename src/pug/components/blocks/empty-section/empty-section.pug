@@ -4,7 +4,7 @@ mixin empty-section(data)
   section.empty-section(class= data.cls ? data.cls : null)
     .container
       .empty-section__grid
-        h2.base-title!= data.title
+        h1.base-title!= data.title
         .empty-section__content
           span.base-subtitle!= data.subtitle
           span.base-text!= data.text
