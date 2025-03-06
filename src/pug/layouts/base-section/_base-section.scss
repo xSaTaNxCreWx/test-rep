@@ -1,5 +1,6 @@
 @forward "@styles/_extends/flexbox.scss";
-
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
 .base-section {
 	padding: var(--section-offset);
 
@@ -7,9 +8,13 @@
 		@extend %flex-align;
 		flex-wrap: wrap;
 		width: 100%;
-		gap: clamp(16px, 3.2vw, 40vw);
-		margin-bottom: 25px;
+		gap: clamp(10px, 3.2vw, 40vw);
+		margin-bottom: 10px;
 		container: base-section-header / inline-size;
+
+		@include container-up("main", $mobile-width) {
+			margin-bottom: 20px;
+		}
 
 		& > * {
 			margin-bottom: 0;

@@ -9,20 +9,22 @@
 	gap: 6px;
 	width: 100%;
 	max-width: fit-content;
-	min-height: 40px;
+	// min-height: 40px;
 	font-size: 14px;
 	line-height: 18px;
 	font-weight: 700;
 	text-transform: uppercase;
-	padding: 10px;
+	// padding: 10px;
 	border: 1px solid transparent;
 	transition: color var(--main-transition),
 		background-color var(--main-transition), border-color var(--main-transition),
 		opacity var(--main-transition);
 
-	@include container-up("main", $mobile-width) {
-		min-height: 60px;
-		padding: 20px 24px;
+	min-height: 60px;
+	padding: 20px 24px;
+
+	@include container-down("main", $mobile-width) {
+		padding: 20px 12px;
 	}
 
 	span {

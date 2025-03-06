@@ -2,15 +2,16 @@
 
 .color-picker-btn {
 	@extend %btn-reset;
-	width: 32px;
-	height: 32px;
+	width: 16px;
+	height: 16px;
 	aspect-ratio: 1/1;
 	border: 1px solid transparent;
 
 	&-row {
 		@extend %flex-align;
 		justify-content: center;
-		padding: 0 10px;
+		padding: 5px 10px;
+		gap: 15px;
 	}
 
 	&__inner {

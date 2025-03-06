@@ -58,8 +58,8 @@ mixin product-card(data)
       .product-card__price-wrapper
         //- заменить на компонент из детальной товара!!
         +price-row ({ 
-          old: '25 490 ₽',
-          current: '11 490 ₽'
+          old: data.priceOld ? data.priceOld : null,
+          current: data.price
         })
         //- if data.oldPrice
         //-   span.product-card__price.product-card__price--old!= data.price

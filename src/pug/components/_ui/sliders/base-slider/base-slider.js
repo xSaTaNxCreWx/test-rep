@@ -66,9 +66,9 @@ if (sliders.length) {
 		const spaceBetween = isAutoFillSlider ? 2 : 2;
 
 		const slidesPerView = isProductCardSlider
-			? 1
+			? 2
 			: isEventsPreviewSlider
-			? 1
+			? 2
 			: isAutoFillSlider
 			? "auto"
 			: 1;

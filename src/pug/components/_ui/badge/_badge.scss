@@ -1,5 +1,6 @@
 @forward "@styles/_extends/flexbox.scss";
-
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
 .badge {
 	@extend %flex-center;
 	width: fit-content;
@@ -10,6 +11,12 @@
 	padding: 10px;
 	text-transform: uppercase;
 	z-index: 9;
+
+	@include container-down("main", $mobile-width) {
+		min-height: 20px;
+		font-size: 10px;
+		padding: 5px;
+	}
 
 	&-accent {
 		color: var(--light);

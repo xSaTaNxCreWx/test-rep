@@ -5087,7 +5087,7 @@ if (sliders$1.length) {
       }
     } : null;
     const spaceBetween = isAutoFillSlider ? 2 : 2;
-    const slidesPerView = isProductCardSlider ? 1 : isEventsPreviewSlider ? 1 : isAutoFillSlider ? "auto" : 1;
+    const slidesPerView = isProductCardSlider ? 2 : isEventsPreviewSlider ? 2 : isAutoFillSlider ? "auto" : 1;
     new Swiper(slider2, {
       modules: [Navigation, Pagination],
       slidesPerView,

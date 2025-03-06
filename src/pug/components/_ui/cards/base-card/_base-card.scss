@@ -27,7 +27,7 @@
 		@extend %flex-column;
 		align-items: center;
 
-		padding: 10px 16px;
+		padding: 10px 5px;
 
 		&:not(.base-card--column .base-card__footer) {
 			position: absolute;
@@ -50,36 +50,61 @@
 	}
 
 	.base-card__title {
+		position: relative;
 		display: flex;
 		gap: 8px;
-
-		font-size: 14px;
+		font-size: 12px;
+		line-height: 1;
 		font-weight: 400;
-
-		&:not(.base-card--column .base-card__title) {
-			font-size: 24px;
-			font-weight: 700;
-		}
-
 		align-items: flex-end;
 		line-height: 17px;
 		text-transform: uppercase;
 		text-align: center;
 		color: var(--primary);
 
-		&:not(.base-card--column .base-card__title) {
-			color: var(--light);
+		@include container-up("base-card", $mobile-width) {
+			font-size: 14px;
 		}
 
-		position: relative;
-		&::after {
-			position: relative;
-			content: "";
-			width: 16px;
-			height: 16px;
-			background-image: url("@img/icon-arrow-white.svg");
-			background-size: contain;
-			background-repeat: no-repeat;
+		&:not(.base-card--column .base-card__title) {
+			font-size: 14px;
+			font-weight: 700;
+
+			@include container-up("base-card", $mobile-width) {
+				font-size: 24px;
+			}
+		}
+
+		&:not(.base-card--column .base-card__title) {
+			color: var(--light);
+			&::before {
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background-color: var(--light);
+				content: "";
+
+				@include container-up("base-card", $mobile-width) {
+					height: 2px;
+				}
+			}
+
+			&::after {
+				position: relative;
+				content: "";
+				width: 11px;
+				height: 14px;
+				background-image: url("@img/icon-arrow-white.svg");
+				background-size: contain;
+				background-repeat: no-repeat;
+
+				@include container-up("base-card", $mobile-width) {
+					width: 16px;
+					height: 16px;
+				}
+			}
 		}
 	}
 }

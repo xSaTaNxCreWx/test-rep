@@ -23,9 +23,8 @@ block content
             cls: 'badge-accent',
             text: '-25%'
           },
-          title: 'Брюки спортивные летние с двумя карманами',
+          title: 'Брюки спортивные',
           price: '9999 ₽',
-          oldPrice: '19990 ₽'
         },
         {
           images: [
@@ -34,8 +33,12 @@ block content
             'product-card-mock-4',
             'product-card-mock-1',
           ],
+          badge: {
+            cls: 'badge',
+            text: 'предзаказ'
+          },
           title: 'Брюки спортивные',
-          price: '99999 ₽'
+          price: '9999 ₽'
         },
         {
           images: [
@@ -45,7 +48,8 @@ block content
             'product-card-mock-2',
           ],
           title: 'Брюки спортивные',
-          price: '99999 ₽'
+          price: '99999 ₽',
+          priceOld: '12499 ₽'
         },
         {
           images: [
@@ -103,7 +107,7 @@ block content
     +main-btn({
       tag: 'a',
       href: "#",
-      title: 'показать все новинки',
+      title: 'посмотреть все новинки',
       cls: 'btn-secondary',
       icon: 'arrow-up'
     })
