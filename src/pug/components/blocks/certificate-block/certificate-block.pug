@@ -1,0 +1,14 @@
+include ../../_ui/buttons/main-btn/btn
+.certificate-wrapper
+  .certificate
+    .certificate__grid
+      img(src="./assets/img/certificate.png" alt="Сертификат" width="440" height="250")
+      .certificate__content
+        span.base-subtitle Выбрать сертификат в качестве подарка — это подарить выбор человеку, который вам дорог
+        span.base-text-sm Выбрать сертификат в качестве подарка — это подарить выбор человеку, который вам дорог 
+
+        +main-btn({
+          tag: 'button',
+          cls: 'btn-primary',
+          title: 'выбрать сертификат'
+        })

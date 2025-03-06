@@ -3,6 +3,7 @@
 @use "@pug/sections/events-preview/events-preview";
 @use "@pug/components/blocks/subscribe-block/subscribe-block";
 
+@use "@pug/components/_ui/nav/top-multilevel-menu/top-multilevel-menu";
 @use "@pug/components/_ui/nav/top-menu/top-menu";
 @use "@pug/components/_ui/nav/bottom-menu/bottom-menu";
 
@@ -17,3 +18,6 @@
 
 @use "@pug/sections/cart/cart";
 @use "@pug/sections/selected/selected";
+
+// ui
+@use "@pug/sections/ui/ui";

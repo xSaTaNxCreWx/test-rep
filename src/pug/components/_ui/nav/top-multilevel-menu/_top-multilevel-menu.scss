@@ -1,0 +1,36 @@
+@use "@pug/components/blocks/certificate-block/certificate-block";
+
+.top-multilevel-menu {
+	&__wrapper {
+		position: fixed;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		min-height: calc(100svh - 60px);
+		background-color: var(--white);
+	}
+
+	.toggler {
+		display: flex;
+		padding: 0;
+		min-height: 60px;
+
+		.btn {
+			min-height: inherit;
+			border: none;
+			border-bottom: 2px solid transparent;
+
+			&:hover,
+			&:focus,
+			&.active {
+				color: #69757c;
+				background-color: #ebebeb;
+			}
+
+			&.active {
+				border-color: #69757c;
+			}
+		}
+	}
+}

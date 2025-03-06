@@ -59,6 +59,10 @@ body {
 
 main {
 	flex-grow: 1;
+
+	section:last-child {
+		padding-bottom: 0;
+	}
 }
 
 body {

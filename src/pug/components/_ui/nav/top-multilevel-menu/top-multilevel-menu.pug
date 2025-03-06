@@ -1,0 +1,33 @@
+include ../../buttons/toggler/toggler
+
+.top-multilevel-menu
+  include ../../buttons/burger/burger
+
+  .top-multilevel-menu__wrapper
+    .top-multilevel-menu__header
+      +toggler({
+        items: [
+          {
+            tag: 'button',
+            dataID: 'women',
+            cls: 'btn-secondary wide active',
+            title: 'Женщинам'
+          },
+          {
+            tag: 'button',
+            dataID: 'mens',
+            cls: 'btn-secondary wide',
+            title: 'Мужчинам'
+          },
+        ]
+      })
+
+    .top-multilevel-menu__content
+      .top-multilevel-menu__grid
+        .top-multilevel-menu__grid-item.top-multilevel-menu__grid-item--main 
+          p test
+
+        .top-multilevel-menu__grid-item.top-multilevel-menu__grid-item--bottom
+          include ../../../blocks/certificate-block/certificate-block
+        .top-multilevel-menu__grid-item.top-multilevel-menu__grid-item--side
+          

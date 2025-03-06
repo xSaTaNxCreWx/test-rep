@@ -14,10 +14,14 @@ p {
 h1,
 .main-title {
 	display: block;
-	font-size: 34px;
+	font-size: 24px;
 	font-weight: 700;
 	text-transform: uppercase;
 	color: var(--primary);
+
+	@include container-up("main", $mobile-width) {
+		font-size: 34px;
+	}
 }
 
 h2,
@@ -58,5 +62,9 @@ h3,
 
 	&-xs {
 		font-size: 12px;
+	}
+
+	&-sm {
+		font-size: 16px;
 	}
 }

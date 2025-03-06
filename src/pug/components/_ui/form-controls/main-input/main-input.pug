@@ -1,0 +1,5 @@
+mixin main-input(data)
+  .main-input-wrapper
+    input(id= data.id type= data.type ? data.type : 'text' placeholder= data.placeholder name= data.name) 
+    label(for= data.id)!= data.label ? data.label : null
+    

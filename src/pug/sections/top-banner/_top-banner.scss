@@ -23,7 +23,15 @@ section:has(.top-banner) {
 		&-pagination {
 			@extend %flex-align;
 			gap: clamp(2px, 0.6vw, 10px);
-			padding: 20px 0;
+			padding: 9px 0;
+
+			&.swiper-pagination-bullets {
+				bottom: 0;
+			}
+
+			@include container-up("main", $mobile-width) {
+				padding: 19px 0;
+			}
 
 			&-bullet {
 				flex-grow: 1;
@@ -69,9 +77,18 @@ section:has(.top-banner) {
 
 .top-banner {
 	@extend %flex-column;
-	gap: 20px;
+	gap: 10px;
 	height: 100%;
-	padding: 80px 20px;
+	padding: 20px 10px;
+
+	@include container-up("main", $mobile-width) {
+		padding: 40px 20px;
+		gap: 20px;
+	}
+
+	@include container-up("main", $tablet-width) {
+		padding: 80px 20px;
+	}
 
 	img {
 		position: absolute;

@@ -28,8 +28,8 @@ body:has(.top-menu:focus) {
 	background-color: transparent;
 	backdrop-filter: blur(10px);
 	will-change: auto;
-	transition: backdrop-filter var(--main-transition),
-		background-color var(--main-transition);
+	// transition: backdrop-filter var(--main-transition),
+	// 	background-color var(--main-transition);
 
 	&:has(.top-menu:hover),
 	&:has(.top-menu:focus) {
@@ -56,14 +56,8 @@ body:has(.top-menu:focus) {
 			&--left {
 				justify-content: flex-start;
 
-				&:has(.btn-thin) {
-					.btn-thin {
-						margin-right: 12px;
-					}
-				}
-
-				@include container-down("header", $tablet-width) {
-					.btn {
+				@include container-down("header", $laptop-width) {
+					.top-menu {
 						display: none;
 					}
 				}

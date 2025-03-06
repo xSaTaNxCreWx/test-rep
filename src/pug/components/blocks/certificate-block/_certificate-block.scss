@@ -1,0 +1,48 @@
+@forward "@styles/_extends/flexbox.scss";
+
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.certificate {
+	padding: 20px;
+	background-color: var(--light);
+
+	@include container-up("certificate-block", 440px) {
+		padding: 40px;
+	}
+
+	&-wrapper {
+		container: certificate-block / inline-size;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		margin: 0 auto;
+		gap: 20px;
+		max-width: 960px;
+
+		@include container-up("certificate-block", $tablet-width) {
+			grid-template-columns: repeat(auto-fit, minmax(320px, auto));
+		}
+
+		img {
+			width: 100%;
+			max-width: fit-content;
+			height: auto;
+			max-height: 250px;
+			object-fit: contain;
+			object-position: left;
+			border-radius: 30px;
+		}
+	}
+
+	&__content {
+		@extend %flex-column;
+		gap: 20px;
+
+		.btn {
+			margin-top: auto;
+		}
+	}
+}

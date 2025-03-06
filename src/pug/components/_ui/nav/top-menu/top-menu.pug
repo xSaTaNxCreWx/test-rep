@@ -1,4 +1,5 @@
 include ../../cards/product-card/product-card
+include ../../cards/base-card/base-card
 
 mixin top-menu(data)
   .top-menu 
@@ -100,19 +101,19 @@ mixin top-menu(data)
             price: '9999 ₽',
             oldPrice: '19990 ₽'
           })
-          +product-card({
-            images: [
-              'product-card-mock-2',
-              'product-card-mock-3',
-              'product-card-mock-4',
-              'product-card-mock-1',
-            ],
-            badge: {
-              text: 'Новинка'
+
+          +base-card({
+            img: {
+              name: 'mock-img-1',
+              width: 920,
+              height: 920
             },
-            title: 'Брюки спортивные',
-            price: '99999 ₽'
+            title: {
+              text: 'Весенняя подборка',
+              icon: true
+            }
           })
+          
           +product-card({
             images: [
               'product-card-mock-3',
@@ -126,6 +127,8 @@ mixin top-menu(data)
             title: 'Брюки спортивные',
             price: '99999 ₽'
           })
+
+          
 
   
 

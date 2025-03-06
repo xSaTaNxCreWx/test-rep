@@ -1,21 +1,29 @@
 @forward "@styles/_extends/flexbox.scss";
 
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
 %btn {
 	@extend %flex-align;
 	justify-content: center;
 	gap: 6px;
 	width: 100%;
 	max-width: fit-content;
-	min-height: 60px;
+	min-height: 40px;
 	font-size: 14px;
 	line-height: 18px;
 	font-weight: 700;
 	text-transform: uppercase;
-	padding: 20px 24px;
+	padding: 10px;
 	border: 1px solid transparent;
 	transition: color var(--main-transition),
 		background-color var(--main-transition), border-color var(--main-transition),
 		opacity var(--main-transition);
+
+	@include container-up("main", $mobile-width) {
+		min-height: 60px;
+		padding: 20px 24px;
+	}
 
 	span {
 		line-height: 1;

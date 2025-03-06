@@ -9,6 +9,11 @@
 	gap: clamp(10px, 3vw, 20px);
 	padding: clamp(20px, 2.4vw, 40px);
 	background-color: var(--primary);
+	container: subscribe / inline-size;
+
+	.base-subtitle {
+		max-width: 760px;
+	}
 
 	& > * {
 		color: var(--white);
@@ -17,9 +22,15 @@
 	form {
 		@extend %flex-column;
 		gap: 10px;
+
 		fieldset {
 			@extend %fieldset-reset;
 			@extend %flex-align;
+
+			@include container-down("subscribe", $mobile-width) {
+				flex-direction: column;
+				gap: 10px;
+			}
 
 			.main-control {
 				font-weight: 400;
@@ -42,6 +53,12 @@
 
 		.btn[type="submit"] {
 			border: 1px solid var(--white);
+			min-height: 60px;
+
+			@include container-down("subscribe", $mobile-width) {
+				width: 100%;
+				max-width: 100%;
+			}
 		}
 
 		small {

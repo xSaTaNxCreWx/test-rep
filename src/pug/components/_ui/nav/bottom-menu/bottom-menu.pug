@@ -1,7 +1,14 @@
+include ../../accordeon/accordeon
 mixin bottom-menu(data)
   nav.bottom-menu
-    span.base-subtitle!= data.title
-    ul(class= data.cls ? data.cls : null)
-      each item in data.items
-        li
-          a(href="#").base-text!= item.title 
+    +accordeon([{
+      title: data.title,
+      content: data.content
+    }])
+    //- span.base-subtitle!= data.title
+    //-   svg(width='16' height='16' role='img' aria-hidden='true' focusable='false')
+    //-     use(xlink:href='./assets/sprite.svg#icon-arrow-up')
+    //- ul(class= data.cls ? data.cls : null)
+    //-   each item in data.items
+    //-     li
+    //-       a(href="#").base-text!= item.title 
