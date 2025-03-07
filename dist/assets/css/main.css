@@ -1343,11 +1343,12 @@ body:has(dialog[open]){
 .footer__grid{
   display:grid;
   grid-template-columns:1fr;
+  padding:0 20px;
 }
 @container footer (min-width: 480px ){
   .footer__grid{
     grid-template-columns:repeat(2, 1fr);
-    gap:20px 0;
+    gap:20px;
   }
 }
 @container footer (min-width: 820px ){
@@ -1373,9 +1374,12 @@ body:has(dialog[open]){
 .footer__grid-item--contacts .social-block{
   text-transform:uppercase;
 }
+.footer__grid-item--top{
+  margin:0 -20px;
+}
 @container footer (min-width: 480px ){
   .footer__grid-item--top{
-    padding:0 20px;
+    margin:0;
     margin-bottom:20px;
   }
 }
@@ -1398,7 +1402,6 @@ body:has(dialog[open]){
   height:-webkit-fit-content;
   height:-moz-fit-content;
   height:fit-content;
-  padding:0 20px;
   margin-bottom:5px;
 }
 @container footer (min-width: 480px ){
@@ -1418,6 +1421,7 @@ body:has(dialog[open]){
 }
 .footer__grid-item--royalty{
   grid-column:-1/1;
+  margin:0 -20px;
   margin-bottom:40px;
 }
 @container footer (min-width: 480px ){
@@ -1430,6 +1434,7 @@ body:has(dialog[open]){
     grid-column:3/4;
     grid-row:1/3;
     max-height:340px;
+    margin:0;
   }
 }
 @container footer (min-width: 1240px ){
