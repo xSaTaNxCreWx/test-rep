@@ -118,5 +118,12 @@ section:has(.top-banner) {
 	&__footer {
 		@extend %flex-center;
 		gap: 10px;
+
+		@include container-down("main", $mobile-width) {
+			.btn {
+				min-height: 40px;
+				padding: 10px 12px;
+			}
+		}
 	}
 }

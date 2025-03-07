@@ -1695,6 +1695,12 @@ section:has(.top-banner){
 .top-banner__footer{
   gap:10px;
 }
+@container main (max-width: 479px){
+  .top-banner__footer .btn{
+    min-height:40px;
+    padding:10px 12px;
+  }
+}
 
 .color-picker-btn{
   padding:0;
