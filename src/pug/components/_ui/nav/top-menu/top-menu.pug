@@ -7,63 +7,97 @@ mixin top-menu(data)
       tag: 'a',
       href: "#",
       title: data.title,
-      cls: 'btn-thin top-menu-btn'
+      cls: 'btn-thin top-menu-opener' 
     })
 
     .top-menu__grid
       .top-menu__grid-item.top-menu__grid-item--main
-        .top-menu__section
-          .top-menu__section-field
+        .top-menu__grid-item-section
+          .top-menu__list-wrapper
             span.base-subtitle Каталог
             ul.top-menu__list
-              li.top-menu__list-item
+              li
                 a(href="#")
                   span.base-text боди
-              li.top-menu__list-item
+              li
                 a(href="#")
                   span.base-text верхняя одежда
+                  svg(width='12' height='12' role='img' aria-hidden='true' focusable='false')
+                    use(xlink:href='./assets/sprite.svg#icon-arrow-up')
+                  
+                ul.top-menu__inner-list
+                  li
+                    a(href="#") 
+                      span.base-text куртки
+                  li
+                    a(href="#")
+                      span.base-text бомберы
+                  li
+                    a(href="#")
+                      span.base-text пуховики
+                  li
+                    a(href="#")
+                      span.base-text очень длинное название раздела
 
-              li.top-menu__list-item
+              li
                 a(href="#")
                   span.base-text толстовки
-              li.top-menu__list-item
+              li
                 a(href="#")
                   span.base-text платья
-              li.top-menu__list-item
+              li
                 a(href="#")
                   span.base-text футболки
-              li.top-menu__list-item
+              li
                 a(href="#")
                   span.base-text костюмы
-              li.top-menu__list-item
+              li
                 a(href="#")
                   span.base-text брюки
-              li.top-menu__list-item
+              li
                 a(href="#")
                   span.base-text носки
-            
+
+              li
+                a(href="#")
+                  span.base-text аксессуары
+                  svg(width='12' height='12' role='img' aria-hidden='true' focusable='false')
+                    use(xlink:href='./assets/sprite.svg#icon-arrow-up')
+                ul.top-menu__inner-list
+                  li
+                    a(href="#") 
+                      span.base-text аксессуары
+                  li
+                    a(href="#")
+                      span.base-text аксессуары
+                  li
+                    a(href="#")
+                      span.base-text пуховики
+                  li
+                    a(href="#")
+                      span.base-text очень длинное название аксессуарa
             +main-btn({
               tag: 'a',
               href: 'catalog-main.html',
               cls: 'btn-thin underlined',
               title: 'Посмотреть все'
             })
-          .top-menu__section-field
+          .top-menu__list-wrapper
             span.base-subtitle Подборки
             ul.top-menu__list
-              li.top-menu__list-item
+              li
                 a(href="#")
                   span.base-text новинки
-              li.top-menu__list-item
+              li
                 a(href="#")
                   span.base-text бестеллеры
-              li.top-menu__list-item
+              li
                 a(href="#")
                   span.base-text sale
-              li.top-menu__list-item
+              li
                 a(href="#")
                   span.base-text базовый гардероб
-              li.top-menu__list-item
+              li
                 a(href="#")
                   span.base-text зимняя подборка
             
@@ -73,62 +107,48 @@ mixin top-menu(data)
               cls: 'btn-thin underlined',
               title: 'Посмотреть все'
             })
-
-        .top-menu__section
-          .top-menu__section-field
-            ul.top-menu__list
-              li.top-menu__list-item
-                a(href="#")
-                  span.base-text сумки
-              li.top-menu__list-item
-                a(href="#")
-                  span.base-text шапка
-
+        .top-menu__grid-item-section
       .top-menu__grid-item.top-menu__grid-item--side
-        .catalog-preview
-          +product-card({
-            images: [
-              'product-card-mock-1',
-              'product-card-mock-2',
-              'product-card-mock-3',
-              'product-card-mock-4',
-            ],
-            badge: {
-              cls: 'badge-accent',
-              text: '-25%'
-            },
-            title: 'Брюки спортивные летние с двумя карманами',
-            price: '9999 ₽',
-            oldPrice: '19990 ₽'
-          })
+        +product-card({
+          images: [
+            'product-card-mock-1',
+            'product-card-mock-2',
+            'product-card-mock-3',
+            'product-card-mock-4',
+          ],
+          badge: {
+            cls: 'badge-accent',
+            text: '-25%'
+          },
+          title: 'Брюки спортивные летние с двумя карманами',
+          price: '9999 ₽',
+          oldPrice: '19990 ₽'
+        })
 
-          +base-card({
-            img: {
-              name: 'mock-img-1',
-              width: 920,
-              height: 920
-            },
-            title: {
-              text: 'Весенняя подборка',
-              icon: true
-            }
-          })
-          
-          +product-card({
-            images: [
-              'product-card-mock-3',
-              'product-card-mock-4',
-              'product-card-mock-1',
-              'product-card-mock-2',
-            ],
-            badge: {
-              text: 'Хит'
-            },
-            title: 'Брюки спортивные',
-            price: '99999 ₽'
-          })
+        +base-card({
+          img: {
+            name: 'mock-img-1',
+            width: 920,
+            height: 920
+          },
+          title: {
+            text: 'Весенняя подборка',
+            icon: true
+          }
+        })
 
-          
-
-  
-
+        +product-card({
+          images: [
+            'product-card-mock-1',
+            'product-card-mock-2',
+            'product-card-mock-3',
+            'product-card-mock-4',
+          ],
+          badge: {
+            cls: 'badge-accent',
+            text: '-25%'
+          },
+          title: 'Брюки спортивные летние с двумя карманами',
+          price: '9999 ₽',
+          oldPrice: '19990 ₽'
+        })

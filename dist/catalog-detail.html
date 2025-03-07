@@ -15,272 +15,297 @@
     <div class="container">
       <div class="header__grid">
         <div class="header__grid-item header__grid-item--left">
+          <button class="burger" aria-label="Открыть меню"><span class="burger__line burger__line--top" aria-hidden="true"> </span><span class="burger__line burger__line--bottom" aria-hidden="true"> </span></button>
           <!--include ././components/_ui/nav/top-multilevel-menu/top-multilevel-menu-->
             <div class="top-menu"> 
-                <a class="btn btn-thin top-menu-btn" href="#"><span>Женщинам</span>
+                <a class="btn btn-thin top-menu-opener" href="#"><span>Женщинам</span>
                 </a>
               <div class="top-menu__grid">
                 <div class="top-menu__grid-item top-menu__grid-item--main">
-                  <div class="top-menu__section">
-                    <div class="top-menu__section-field"><span class="base-subtitle">Каталог</span>
+                  <div class="top-menu__grid-item-section">
+                    <div class="top-menu__list-wrapper"><span class="base-subtitle">Каталог</span>
                       <ul class="top-menu__list">
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">боди</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">верхняя одежда</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">толстовки</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">платья</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">футболки</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">костюмы</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">брюки</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">носки</span></a></li>
+                        <li><a href="#"><span class="base-text">боди</span></a></li>
+                        <li><a href="#"><span class="base-text">верхняя одежда</span>
+                            <svg width="12" height="12" role="img" aria-hidden="true" focusable="false">
+                              <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
+                            </svg></a>
+                          <ul class="top-menu__inner-list">
+                            <li><a href="#"> <span class="base-text">куртки</span></a></li>
+                            <li><a href="#"><span class="base-text">бомберы</span></a></li>
+                            <li><a href="#"><span class="base-text">пуховики</span></a></li>
+                            <li><a href="#"><span class="base-text">очень длинное название раздела</span></a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#"><span class="base-text">толстовки</span></a></li>
+                        <li><a href="#"><span class="base-text">платья</span></a></li>
+                        <li><a href="#"><span class="base-text">футболки</span></a></li>
+                        <li><a href="#"><span class="base-text">костюмы</span></a></li>
+                        <li><a href="#"><span class="base-text">брюки</span></a></li>
+                        <li><a href="#"><span class="base-text">носки</span></a></li>
+                        <li><a href="#"><span class="base-text">аксессуары</span>
+                            <svg width="12" height="12" role="img" aria-hidden="true" focusable="false">
+                              <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
+                            </svg></a>
+                          <ul class="top-menu__inner-list">
+                            <li><a href="#"> <span class="base-text">аксессуары</span></a></li>
+                            <li><a href="#"><span class="base-text">аксессуары</span></a></li>
+                            <li><a href="#"><span class="base-text">пуховики</span></a></li>
+                            <li><a href="#"><span class="base-text">очень длинное название аксессуарa</span></a></li>
+                          </ul>
+                        </li>
                       </ul>
                         <a class="btn btn-thin underlined" href="catalog-main.html"><span>Посмотреть все</span>
                         </a>
                     </div>
-                    <div class="top-menu__section-field"><span class="base-subtitle">Подборки</span>
+                    <div class="top-menu__list-wrapper"><span class="base-subtitle">Подборки</span>
                       <ul class="top-menu__list">
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">новинки</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">бестеллеры</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">sale</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">базовый гардероб</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">зимняя подборка</span></a></li>
+                        <li><a href="#"><span class="base-text">новинки</span></a></li>
+                        <li><a href="#"><span class="base-text">бестеллеры</span></a></li>
+                        <li><a href="#"><span class="base-text">sale</span></a></li>
+                        <li><a href="#"><span class="base-text">базовый гардероб</span></a></li>
+                        <li><a href="#"><span class="base-text">зимняя подборка</span></a></li>
                       </ul>
                         <a class="btn btn-thin underlined" href="catalog-main.html"><span>Посмотреть все</span>
                         </a>
                     </div>
                   </div>
-                  <div class="top-menu__section">
-                    <div class="top-menu__section-field">
-                      <ul class="top-menu__list">
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">сумки</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">шапка</span></a></li>
-                      </ul>
-                    </div>
-                  </div>
+                  <div class="top-menu__grid-item-section"></div>
                 </div>
                 <div class="top-menu__grid-item top-menu__grid-item--side">
-                  <div class="catalog-preview">
-                      <div class="product-card">
-                        <div class="product-card__header">
-                            <div class="badge badge-accent">-25%</div>
-                            <button class="btn btn-cart-wide"><span>Добавить в корзину</span>
-                              <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                                <use xlink:href="./assets/sprite.svg#icon-cart"></use>
-                              </svg>
+                    <div class="product-card">
+                      <div class="product-card__header">
+                          <div class="badge badge-accent">-25%</div>
+                          <button class="btn btn-cart-wide"><span>Добавить в корзину</span>
+                            <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
+                              <use xlink:href="./assets/sprite.svg#icon-cart"></use>
+                            </svg>
+                          </button>
+                        <div class="product-cart__props-row">
+                            <button class="btn size-chooser-btn"><span>XS</span>
                             </button>
-                          <div class="product-cart__props-row">
-                              <button class="btn size-chooser-btn"><span>XS</span>
-                              </button>
-                              <button class="btn size-chooser-btn active"><span>S</span>
-                              </button>
-                              <button class="btn size-chooser-btn"><span>M</span>
-                              </button>
-                              <button class="btn size-chooser-btn"><span>L</span>
-                              </button>
-                          </div>
-                          <div class="swiper product-card-inner-slider">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-1.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-2.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-3.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-4.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
-                            </div>
-                            <div class="swiper-pagination swiper-pagination--main"></div>
-                          </div>
+                            <button class="btn size-chooser-btn active"><span>S</span>
+                            </button>
+                            <button class="btn size-chooser-btn"><span>M</span>
+                            </button>
+                            <button class="btn size-chooser-btn"><span>L</span>
+                            </button>
                         </div>
-                        <div class="product-card__main"><span class="base-text product-card__title">Брюки спортивные летние с двумя карманами</span>
-                          <div class="product-card__price-wrapper">
-                              <div class="price-row"><span class="price-row__item">9999 ₽</span>
-                              </div>
+                        <div class="swiper product-card-inner-slider">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-1.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-2.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-3.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-4.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
                           </div>
+                          <div class="swiper-pagination swiper-pagination--main"></div>
                         </div>
-                        <div class="product-card__footer">
-                            <div class="color-picker-btn-row"> 
-                              <button class="active color-picker-btn" type="button" aria-label="Белый"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #ffffff;"></span></button>
-                              <button class="color-picker-btn" type="button" aria-label="Синий"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #363ef1;"></span></button>
-                              <button class="color-picker-btn" type="button" aria-label="Черный"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #000000;"></span></button>
+                      </div>
+                      <div class="product-card__main"><span class="base-text product-card__title">Брюки спортивные летние с двумя карманами</span>
+                        <div class="product-card__price-wrapper">
+                            <div class="price-row"><span class="price-row__item">9999 ₽</span>
                             </div>
                         </div>
                       </div>
-                      <div class="base-card-wrapper"><a class="base-card" href="#"><img src="./assets/img/mock-img-1.png" alt="{&quot;text&quot;:&quot;Весенняя подборка&quot;,&quot;icon&quot;:true}" width="920" height="920">
-                          <div class="base-card__footer"><span class="base-card__title">Весенняя подборка</span>
-                          </div></a></div>
-                      <div class="product-card">
-                        <div class="product-card__header">
-                            <div class="badge">Хит</div>
-                            <button class="btn btn-cart-wide"><span>Добавить в корзину</span>
-                              <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                                <use xlink:href="./assets/sprite.svg#icon-cart"></use>
-                              </svg>
+                      <div class="product-card__footer">
+                          <div class="color-picker-btn-row"> 
+                            <button class="active color-picker-btn" type="button" aria-label="Белый"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #ffffff;"></span></button>
+                            <button class="color-picker-btn" type="button" aria-label="Синий"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #363ef1;"></span></button>
+                            <button class="color-picker-btn" type="button" aria-label="Черный"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #000000;"></span></button>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="base-card-wrapper"><a class="base-card" href="#"><img src="./assets/img/mock-img-1.png" alt="{&quot;text&quot;:&quot;Весенняя подборка&quot;,&quot;icon&quot;:true}" width="920" height="920">
+                        <div class="base-card__footer"><span class="base-card__title">Весенняя подборка</span>
+                        </div></a></div>
+                    <div class="product-card">
+                      <div class="product-card__header">
+                          <div class="badge badge-accent">-25%</div>
+                          <button class="btn btn-cart-wide"><span>Добавить в корзину</span>
+                            <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
+                              <use xlink:href="./assets/sprite.svg#icon-cart"></use>
+                            </svg>
+                          </button>
+                        <div class="product-cart__props-row">
+                            <button class="btn size-chooser-btn"><span>XS</span>
                             </button>
-                          <div class="product-cart__props-row">
-                              <button class="btn size-chooser-btn"><span>XS</span>
-                              </button>
-                              <button class="btn size-chooser-btn active"><span>S</span>
-                              </button>
-                              <button class="btn size-chooser-btn"><span>M</span>
-                              </button>
-                              <button class="btn size-chooser-btn"><span>L</span>
-                              </button>
-                          </div>
-                          <div class="swiper product-card-inner-slider">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-3.png" alt="Брюки спортивные" width="480" height="705"></div>
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-4.png" alt="Брюки спортивные" width="480" height="705"></div>
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-1.png" alt="Брюки спортивные" width="480" height="705"></div>
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-2.png" alt="Брюки спортивные" width="480" height="705"></div>
-                            </div>
-                            <div class="swiper-pagination swiper-pagination--main"></div>
-                          </div>
+                            <button class="btn size-chooser-btn active"><span>S</span>
+                            </button>
+                            <button class="btn size-chooser-btn"><span>M</span>
+                            </button>
+                            <button class="btn size-chooser-btn"><span>L</span>
+                            </button>
                         </div>
-                        <div class="product-card__main"><span class="base-text product-card__title">Брюки спортивные</span>
-                          <div class="product-card__price-wrapper">
-                              <div class="price-row"><span class="price-row__item">99999 ₽</span>
-                              </div>
+                        <div class="swiper product-card-inner-slider">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-1.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-2.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-3.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-4.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
                           </div>
+                          <div class="swiper-pagination swiper-pagination--main"></div>
                         </div>
-                        <div class="product-card__footer">
-                            <div class="color-picker-btn-row"> 
-                              <button class="active color-picker-btn" type="button" aria-label="Белый"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #ffffff;"></span></button>
-                              <button class="color-picker-btn" type="button" aria-label="Синий"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #363ef1;"></span></button>
-                              <button class="color-picker-btn" type="button" aria-label="Черный"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #000000;"></span></button>
+                      </div>
+                      <div class="product-card__main"><span class="base-text product-card__title">Брюки спортивные летние с двумя карманами</span>
+                        <div class="product-card__price-wrapper">
+                            <div class="price-row"><span class="price-row__item">9999 ₽</span>
                             </div>
                         </div>
                       </div>
-                  </div>
+                      <div class="product-card__footer">
+                          <div class="color-picker-btn-row"> 
+                            <button class="active color-picker-btn" type="button" aria-label="Белый"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #ffffff;"></span></button>
+                            <button class="color-picker-btn" type="button" aria-label="Синий"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #363ef1;"></span></button>
+                            <button class="color-picker-btn" type="button" aria-label="Черный"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #000000;"></span></button>
+                          </div>
+                      </div>
+                    </div>
                 </div>
               </div>
             </div>
             <div class="top-menu"> 
-                <a class="btn btn-thin top-menu-btn" href="#"><span>Мужчинам</span>
+                <a class="btn btn-thin top-menu-opener" href="#"><span>Мужчинам</span>
                 </a>
               <div class="top-menu__grid">
                 <div class="top-menu__grid-item top-menu__grid-item--main">
-                  <div class="top-menu__section">
-                    <div class="top-menu__section-field"><span class="base-subtitle">Каталог</span>
+                  <div class="top-menu__grid-item-section">
+                    <div class="top-menu__list-wrapper"><span class="base-subtitle">Каталог</span>
                       <ul class="top-menu__list">
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">боди</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">верхняя одежда</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">толстовки</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">платья</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">футболки</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">костюмы</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">брюки</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">носки</span></a></li>
+                        <li><a href="#"><span class="base-text">боди</span></a></li>
+                        <li><a href="#"><span class="base-text">верхняя одежда</span>
+                            <svg width="12" height="12" role="img" aria-hidden="true" focusable="false">
+                              <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
+                            </svg></a>
+                          <ul class="top-menu__inner-list">
+                            <li><a href="#"> <span class="base-text">куртки</span></a></li>
+                            <li><a href="#"><span class="base-text">бомберы</span></a></li>
+                            <li><a href="#"><span class="base-text">пуховики</span></a></li>
+                            <li><a href="#"><span class="base-text">очень длинное название раздела</span></a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#"><span class="base-text">толстовки</span></a></li>
+                        <li><a href="#"><span class="base-text">платья</span></a></li>
+                        <li><a href="#"><span class="base-text">футболки</span></a></li>
+                        <li><a href="#"><span class="base-text">костюмы</span></a></li>
+                        <li><a href="#"><span class="base-text">брюки</span></a></li>
+                        <li><a href="#"><span class="base-text">носки</span></a></li>
+                        <li><a href="#"><span class="base-text">аксессуары</span>
+                            <svg width="12" height="12" role="img" aria-hidden="true" focusable="false">
+                              <use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
+                            </svg></a>
+                          <ul class="top-menu__inner-list">
+                            <li><a href="#"> <span class="base-text">аксессуары</span></a></li>
+                            <li><a href="#"><span class="base-text">аксессуары</span></a></li>
+                            <li><a href="#"><span class="base-text">пуховики</span></a></li>
+                            <li><a href="#"><span class="base-text">очень длинное название аксессуарa</span></a></li>
+                          </ul>
+                        </li>
                       </ul>
                         <a class="btn btn-thin underlined" href="catalog-main.html"><span>Посмотреть все</span>
                         </a>
                     </div>
-                    <div class="top-menu__section-field"><span class="base-subtitle">Подборки</span>
+                    <div class="top-menu__list-wrapper"><span class="base-subtitle">Подборки</span>
                       <ul class="top-menu__list">
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">новинки</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">бестеллеры</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">sale</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">базовый гардероб</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">зимняя подборка</span></a></li>
+                        <li><a href="#"><span class="base-text">новинки</span></a></li>
+                        <li><a href="#"><span class="base-text">бестеллеры</span></a></li>
+                        <li><a href="#"><span class="base-text">sale</span></a></li>
+                        <li><a href="#"><span class="base-text">базовый гардероб</span></a></li>
+                        <li><a href="#"><span class="base-text">зимняя подборка</span></a></li>
                       </ul>
                         <a class="btn btn-thin underlined" href="catalog-main.html"><span>Посмотреть все</span>
                         </a>
                     </div>
                   </div>
-                  <div class="top-menu__section">
-                    <div class="top-menu__section-field">
-                      <ul class="top-menu__list">
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">сумки</span></a></li>
-                        <li class="top-menu__list-item"><a href="#"><span class="base-text">шапка</span></a></li>
-                      </ul>
-                    </div>
-                  </div>
+                  <div class="top-menu__grid-item-section"></div>
                 </div>
                 <div class="top-menu__grid-item top-menu__grid-item--side">
-                  <div class="catalog-preview">
-                      <div class="product-card">
-                        <div class="product-card__header">
-                            <div class="badge badge-accent">-25%</div>
-                            <button class="btn btn-cart-wide"><span>Добавить в корзину</span>
-                              <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                                <use xlink:href="./assets/sprite.svg#icon-cart"></use>
-                              </svg>
+                    <div class="product-card">
+                      <div class="product-card__header">
+                          <div class="badge badge-accent">-25%</div>
+                          <button class="btn btn-cart-wide"><span>Добавить в корзину</span>
+                            <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
+                              <use xlink:href="./assets/sprite.svg#icon-cart"></use>
+                            </svg>
+                          </button>
+                        <div class="product-cart__props-row">
+                            <button class="btn size-chooser-btn"><span>XS</span>
                             </button>
-                          <div class="product-cart__props-row">
-                              <button class="btn size-chooser-btn"><span>XS</span>
-                              </button>
-                              <button class="btn size-chooser-btn active"><span>S</span>
-                              </button>
-                              <button class="btn size-chooser-btn"><span>M</span>
-                              </button>
-                              <button class="btn size-chooser-btn"><span>L</span>
-                              </button>
-                          </div>
-                          <div class="swiper product-card-inner-slider">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-1.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-2.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-3.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-4.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
-                            </div>
-                            <div class="swiper-pagination swiper-pagination--main"></div>
-                          </div>
+                            <button class="btn size-chooser-btn active"><span>S</span>
+                            </button>
+                            <button class="btn size-chooser-btn"><span>M</span>
+                            </button>
+                            <button class="btn size-chooser-btn"><span>L</span>
+                            </button>
                         </div>
-                        <div class="product-card__main"><span class="base-text product-card__title">Брюки спортивные летние с двумя карманами</span>
-                          <div class="product-card__price-wrapper">
-                              <div class="price-row"><span class="price-row__item">9999 ₽</span>
-                              </div>
+                        <div class="swiper product-card-inner-slider">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-1.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-2.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-3.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-4.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
                           </div>
+                          <div class="swiper-pagination swiper-pagination--main"></div>
                         </div>
-                        <div class="product-card__footer">
-                            <div class="color-picker-btn-row"> 
-                              <button class="active color-picker-btn" type="button" aria-label="Белый"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #ffffff;"></span></button>
-                              <button class="color-picker-btn" type="button" aria-label="Синий"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #363ef1;"></span></button>
-                              <button class="color-picker-btn" type="button" aria-label="Черный"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #000000;"></span></button>
+                      </div>
+                      <div class="product-card__main"><span class="base-text product-card__title">Брюки спортивные летние с двумя карманами</span>
+                        <div class="product-card__price-wrapper">
+                            <div class="price-row"><span class="price-row__item">9999 ₽</span>
                             </div>
                         </div>
                       </div>
-                      <div class="base-card-wrapper"><a class="base-card" href="#"><img src="./assets/img/mock-img-1.png" alt="{&quot;text&quot;:&quot;Весенняя подборка&quot;,&quot;icon&quot;:true}" width="920" height="920">
-                          <div class="base-card__footer"><span class="base-card__title">Весенняя подборка</span>
-                          </div></a></div>
-                      <div class="product-card">
-                        <div class="product-card__header">
-                            <div class="badge">Хит</div>
-                            <button class="btn btn-cart-wide"><span>Добавить в корзину</span>
-                              <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
-                                <use xlink:href="./assets/sprite.svg#icon-cart"></use>
-                              </svg>
+                      <div class="product-card__footer">
+                          <div class="color-picker-btn-row"> 
+                            <button class="active color-picker-btn" type="button" aria-label="Белый"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #ffffff;"></span></button>
+                            <button class="color-picker-btn" type="button" aria-label="Синий"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #363ef1;"></span></button>
+                            <button class="color-picker-btn" type="button" aria-label="Черный"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #000000;"></span></button>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="base-card-wrapper"><a class="base-card" href="#"><img src="./assets/img/mock-img-1.png" alt="{&quot;text&quot;:&quot;Весенняя подборка&quot;,&quot;icon&quot;:true}" width="920" height="920">
+                        <div class="base-card__footer"><span class="base-card__title">Весенняя подборка</span>
+                        </div></a></div>
+                    <div class="product-card">
+                      <div class="product-card__header">
+                          <div class="badge badge-accent">-25%</div>
+                          <button class="btn btn-cart-wide"><span>Добавить в корзину</span>
+                            <svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
+                              <use xlink:href="./assets/sprite.svg#icon-cart"></use>
+                            </svg>
+                          </button>
+                        <div class="product-cart__props-row">
+                            <button class="btn size-chooser-btn"><span>XS</span>
                             </button>
-                          <div class="product-cart__props-row">
-                              <button class="btn size-chooser-btn"><span>XS</span>
-                              </button>
-                              <button class="btn size-chooser-btn active"><span>S</span>
-                              </button>
-                              <button class="btn size-chooser-btn"><span>M</span>
-                              </button>
-                              <button class="btn size-chooser-btn"><span>L</span>
-                              </button>
-                          </div>
-                          <div class="swiper product-card-inner-slider">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-3.png" alt="Брюки спортивные" width="480" height="705"></div>
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-4.png" alt="Брюки спортивные" width="480" height="705"></div>
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-1.png" alt="Брюки спортивные" width="480" height="705"></div>
-                              <div class="swiper-slide"><img src="./assets/img/product-card-mock-2.png" alt="Брюки спортивные" width="480" height="705"></div>
-                            </div>
-                            <div class="swiper-pagination swiper-pagination--main"></div>
-                          </div>
+                            <button class="btn size-chooser-btn active"><span>S</span>
+                            </button>
+                            <button class="btn size-chooser-btn"><span>M</span>
+                            </button>
+                            <button class="btn size-chooser-btn"><span>L</span>
+                            </button>
                         </div>
-                        <div class="product-card__main"><span class="base-text product-card__title">Брюки спортивные</span>
-                          <div class="product-card__price-wrapper">
-                              <div class="price-row"><span class="price-row__item">99999 ₽</span>
-                              </div>
+                        <div class="swiper product-card-inner-slider">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-1.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-2.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-3.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
+                            <div class="swiper-slide"><img src="./assets/img/product-card-mock-4.png" alt="Брюки спортивные летние с двумя карманами" width="480" height="705"></div>
                           </div>
+                          <div class="swiper-pagination swiper-pagination--main"></div>
                         </div>
-                        <div class="product-card__footer">
-                            <div class="color-picker-btn-row"> 
-                              <button class="active color-picker-btn" type="button" aria-label="Белый"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #ffffff;"></span></button>
-                              <button class="color-picker-btn" type="button" aria-label="Синий"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #363ef1;"></span></button>
-                              <button class="color-picker-btn" type="button" aria-label="Черный"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #000000;"></span></button>
+                      </div>
+                      <div class="product-card__main"><span class="base-text product-card__title">Брюки спортивные летние с двумя карманами</span>
+                        <div class="product-card__price-wrapper">
+                            <div class="price-row"><span class="price-row__item">9999 ₽</span>
                             </div>
                         </div>
                       </div>
-                  </div>
+                      <div class="product-card__footer">
+                          <div class="color-picker-btn-row"> 
+                            <button class="active color-picker-btn" type="button" aria-label="Белый"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #ffffff;"></span></button>
+                            <button class="color-picker-btn" type="button" aria-label="Синий"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #363ef1;"></span></button>
+                            <button class="color-picker-btn" type="button" aria-label="Черный"><span class="color-picker-btn__inner" aria-hidden="true" style="background-color: #000000;"></span></button>
+                          </div>
+                      </div>
+                    </div>
                 </div>
               </div>
             </div>
