@@ -6,178 +6,96 @@
 @use "@styles/_vars/scoped" as *;
 
 .footer {
-	padding: 40px 0 30px;
-
-	@include container-up("main", $tablet-width) {
-		padding: 40px 20px 30px;
-	}
-
-	@include container-up("main", $tablet-lg-width) {
-		padding: 40px 0 30px;
-	}
+	padding: 40px 0;
+	container: footer / inline-size;
 
 	&__grid {
 		display: grid;
 		grid-template-columns: 1fr;
 
-		@include container-up("main", $mobile-width) {
+		@include container-up("footer", $mobile-width) {
 			grid-template-columns: repeat(2, 1fr);
+			gap: 20px 0;
 		}
 
-		@include container-up("main", $tablet-width) {
-			grid-template-columns: 150px 1fr 1fr 1fr 1fr;
-			gap: 40px 20px;
+		@include container-up("footer", 820px) {
+			gap: 40px;
+			padding: 0 40px;
+			grid-template-columns: max-content 1fr minmax(300px, 1fr);
 		}
 
-		@include container-up("main", $tablet-lg-width) {
-			grid-template-columns: 150px 1fr 1fr 1fr 1fr 150px;
-			gap: 40px 0;
+		@include container-up("footer", 1240px) {
+			grid-template-columns: max-content max-content max-content max-content auto;
 		}
+	}
 
-		&-item {
-			// outline: 1px solid red;
+	&__grid-item {
+		&--contacts {
+			@extend %flex-column;
 
-			&-field {
-				@extend %flex-column;
-				gap: 14px;
-				// outline: 1px solid red;
-
-				&--contacts {
-					display: grid;
-					grid-template-columns: 1fr;
-					gap: 0;
-
-					@include container-up("main", $mobile-width) {
-						gap: 40px;
-					}
-
-					@include container-up("main", 1320px) {
-						grid-template-columns: max-content max-content;
-						grid-column: -1/1;
-					}
-
-					@include container-up("main", 1720px) {
-						grid-template-columns: 1fr;
-						grid-column: revert;
-					}
-				}
+			@include container-up("footer", $mobile-width) {
+				gap: 40px;
 			}
 
 			.contacts-block,
 			.social-block {
 				text-transform: uppercase;
 			}
+		}
 
-			&--main {
-				@include container-up("main", $mobile-width) {
-					display: grid;
-					grid-template-columns: repeat(2, 1fr);
-					grid-column: -1/1;
-					gap: 40px 20px;
-					padding: 20px;
-					margin-bottom: 20px;
-				}
-
-				@include container-up("main", $tablet-width) {
-					grid-template-columns: 150px 1fr;
-					grid-column: revert;
-					gap: 40px;
-					padding: 0;
-					margin: 0;
-
-					grid-column: 1 / 4;
-				}
-
-				@include container-up("main", $tablet-lg-width) {
-					padding: 0 20px;
-				}
-
-				@include container-up("main", 1320px) {
-					grid-template-columns: 150px max-content max-content;
-				}
-
-				@include container-up("main", 1720px) {
-					grid-template-columns: 150px max-content max-content max-content;
-				}
+		&--top {
+			@include container-up("footer", $mobile-width) {
+				padding: 0 20px;
+				margin-bottom: 20px;
 			}
 
-			&--info {
-				display: grid;
-				grid-template-columns: 1fr;
-				gap: 5px 0;
+			@include container-up("footer", 820px) {
+				padding: 0;
+				margin-bottom: 0;
+			}
+		}
 
-				.footer__grid-item-field {
-					gap: 5px;
-				}
+		&--bottom {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+			margin-top: auto;
+			height: fit-content;
+			padding: 0 20px;
+			margin-bottom: 5px;
 
-				@include container-down("main", $tablet-width) {
-					padding: 40px 20px 0;
-				}
+			@include container-up("footer", $mobile-width) {
+				margin-bottom: 0;
 
-				@include container-up("main", $mobile-width) {
-					grid-template-columns: repeat(2, 1fr);
-					grid-column: -1/1;
-					gap: 20px;
-				}
-
-				@include container-up("main", $tablet-width) {
-					grid-template-columns: 150px 1fr 1fr 1fr 1fr;
-					gap: 40px;
-
-					.footer__grid-item-field:nth-child(2) {
-						grid-column: 2/4;
-					}
-
-					.footer__grid-item-field:nth-child(3) {
-						grid-column: 4 / 6;
-						margin-left: -20px;
-					}
-				}
-
-				@include container-up("main", $tablet-lg-width) {
-					grid-template-columns: 150px 1fr 1fr 1fr 1fr 150px;
-					padding: 0 20px;
-				}
-
-				@include container-up("main", 1720px) {
-					grid-template-columns: 150px max-content max-content;
-					grid-column: 1 / 4;
-
-					.footer__grid-item-field:nth-child(2) {
-						grid-column: revert;
-					}
-
-					.footer__grid-item-field:nth-child(3) {
-						grid-column: revert;
-						margin-left: 0;
+				&:last-child {
+					@include container-up("footer", 1240px) {
+						grid-column: 4/5;
 					}
 				}
 			}
 
-			&--side {
-				grid-column: -1/1;
+			@include container-up("footer", 820px) {
+				padding: 0;
+			}
+		}
 
-				@include container-up("main", $tablet-width) {
-					max-height: 340px;
-					grid-column: 4 / 6;
-				}
+		&--royalty {
+			margin-bottom: 40px;
+			grid-column: -1/1;
 
-				@include container-up("main", $tablet-lg-width) {
-					padding-right: 20px;
-				}
+			@include container-up("footer", $mobile-width) {
+				margin-bottom: 0;
+			}
+			@include container-up("footer", 820px) {
+				grid-column: 3/4;
+				grid-row: 1/3;
+				max-height: 340px;
+			}
 
-				@include container-up("main", $tablet-lg-width) {
-					grid-column: 4 / 7;
-				}
-
-				@include container-up("main", 1720px) {
-					grid-row: 1 / 3;
-
-					.royalty {
-						max-width: 75%;
-						margin-left: auto;
-					}
-				}
+			@include container-up("footer", 1240px) {
+				grid-column: 5/7;
+				max-width: 680px;
+				margin-left: auto;
 			}
 		}
 	}

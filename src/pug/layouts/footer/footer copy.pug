@@ -1,0 +1,82 @@
+include ../../components/_ui/nav/bottom-menu/bottom-menu
+include ../../components/_ui/accordeon/accordeon
+
+footer.footer
+  .container-fluid
+    .footer__grid
+      .footer__grid-item.footer__grid-item--main
+        .footer__grid-item-field
+          +bottom-menu({
+            title: 'каталог',
+            content: 
+              `
+                <ul>
+                  <li><a href="#">женщинам</a></li>
+                  <li><a href="#">мужчинам</a></li>
+                  <li><a href="#">аксессуары</a></li>
+                  <li><a href="#">весеняя подборка</a></li>
+                  <li><a href="#">базовый гардероб</a></li>
+                  <li><a href="#">зимняя подборка</a></li>
+                </ul>
+              `
+          })
+        .footer__grid-item-field
+          +bottom-menu({
+            title: 'покупателям',
+            content: 
+              `
+                <ul>
+                  <li><a href="#">доставка и оплата</a></li>
+                  <li><a href="#">обмен и возврат</a></li>
+                  <li><a href="#">состав и уход</a></li>
+                  <li><a href="#">программа лояльности</a></li>
+                  <li><a href="#">подарочный сертификат</a></li>
+                </ul>
+              `
+          })
+        .footer__grid-item-field
+          +bottom-menu({
+            title: 'О нас',
+            content: 
+              `
+                <ul>
+                  <li><a href="#">о бренде</a></li>
+                  <li><a href="#">события</a></li>
+                  <li><a href="#">вакансии</a></li>
+                  <li><a href="#">офлайн магазины</a></li>
+                </ul>
+              `
+          })
+        .footer__grid-item-field.footer__grid-item-field--contacts
+          +accordeon([{
+            title: 'Контакты',
+            cls: 'contacts-block',
+            content: 
+              `
+                <a href="tel:88047007474" class="base-text">8 (804) 700 74 74</a>
+                <a href="mailto:support@urbanboris.com" class="base-text">support@urbanboris.com</a>
+              `
+          }])
+          +accordeon([{
+            title: 'Социальные сети',
+            cls: 'social-block',
+            content: 
+              `
+                <a href="#" class="base-text">telegram</a>
+                <a href="#" class="base-text">вконтакте</a>
+              `
+          }])
+
+      .footer__grid-item.footer__grid-item--side
+        include ../../components/blocks/royalty/royalty
+      .footer__grid-item.footer__grid-item--info 
+        .footer__grid-item-field
+          a(href="#").base-text Карта сайта
+          span.base-text ©UB 2020-2025 
+        .footer__grid-item-field
+          a(href="#").base-text Дизайн
+          a(href="#").base-text Создание сайта
+        .footer__grid-item-field
+          a(href="#").base-text Политика конфиденциальности
+          a(href="#").base-text Оферта
+      
