@@ -1,0 +1,113 @@
+@forward "@styles/_extends/flexbox.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+@use "@pug/components/_ui/form-controls/range/range";
+
+.filter-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	height: 100dvh;
+	z-index: 102;
+	background: linear-gradient(
+		0deg,
+		rgba(53, 56, 58, 0.4),
+		rgba(53, 56, 58, 0.4)
+	);
+	backdrop-filter: blur(2px);
+
+	visibility: hidden;
+	z-index: -1;
+	opacity: 0;
+	transition: opacity var(--main-transition);
+
+	&.active {
+		visibility: visible;
+		z-index: 103;
+		opacity: 1;
+
+		.filter {
+			transform: translateX(0);
+		}
+	}
+}
+
+.filter {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: var(--white);
+	width: 100%;
+	height: 100%;
+	container: filter / inline-size;
+	overflow: hidden;
+	overflow-y: auto;
+	transform: translateX(100vw);
+	transition: transform var(--main-transition);
+
+	@include container-up("main", $tablet-width) {
+		max-width: 480px;
+	}
+
+	&__header {
+		@extend %flex-align;
+		justify-content: space-between;
+		gap: 20px;
+		background-color: var(--light);
+		padding-left: 20px;
+
+		.btn {
+			aspect-ratio: 1/1;
+			background-color: var(--light);
+		}
+	}
+
+	&__field {
+		@extend %flex-column;
+		gap: 10px;
+		padding: 20px;
+		&:not(&--thin) {
+			padding: 40px 20px;
+		}
+		border-bottom: 1px solid var(--gray);
+
+		&-content {
+			@extend %flex-column;
+			gap: 5px;
+
+			&--row {
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+		}
+
+		.btn {
+			min-width: 40px;
+			min-height: 40px;
+			padding: 12px 10px;
+			&.active {
+				background-color: var(--primary);
+				color: var(--light);
+			}
+		}
+	}
+
+	&__footer {
+		@extend %flex-align;
+		justify-content: space-between;
+		gap: 5px;
+		padding: 20px;
+		background-color: var(--light);
+
+		@include container-down("filter", $mobile-width) {
+			flex-direction: column;
+		}
+
+		.btn {
+			max-width: 100%;
+			padding: 10px;
+		}
+	}
+}

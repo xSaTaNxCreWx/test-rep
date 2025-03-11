@@ -1,0 +1,171 @@
+include ../../_ui/buttons/main-btn/btn
+include ../../_ui/form-controls/switcher/switcher
+
+form(action="#").filter
+  .filter__header
+    span.base-subtitle фильтр и сортировка
+    button(type="button" aria-label="Закрыть").btn
+      svg(width='16' height='16' role='img' aria-hidden='true' focusable='false')
+        use(xlink:href='./assets/sprite.svg#icon-close')
+  .filter__content
+    .filter__field
+      span.base-subtitle.filter__field-title Сортировка
+
+      .filter__field-content.filter__field-content--column
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light',
+          title: 'по цене: меньше'
+        })
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light active',
+          title: 'по цене: больше'
+        })
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light',
+          title: 'сначала новые'
+        })
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light',
+          title: 'сначала популярные'
+        })
+    .filter__field
+      span.base-subtitle.filter__field-title Цвет
+
+      .filter__field-content.filter__field-content--row
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light reversed',
+          color: '#ffffff',
+          title: 'черный'
+        })
+
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light reversed',
+          color: '#000000',
+          title: 'черный'
+        })
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light reversed active',
+          color: '#d7d7d7',
+          title: 'серый'
+        })
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light reversed',
+          color: '#686868',
+          title: 'графитовый'
+        })
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light reversed',
+          color: '#cbb38c',
+          title: 'серый'
+        })
+    .filter__field
+      span.base-subtitle.filter__field-title цена, ₽
+
+      .filter__field-content 
+        include ../../_ui/form-controls/range/range
+        
+    .filter__field
+      span.base-subtitle.filter__field-title размер одежды
+
+      .filter__field-content.filter__field-content--row
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light',
+          title: 'xs'
+        })
+
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light',
+          title: 's'
+        })
+
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light',
+          title: 'm'
+        })
+
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light',
+          title: 'l'
+        })
+
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light active',
+          title: 'xl'
+        })
+
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light',
+          title: 'onesize'
+        })
+    .filter__field
+      span.base-subtitle.filter__field-title Наличие в магазине
+
+      .filter__field-content.filter__field-content--column
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light',
+          title: 'санкт-питербург'
+        })
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          cls: 'btn-light',
+          title: 'москва'
+        })
+
+    .filter__field.filter__field--thin
+      .filter__field-content
+        +switcher({
+          title: 'доступны для доставки'
+        })
+    .filter__field.filter__field--thin
+      .filter__field-content
+        +switcher({
+          title: 'доступны для самовывоза'
+        })
+
+  .filter__footer
+    +main-btn({
+      tag: 'button',
+      type: 'submit',
+      cls: 'btn-primary',
+      title: 'показать 250 товаров'
+    })
+
+    +main-btn({
+      tag: 'button',
+      type: 'submit',
+      cls: 'btn-light',
+      title: 'очистить'
+    })

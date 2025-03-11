@@ -1,0 +1,40 @@
+@forward "@styles/_extends/flexbox.scss";
+
+.switcher {
+	@extend %flex-align;
+	gap: 20px;
+
+	label {
+		position: relative;
+		width: 30px;
+		height: 16px;
+		border-radius: 30px;
+		background-color: var(--gray);
+		margin-left: auto;
+		cursor: pointer;
+
+		&::after {
+			position: absolute;
+			top: 50%;
+			left: 2px;
+			transform: translateY(-50%);
+			content: "";
+			height: 12px;
+			width: 12px;
+			border-radius: 50%;
+			background-color: var(--white);
+			transition: left var(--main-transition);
+		}
+
+		input {
+			display: none;
+		}
+
+		&:has(input:checked) {
+			background-color: var(--primary);
+			&::after {
+				left: calc(100% - 14px);
+			}
+		}
+	}
+}

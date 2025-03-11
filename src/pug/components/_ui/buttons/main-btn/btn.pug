@@ -2,6 +2,8 @@ mixin main-btn(data)
   #{data.tag}.btn( data-modal-opener= data.modal ? data.modal : null type= data.type ? data.type : null data-id = data.dataID ? data.dataID : null class= data.cls ? data.cls : 'btn-primary' href= data.href ? data.href : null )
     if data.title
       span!= data.title
+    if data.color
+      span(style=`background-color: ${data.color}`).color-square
     if data.icon
       svg(width='11' height='10' role='img' aria-hidden='true' focusable='false')
         use(xlink:href=`./assets/sprite.svg#icon-${data.icon}`)

@@ -5441,6 +5441,17 @@ if (slider) {
     freeMode: true
   });
 }
+const opener = document.querySelector(".filter-opener-btn");
+if (opener) {
+  const filter = document.querySelector(".filter-wrapper");
+  const closer = document.querySelector(".filter");
+  opener.addEventListener("click", () => {
+    filter.classList.add("active");
+  });
+  closer.addEventListener("click", () => {
+    filter.classList.remove("active");
+  });
+}
 class Modal {
   constructor(modal, options = {}) {
     __publicField(this, "bodyLocker", (bool) => {
@@ -5486,8 +5497,8 @@ class Modal {
     });
     __publicField(this, "addListeners", () => {
       if (this.openers) {
-        this.openers.forEach((opener) => {
-          opener.removeEventListener("click", this.openModal);
+        this.openers.forEach((opener2) => {
+          opener2.removeEventListener("click", this.openModal);
         });
       }
       document.addEventListener("click", this.closeByOverlayClick);
@@ -5508,8 +5519,8 @@ class Modal {
         !this.preventBodyLock ? this.bodyLocker(false) : null;
         this.preventBodyLock = false;
         if (this.openers) {
-          this.openers.forEach((opener) => {
-            opener.addEventListener("click", this.openModal);
+          this.openers.forEach((opener2) => {
+            opener2.addEventListener("click", this.openModal);
           });
         }
       }, 400);
@@ -5558,8 +5569,8 @@ class Modal {
   init() {
     if (this.openers) {
       this.isInited = true;
-      this.openers.forEach((opener) => {
-        opener.addEventListener("click", this.openModal);
+      this.openers.forEach((opener2) => {
+        opener2.addEventListener("click", this.openModal);
       });
     } else {
       console.error(

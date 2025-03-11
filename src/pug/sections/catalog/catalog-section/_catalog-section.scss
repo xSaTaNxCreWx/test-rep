@@ -5,6 +5,7 @@
 @use "@styles/_vars/scoped" as *;
 
 @use "@pug/components/_ui/sort/sort";
+@use "@pug/components/blocks/filter/filter";
 
 .catalog-section {
 	container: catalog-grid / inline-size;
@@ -17,7 +18,6 @@
 		@include container-down("main", $mobile-width) {
 			flex-direction: column;
 			align-items: flex-start;
-
 			gap: 10px;
 		}
 	}

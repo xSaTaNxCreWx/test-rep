@@ -11,5 +11,6 @@ import "@pug/components/_ui/accordeon/accordeon";
 import "@pug/components/_ui/main-picker/main-picker";
 import "@pug/components/_ui/form-controls/main-input/main-input";
 import "@pug/components/_ui/sort/sort";
+import "@pug/components/blocks/filter/filter";
 
 import "./modules/modal";

@@ -1,0 +1,6 @@
+mixin switcher(data)
+  .switcher
+    if data.title
+      span.base-subtitle!= data.title
+    label.switcher-control
+      input(type="checkbox")
