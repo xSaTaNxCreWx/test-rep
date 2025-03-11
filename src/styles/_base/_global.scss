@@ -1,6 +1,8 @@
 *,
 *::before,
 *::after {
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
 	overscroll-behavior: contain;
 }
@@ -59,6 +61,7 @@ body {
 
 main {
 	flex-grow: 1;
+	container: main / inline-size;
 
 	section:last-child {
 		padding-bottom: 0;
@@ -66,7 +69,6 @@ main {
 }
 
 body {
-	container: main / inline-size;
 }
 
 footer {

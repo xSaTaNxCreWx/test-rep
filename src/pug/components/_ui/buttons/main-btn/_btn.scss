@@ -7,6 +7,19 @@ $btn-hover-color: #454c51;
 $btn-disabled-color: #b6b6b6;
 $btn-thin-hover-color: #606b80;
 
+// .filter-opener-btn {
+// 	flex-direction: row-reverse;
+// 	border-color: transparent;
+
+// 	color: var(--primary);
+
+// 	svg {
+// 		width: 24px;
+// 		height: 24px;
+// 		fill: var(--primary);
+// 	}
+// }
+
 .btn {
 	@extend %btn;
 

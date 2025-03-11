@@ -1,0 +1,9 @@
+.swiper.sort
+  .swiper-wrapper
+    each title in ['верхняя одежда','костюмы','брюки','боди','сумки','платья','шапка','футболки']
+      +main-btn({
+        tag: 'a',
+        href: "#",
+        cls: 'swiper-slide sort-btn',
+        title
+      })

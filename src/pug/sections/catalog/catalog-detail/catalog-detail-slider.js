@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 const slider = document.querySelector(".catalog-detail-slider");
 
 if (slider) {
-	let mediaQuery = window.matchMedia("(max-width: 534px)");
+	let mediaQuery = window.matchMedia("(max-width: 479px)");
 	let isInited = false;
 	let swiper = null;
 

@@ -27,7 +27,6 @@ section.catalog-detail
               img(src="./assets/img/catalog-detail-mock-5.png" alt="брюки спортивные" width="480" height="800")
           .swiper-pagination.swiper-pagination--main.swiper-pagination--main-xs
       
-      
       .catalog-detail__grid-item.catalog-detail__grid-item--main
         .catalog-detail__grid-item-wrapper
           form(action="#")
@@ -107,9 +106,11 @@ section.catalog-detail
                   `
                 ]
               })
+
               +main-btn({
                 tag: 'button',
                 cls: 'btn-thin underlined',
+                modal: 'size-table-modal',
                 title: 'Таблица размеров'
               })
             .catalog-detail__field.catalog-detail__field--add-btn
@@ -120,9 +121,9 @@ section.catalog-detail
                 title: 'добавить в корзину <span>11 490 ₽</span>'
               })
             .catalog-detail__field.catalog-detail__field--props
-              small Артикул: URB/-FPNT-1-FEM
-              small на модели размер: M
-              small параметры модели: рост 180 см. 86/60/91
+              small Артикул: URB/-FPNT-1-FEM
+              small на модели размер: M
+              small параметры модели: рост 180 см. 86/60/91
 
         .catalog-detail__grid-item-wrapper
           .catalog-detail__field.catalog-detail__field--info
@@ -181,8 +182,7 @@ section.catalog-detail
               },
             ])
 
-
-
+    include ../../../components/_ui/modals/size-table-modal/size-table-modal
 
     
   

@@ -1,7 +1,12 @@
+//- - rand = Math.floor(Math.random() * 3000);
+
+//- - console.log(rand);
+
 include ../../buttons/main-btn/btn
 include ../../badge/badge
 include ../../buttons/color-picker-btn-row/color-picker-btn-row
 include ../../price-row/price-row
+include ../../modals/size-modal/size-modal
 
 mixin product-card(data)
   .product-card
@@ -21,9 +26,20 @@ mixin product-card(data)
         tag: 'button', 
         cls: 'btn-cart-wide',
         title: 'Добавить в корзину',
-        icon: 'cart' 
+        icon: 'cart',
       })
 
+      - rand = Math.floor(Math.random() * 3000);
+      +main-btn({
+        tag: 'button', 
+        cls: 'btn-cart',
+        icon: 'cart',
+        modal: `size-modal-${Math.floor(rand)}`,
+      })
+      +size-modal({
+        id: `size-modal-${Math.floor(rand)}`,
+        cls: `size-modal`
+      })
       .product-cart__props-row
         +main-btn({
           tag: 'button', 
@@ -56,14 +72,10 @@ mixin product-card(data)
     .product-card__main
       span.base-text.product-card__title!= data.title
       .product-card__price-wrapper
-        //- заменить на компонент из детальной товара!!
         +price-row ({ 
           old: data.priceOld ? data.priceOld : null,
           current: data.price
         })
-        //- if data.oldPrice
-        //-   span.product-card__price.product-card__price--old!= data.price
-        //- span.product-card__price!= data.price
     
     .product-card__footer
       +color-picker-btn-row({
@@ -83,3 +95,5 @@ mixin product-card(data)
           },
         ]
       })
+
+    

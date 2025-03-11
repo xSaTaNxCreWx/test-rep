@@ -6,6 +6,7 @@
 @use "@pug/components/_ui/badge/badge";
 @use "@pug/components/_ui/buttons/color-picker-btn-row/color-picker-btn-row";
 @use "@pug/components/_ui/price-row/price-row";
+@use "@pug/components/_ui/modals/size-modal/size-modal";
 
 .product-card {
 	position: relative;
@@ -65,12 +66,27 @@
 			bottom: 0;
 			right: 0;
 			z-index: 11;
+			display: none;
+
+			@include container-up("main", $mobile-width) {
+				display: flex;
+			}
 
 			@include container-up("main", $tablet-width) {
 				bottom: -140px;
 				right: 20px;
 				max-width: calc(100% - 40px);
 				transition: bottom var(--main-transition);
+			}
+		}
+
+		& .btn-cart {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			z-index: 11;
+			@include container-up("main", $mobile-width) {
+				display: none;
 			}
 		}
 

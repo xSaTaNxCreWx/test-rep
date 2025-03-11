@@ -1,0 +1,66 @@
+@forward "@styles/_extends/flexbox.scss";
+
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+/* purgecss start ignore */
+// html:has(.size-modal.active) {
+// 	scrollbar-gutter: stable;
+// }
+.size-modal {
+	@include container-up("main", $mobile-width) {
+		display: none;
+	}
+	.modal-wrapper {
+		width: 100%;
+		max-width: 100%;
+		top: revert;
+		left: 0;
+		bottom: 0;
+		transform: none;
+		transform: translateY(100%);
+		padding: 0;
+		height: 100%;
+		max-height: fit-content;
+		transition: transform 0.3s 0.1s linear;
+	}
+
+	.modal-header {
+		position: relative;
+		min-height: 60px;
+		padding: 20px;
+	}
+
+	.modal-closer {
+		position: absolute;
+		top: -60px;
+		right: 0;
+	}
+
+	.modal-content {
+		button {
+			display: flex;
+			align-items: center;
+			font-size: 14px;
+			text-transform: uppercase;
+			background-color: transparent;
+			min-height: 60px;
+			width: 100%;
+			padding: 20px 40px;
+			border: none;
+
+			&:not(:last-child) {
+				border-bottom: 1px solid #f2efef;
+			}
+		}
+	}
+
+	&.active .modal-wrapper {
+		transform: translateX(0);
+	}
+
+	&.active.unactive .modal-wrapper {
+		transform: translateY(100%);
+	}
+}
+/* purgecss end ignore */

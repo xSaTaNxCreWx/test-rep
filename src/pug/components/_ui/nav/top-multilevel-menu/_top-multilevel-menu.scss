@@ -1,4 +1,7 @@
 @use "@pug/components/blocks/certificate-block/certificate-block";
+@forward "@styles/_extends/resets.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
 
 .top-multilevel-menu {
 	&__wrapper {
@@ -9,6 +12,85 @@
 		height: 100%;
 		min-height: calc(100svh - 60px);
 		background-color: var(--white);
+		overflow: hidden;
+		overflow-y: auto;
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		height: 100%;
+		padding: 40px 0 60px;
+
+		@include container-up("main", $desktop-width) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	&__side {
+		display: grid;
+		grid-template-columns: 1fr;
+
+		.base-card {
+			width: 100%;
+			img {
+				height: 100%;
+				aspect-ratio: revert;
+			}
+		}
+
+		& > *:nth-child(2) {
+			display: none;
+		}
+
+		@include container-up("main", $desktop-width) {
+			grid-template-columns: repeat(2, 1fr);
+			& > *:nth-child(2) {
+				display: flex;
+			}
+		}
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 40px 0;
+
+		&-item {
+			&--main {
+				display: grid;
+				grid-template-columns: repeat(3, max-content);
+				gap: 40px;
+				padding: 0 40px;
+				height: fit-content;
+			}
+
+			&--bottom {
+				margin-top: auto;
+			}
+		}
+	}
+
+	&__city {
+		grid-column: -1 /1;
+	}
+
+	&__list-wrapper {
+		@extend %flex-column;
+		gap: 10px;
+
+		ul {
+			@extend %list-reset;
+			@extend %flex-column;
+			gap: 5px;
+
+			li {
+				a {
+					font-size: 14px;
+					text-transform: uppercase;
+				}
+			}
+		}
 	}
 
 	.toggler {
@@ -31,6 +113,10 @@
 			&.active {
 				border-color: #69757c;
 			}
+		}
+
+		@include container-up("main", $tablet-width) {
+			display: none;
 		}
 	}
 }

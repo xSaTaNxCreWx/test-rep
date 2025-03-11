@@ -1,0 +1,35 @@
+@forward "@styles/_extends/flexbox.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.size-table {
+	@extend %flex-column;
+	background-color: var(--light);
+	overflow-x: auto;
+
+	&__grid {
+		display: grid;
+		min-width: 420px;
+
+		&-item {
+			display: grid;
+			grid-template-columns: 160px repeat(5, 1fr);
+			gap: 10px;
+			padding: 12px 20px;
+
+			span {
+				font-size: 14px;
+				text-transform: uppercase;
+
+				&:first-child {
+					padding-right: 20px;
+				}
+
+				&:not(:first-child) {
+					@extend %flex-center;
+					text-align: center;
+				}
+			}
+		}
+	}
+}

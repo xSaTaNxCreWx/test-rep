@@ -1,0 +1,34 @@
+@forward "@styles/_extends/flexbox.scss";
+
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+/* purgecss start ignore */
+
+html:has(.size-table-modal.active) {
+	scrollbar-gutter: stable;
+}
+.size-table-modal {
+	.modal-wrapper {
+		width: 480px;
+		max-width: 90vw;
+		max-width: 90svw;
+		top: 0;
+		left: revert;
+		right: 0;
+		transform: none;
+		transform: translateX(600px);
+		height: 100vh;
+		height: 100svh;
+		transition: transform 0.3s 0.1s linear;
+	}
+
+	&.active .modal-wrapper {
+		transform: translateX(0);
+	}
+
+	&.active.unactive .modal-wrapper {
+		transform: translateX(600px);
+	}
+}
+/* purgecss end ignore */

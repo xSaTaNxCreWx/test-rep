@@ -1,0 +1,10 @@
+.modal(id= modalID ? modalID : null class= modalClass ? modalClass : null)
+  .modal-wrapper
+    .modal-header
+      if modalTitle
+        span.base-subtitle= modalTitle
+      button(aria-label="Закрыть").modal-closer.main-btn
+        svg(width='32' height='32' role='img' aria-hidden='true' focusable='false')
+          use(xlink:href='./assets/sprite.svg#icon-close')
+    .modal-content
+      block modalContent

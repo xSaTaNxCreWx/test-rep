@@ -1,0 +1,17 @@
+@forward "@styles/_extends/flexbox.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.sort {
+	// @extend %flex-align;
+	// gap: 10px;
+	// width: fit-content;
+	width: 100%;
+
+	&-btn {
+		min-height: 40px;
+		border: none;
+		padding: 12px 10px;
+		background-color: var(--light);
+	}
+}

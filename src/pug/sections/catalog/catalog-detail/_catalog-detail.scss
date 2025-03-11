@@ -3,6 +3,9 @@
 @use "@styles/_vars/scoped" as *;
 @use "@pug/components/_ui/price-row/price-row";
 
+@use "@pug/components/_ui/modals/size-table-modal/size-table-modal";
+@use "@pug/components/blocks/size-table/size-table";
+
 .catalog-detail {
 	container: catalog-detail / inline-size;
 
