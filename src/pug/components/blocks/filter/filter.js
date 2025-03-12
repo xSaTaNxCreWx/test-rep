@@ -2,7 +2,7 @@ const opener = document.querySelector(".filter-opener-btn");
 
 if (opener) {
 	const filter = document.querySelector(".filter-wrapper");
-	const closer = document.querySelector(".filter");
+	const closer = document.querySelector(".filter-closer");
 
 	opener.addEventListener("click", () => {
 		filter.classList.add("active");
