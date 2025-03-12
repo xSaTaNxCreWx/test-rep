@@ -66,6 +66,11 @@
 	&-removed-items {
 		line-height: 20px;
 		margin-left: auto;
+
+		&.hidden {
+			visibility: hidden;
+			opacity: 0;
+		}
 	}
 }
 

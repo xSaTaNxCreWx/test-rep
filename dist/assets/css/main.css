@@ -290,6 +290,7 @@ a{
 
 a,
 button,
+label,
 input[type=submit]{
   cursor:pointer;
 }
@@ -3167,6 +3168,13 @@ html:has(.size-table-modal.active){
 .cart-item__wrapper{
   gap:10px;
 }
+.cart-item img{
+  width:100%;
+  max-width:105px;
+  height:auto;
+  -o-object-fit:contain;
+     object-fit:contain;
+}
 .cart-item__header{
   gap:5px;
 }
@@ -3272,6 +3280,10 @@ html:has(.size-table-modal.active){
 .cart-removed-items{
   line-height:20px;
   margin-left:auto;
+}
+.cart-removed-items.hidden{
+  visibility:hidden;
+  opacity:0;
 }
 
 .cart-total{

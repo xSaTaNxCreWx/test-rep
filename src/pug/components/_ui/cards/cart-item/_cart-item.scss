@@ -12,6 +12,13 @@
 		gap: 10px;
 	}
 
+	img {
+		width: 100%;
+		max-width: 105px;
+		height: auto;
+		object-fit: contain;
+	}
+
 	&__header {
 		@extend %flex-column;
 		gap: 5px;

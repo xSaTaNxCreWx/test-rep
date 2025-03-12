@@ -5396,8 +5396,8 @@ if (pickers$1.length) {
 const accordeons = document.querySelectorAll(".accordeon");
 if (accordeons) {
   accordeons.forEach((accordeon) => {
-    const items = accordeon.querySelectorAll(".accordeon-header");
-    items.forEach((item) => {
+    const items2 = accordeon.querySelectorAll(".accordeon-header");
+    items2.forEach((item) => {
       item.addEventListener("click", () => {
         item.parentNode.classList.toggle("expanded");
       });
@@ -5413,8 +5413,8 @@ if (pickers.length) {
     headline.innerText = value;
   };
   pickers.forEach((picker) => {
-    const items = picker.querySelectorAll(".main-picker__item");
-    items.forEach((item) => {
+    const items2 = picker.querySelectorAll(".main-picker__item");
+    items2.forEach((item) => {
       item.addEventListener("click", onClickSetValue);
     });
   });
@@ -5441,16 +5441,64 @@ if (slider) {
     freeMode: true
   });
 }
-const opener = document.querySelector(".filter-opener-btn");
-if (opener) {
+const opener$1 = document.querySelector(".filter-opener-btn");
+if (opener$1) {
   const filter = document.querySelector(".filter-wrapper");
   const closer = document.querySelector(".filter-closer");
-  opener.addEventListener("click", () => {
+  opener$1.addEventListener("click", () => {
     filter.classList.add("active");
   });
   closer.addEventListener("click", () => {
     filter.classList.remove("active");
   });
+}
+const items = document.querySelectorAll(".cart-item");
+const selectAllBtn = document.querySelector(".cart-select-all-btn");
+const removedNode = document.querySelector(".cart-removed-items span");
+if (items.length) {
+  let checked = 0;
+  const fillSelectBtn = (status) => {
+    if (!!status) {
+      !selectAllBtn.classList.contains("hidden") ? selectAllBtn.classList.add("hidden") : null;
+    } else {
+      selectAllBtn.classList.contains("hidden") ? selectAllBtn.classList.remove("hidden") : null;
+    }
+    removedNode.innerHTML = checked;
+  };
+  const onControlClickHandler = () => {
+    checked = 0;
+    items.forEach((item) => {
+      const control = item.querySelector('input[type="checkbox"]');
+      if (control.checked) checked++;
+    });
+    if (checked === items.length) {
+      fillSelectBtn(true);
+    } else {
+      fillSelectBtn(false);
+    }
+  };
+  items.forEach((item) => {
+    const control = item.querySelector('input[type="checkbox"]');
+    if (control.checked) checked++;
+    control.addEventListener("click", onControlClickHandler);
+  });
+  if (checked === items.length) {
+    fillSelectBtn(true);
+  }
+  selectAllBtn.addEventListener("click", () => {
+    items.forEach((item) => {
+      item.querySelector('input[type="checkbox"]').checked = true;
+    });
+    fillSelectBtn(true);
+  });
+  console.log(checked, items.length);
+}
+const opener = document.querySelector(".promo-field-opener");
+if (opener) {
+  const onClickOpenPromoField = () => {
+    console.log("onClickOpenPromoField");
+  };
+  opener.addEventListener("click", onClickOpenPromoField);
 }
 const counters = document.querySelectorAll(".counter");
 if (counters) {
