@@ -1,0 +1,15 @@
+include ../../buttons/main-btn/btn
+.counter
+  +main-btn({
+    tag: 'button',
+    cls: 'counter-btn counter-btn--dec disabled',
+    icon: 'minus'
+  })
+
+  input(type="number" placeholder="1" value="1")
+
+  +main-btn({
+    tag: 'button',
+    cls: 'counter-btn counter-btn--inc',
+    icon: 'plus'
+  })

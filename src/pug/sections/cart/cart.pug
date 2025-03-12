@@ -1,4 +1,5 @@
 include ../../components/_ui/buttons/main-btn/btn
+include ../../components/_ui/cards/cart-item/cart-item
 
 section.cart
   .container
@@ -9,14 +10,57 @@ section.cart
         .cart-items
           .cart-items__header
             button(type="button").btn.btn-thin.cart-select-all-btn Выделить все
-            span.base-text-xs.cart-removed-items Удалить <span>(1)</span>
+            span.base-text-xs.cart-removed-items Удалить (<span>3</span>)
           .cart-items__content
-            .cart-item
-              p 1
-            .cart-item
-              p 2
-            .cart-item
-              p 3
+            +cart-item({
+              title: 'брюки спортивные',
+              price: {
+                old: '20 500 ₽',
+                current: '10 500 ₽',
+              },
+              props: [
+                {
+                  name: 'Размер:',
+                  value: 'М'
+                },
+                {
+                  name: 'Цвет:',
+                  value: 'черный'
+                }
+              ],
+            })
+            +cart-item({
+              title: 'брюки спортивные',
+              price: {
+                current: '10 500 ₽',
+              },
+              props: [
+                {
+                  name: 'Размер:',
+                  value: 'М'
+                },
+                {
+                  name: 'Цвет:',
+                  value: 'черный'
+                }
+              ],
+            })
+            +cart-item({
+              title: 'брюки спортивные',
+              price: {
+                current: '10 500 ₽',
+              },
+              props: [
+                {
+                  name: 'Размер:',
+                  value: 'М'
+                },
+                {
+                  name: 'Цвет:',
+                  value: 'черный'
+                }
+              ],
+            })
         
       .cart__grid-item.cart__grid-item--side
         .cart-total

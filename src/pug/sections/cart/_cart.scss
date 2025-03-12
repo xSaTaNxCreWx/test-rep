@@ -1,22 +1,30 @@
-@use "@pug/components/blocks/empty-section/empty-section";
 @forward "@styles/_extends/flexbox.scss";
 @forward "@styles/_extends/effects.scss";
 @forward "@styles/_extends/resets.scss";
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
+@use "@pug/components/blocks/empty-section/empty-section";
+@use "@pug/components/_ui/cards/cart-item/cart-item";
+
 .cart {
 	&__grid {
 		display: grid;
-		grid-template-columns: minmax(auto, 240px) auto 560px;
-		gap: 20px;
+		grid-template-columns: 1fr;
+		gap: 40px;
+
+		@include container-up("main", 1320px) {
+			grid-template-columns: repeat(4, 1fr);
+		}
 
 		&-item {
-			outline: 1px solid red;
-
 			&--main {
 				flex-grow: 1;
 				width: 100%;
+
+				@include container-up("main", 1320px) {
+					grid-column: 2/4;
+				}
 			}
 
 			&--side {
@@ -34,8 +42,12 @@
 
 		&__content {
 			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); // ??
-			gap: 20px;
+			grid-template-columns: 1fr;
+			gap: 40px;
+
+			@include container-up("main", $tablet-width) {
+				grid-template-columns: repeat(2, 1fr);
+			}
 		}
 	}
 
@@ -43,15 +55,18 @@
 		font-weight: 400;
 		font-size: 12px;
 		padding: 0;
+		transition: opacity var(--main-transition);
+
+		&.hidden {
+			visibility: hidden;
+			opacity: 0;
+		}
 	}
 
 	&-removed-items {
 		line-height: 20px;
+		margin-left: auto;
 	}
-}
-
-.cart-item {
-	outline: 1px solid red;
 }
 
 .cart-total {
@@ -59,6 +74,10 @@
 	gap: 20px;
 	padding: 20px;
 	background-color: var(--light);
+
+	@include container-down("main", $mobile-width) {
+		margin: 0 calc(-1 * var(--container-offset));
+	}
 
 	&__row {
 		@extend %flex-align;

@@ -1,0 +1,29 @@
+@forward "@styles/_extends/flexbox.scss";
+
+.main-checkbox {
+	input {
+		display: none;
+	}
+	label {
+		@extend %flex-align;
+		gap: 6px;
+		position: relative;
+
+		&::before {
+			position: relative;
+			content: "";
+			width: 16px;
+			height: 16px;
+			border: 1px solid var(--primary);
+		}
+
+		&:has(input:checked) {
+			&::before {
+				background-image: url("@/assets/img/icon-check.svg");
+				background-repeat: no-repeat;
+				background-size: 12px;
+				background-position: center;
+			}
+		}
+	}
+}

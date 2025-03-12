@@ -1,0 +1,90 @@
+@forward "@styles/_extends/flexbox.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.cart-item {
+	display: grid;
+	grid-template-columns: 16px 105px auto;
+	gap: 10px;
+
+	&__wrapper {
+		@extend %flex-column;
+		gap: 10px;
+	}
+
+	&__header {
+		@extend %flex-column;
+		gap: 5px;
+	}
+
+	&__footer {
+		@extend %flex-align;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 10px 20px;
+
+		.btn {
+			font-size: 12px;
+		}
+	}
+
+	&__title {
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	&__price {
+		@extend %flex-wrap;
+		gap: 5px;
+
+		&-value {
+			font-size: 12px;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+
+		&:has(.cart-item__price-value--old) {
+			.cart-item__price-value:not(.cart-item__price-value--old) {
+				color: var(--accent);
+			}
+
+			.cart-item__price-value--old {
+				text-decoration: line-through;
+			}
+		}
+	}
+
+	&__props {
+		font-size: 14px;
+		color: var(--gray);
+		&-item {
+			@extend %flex-align;
+			gap: 3px;
+		}
+	}
+
+	&-fav-btn {
+		svg {
+			width: 16px;
+			height: 16px;
+			fill: none;
+			stroke: var(--primary);
+		}
+
+		&.active {
+			svg {
+				fill: var(--primary);
+			}
+		}
+	}
+	&:has(input:checked) {
+		.cart-item-remove-btn {
+			color: var(--gray);
+		}
+	}
+
+	&-remove-btn {
+		cursor: pointer;
+	}
+}

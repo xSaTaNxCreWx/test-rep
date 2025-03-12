@@ -1,0 +1,34 @@
+@forward "@styles/_extends/flexbox.scss";
+
+.counter {
+	@extend %flex-align;
+
+	input {
+		width: fit-content;
+		height: 100%;
+		max-width: 30px;
+		text-align: center;
+		border: none;
+		font-size: 12px;
+	}
+
+	&-btn {
+		@extend %flex-center;
+		width: 20px;
+		height: 20px;
+		min-height: revert;
+		padding: 5px;
+
+		svg {
+			width: 10px;
+			height: 10px;
+			fill: var(--primary);
+		}
+
+		&.disabled {
+			svg {
+				fill: var(--gray);
+			}
+		}
+	}
+}

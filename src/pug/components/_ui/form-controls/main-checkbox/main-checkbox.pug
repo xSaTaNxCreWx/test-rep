@@ -1,0 +1,4 @@
+mixin main-checkbox(data)
+  .main-checkbox
+    label!= data.label ? data.label : null
+      input(type="checkbox" checked="true" id= data.id)

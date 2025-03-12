@@ -1,0 +1,44 @@
+include ../../buttons/main-btn/btn
+include ../../form-controls/main-checkbox/main-checkbox
+
+mixin cart-item(data)
+  .cart-item
+    +main-checkbox({
+      id: data.title
+    })
+    
+    img(src="./assets/img/cart-item-mock-img.png" alt= data.title width="105" height="175")
+    
+    .cart-item__wrapper
+      .cart-item__header
+        span.cart-item__title!= data.title
+
+        .cart-item__price
+          span.cart-item__price-value!= data.price.current
+          if data.price.old
+            span.cart-item__price-value.cart-item__price-value--old!= data.price.old
+
+      .cart-item__props
+        each prop in data.props
+          .cart-item__props-item
+            span!= prop.name
+            span!= prop.value
+
+      include ../../form-controls/counter/counter
+
+      .cart-item__footer
+        +main-btn({
+          tag: 'button',
+          type: 'button',
+          title: 'в избранное',
+          cls: 'underlined btn-thin reversed active cart-item-fav-btn',
+          icon: 'fav'
+        })
+
+        label(for= data.title).btn.btn-thin.cart-item-remove-btn удалить
+          //- +main-btn({
+          //-   tag: 'button',
+          //-   type: 'button',
+          //-   title: 'удалить',
+          //-   cls: 'btn-thin cart-item-remove-btn',
+          //- })
