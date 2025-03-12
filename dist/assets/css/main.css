@@ -3302,7 +3302,7 @@ html:has(.size-table-modal.active){
           justify-content:space-between;
   gap:20px;
 }
-.cart-total__row--count{
+.cart-total__row--main{
   padding:10px 0;
   border-bottom:1px solid var(--gray);
 }

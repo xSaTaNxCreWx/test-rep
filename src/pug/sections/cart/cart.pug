@@ -66,9 +66,13 @@ section.cart
         .cart-total
           span.base-subtitle Ваш заказ
 
-          .cart-total__row.cart-total__row--count
+          .cart-total__row.cart-total__row--main
             span.base-text Товары: 3 шт.
             span.base-text 31 500 ₽
+          
+          .cart-total__row.cart-total__row--main
+            span.base-text Скидка
+            span.base-text -10 500 ₽
 
           .cart-total__row.cart-total__row--promo
             +main-btn({
@@ -80,7 +84,8 @@ section.cart
 
           .cart-total__row.cart-total__row--price
             span.base-subtitle ИТОГО
-            span.base-subtitle 31 500 ₽ 
+            span.base-subtitle 31 500 ₽
+          
 
           +main-btn({
             tag: 'button',
