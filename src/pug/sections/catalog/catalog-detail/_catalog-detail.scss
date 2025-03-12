@@ -47,6 +47,8 @@
 				padding: 0 var(--container-offset);
 
 				@include container-up("catalog-detail", $mobile-width) {
+					position: sticky;
+					top: 120px;
 					padding: 0;
 				}
 			}
@@ -112,6 +114,7 @@
 					position: absolute;
 					top: 0;
 					right: 0;
+					display: none; // TEMP!!
 				}
 			}
 		}

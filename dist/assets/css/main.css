@@ -2995,6 +2995,8 @@ html:has(.size-table-modal.active){
 }
 @container catalog-detail (min-width: 480px ){
   .catalog-detail__grid-item--main{
+    position:sticky;
+    top:120px;
     padding:0;
   }
 }
@@ -3054,6 +3056,7 @@ html:has(.size-table-modal.active){
   position:absolute;
   top:0;
   right:0;
+  display:none;
 }
 .catalog-detail__field--add-btn .btn{
   padding:20px 10px;
