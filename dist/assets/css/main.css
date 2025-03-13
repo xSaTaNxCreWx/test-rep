@@ -1478,6 +1478,17 @@ body:has(.top-menu:focus) main{
     grid-template-columns:repeat(4, max-content) auto;
   }
 }
+.footer__grid-item a{
+  width:-webkit-fit-content;
+  width:-moz-fit-content;
+  width:fit-content;
+  min-height:20px;
+}
+.footer__grid-item a:hover, .footer__grid-item a:focus{
+  color:var(--hover-color);
+  text-decoration:underline;
+  text-underline-offset:5px;
+}
 @container footer (min-width: 480px ){
   .footer__grid-item--contacts{
     gap:40px;
@@ -1559,7 +1570,6 @@ body:has(.top-menu:focus) main{
 }
 @container footer (min-width: 480px ){
   .footer .accordeon-item{
-    pointer-events:none;
     gap:14px;
   }
 }
