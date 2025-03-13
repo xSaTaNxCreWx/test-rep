@@ -5445,11 +5445,16 @@ const opener$1 = document.querySelector(".filter-opener-btn");
 if (opener$1) {
   const filter = document.querySelector(".filter-wrapper");
   const closer = document.querySelector(".filter-closer");
+  const setActiveClass = (node, state) => {
+    !!state ? node.classList.add("active") : node.classList.remove("active");
+  };
   opener$1.addEventListener("click", () => {
-    filter.classList.add("active");
+    setActiveClass(opener$1, true);
+    setActiveClass(filter, true);
   });
   closer.addEventListener("click", () => {
-    filter.classList.remove("active");
+    setActiveClass(opener$1);
+    setActiveClass(filter);
   });
 }
 const items = document.querySelectorAll(".cart-item");

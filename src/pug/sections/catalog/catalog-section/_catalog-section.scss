@@ -44,17 +44,14 @@
 			}
 		}
 
-		// &:active {
-		// 	width: 100%;
-		// 	max-width: 100%;
-		// 	background-color: var(--primary);
-		// 	color: var(--light);
-		// 	margin-bottom: 10px;
+		&.active {
+			background-color: var(--primary);
+			color: var(--light);
 
-		// 	svg {
-		// 		fill: var(--light);
-		// 	}
-		// }
+			svg {
+				fill: var(--light);
+			}
+		}
 
 		// @include container-down("main", $mobile-width) {
 		// 	width: 100%;

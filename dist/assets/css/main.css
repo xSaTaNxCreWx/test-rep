@@ -2866,6 +2866,13 @@ section:has(.top-banner){
 .catalog-section .filter-opener-btn:hover svg, .catalog-section .filter-opener-btn:focus svg{
   fill:var(--primary);
 }
+.catalog-section .filter-opener-btn.active{
+  background-color:var(--primary);
+  color:var(--light);
+}
+.catalog-section .filter-opener-btn.active svg{
+  fill:var(--light);
+}
 .catalog-section__grid{
   display:grid;
   grid-template-columns:1fr;
