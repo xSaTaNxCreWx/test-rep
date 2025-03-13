@@ -1,5 +1,6 @@
 @forward "@styles/_extends/flexbox.scss";
 @use "@styles/_mixins/container-queries" as *;
+@use "@styles/_mixins/media-queries" as *;
 @use "@styles/_vars/scoped" as *;
 @use "@pug/components/_ui/form-controls/range/range";
 
@@ -47,7 +48,7 @@
 	transform: translateX(100vw);
 	transition: transform var(--main-transition);
 
-	@include container-up("main", $tablet-width) {
+	@include media-up($tablet-lg-width) {
 		max-width: 480px;
 	}
 
@@ -86,7 +87,16 @@
 		.btn {
 			min-width: 40px;
 			min-height: 40px;
+			font-size: 12px;
 			padding: 12px 10px;
+
+			&:hover,
+			&:focus {
+				background-color: var(--hover-dop-color);
+				color: var(--primary);
+			}
+
+			&:active,
 			&.active {
 				background-color: var(--primary);
 				color: var(--light);
@@ -99,6 +109,7 @@
 		justify-content: space-between;
 		gap: 5px;
 		padding: 20px;
+		margin-top: 20px;
 		background-color: var(--light);
 
 		@include container-down("filter", $mobile-width) {
@@ -108,6 +119,10 @@
 		.btn {
 			max-width: 100%;
 			padding: 10px;
+
+			&-primary {
+				border-color: var(--light);
+			}
 		}
 	}
 }

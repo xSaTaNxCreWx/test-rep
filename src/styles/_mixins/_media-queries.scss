@@ -3,15 +3,31 @@
 // down
 
 @mixin media-down($width) {
-  @media (max-width: calc($width - 1px)) {
-    @content;
-  }
+	@media (max-width: calc($width - 1px)) {
+		//<1000
+		@content;
+	}
+}
+
+@mixin media-equal-down($width) {
+	@media (max-width: $width) {
+		//<=1000
+		@content;
+	}
 }
 
 // up
 
 @mixin media-up($width) {
-  @media (min-width: #{$width}) {
-    @content;
-  }
+	@media (min-width: calc($width + 1px)) {
+		//> 1000
+		@content;
+	}
+}
+
+@mixin media-equal-up($width) {
+	@media (min-width: $width) {
+		//>= 1000
+		@content;
+	}
 }
