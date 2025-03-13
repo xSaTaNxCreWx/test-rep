@@ -1,5 +1,6 @@
 include ../../buttons/toggler/toggler
 include ../../nav/bottom-menu/bottom-menu
+include ../../buttons/main-btn/btn
 
 .top-multilevel-menu
   include ../../buttons/burger/burger
@@ -23,45 +24,51 @@ include ../../nav/bottom-menu/bottom-menu
         ]
       })
 
-    .top-multilevel-menu__content
-      .top-multilevel-menu__grid
-        .top-multilevel-menu__grid-item.top-multilevel-menu__grid-item--main 
-          .top-multilevel-menu__list-wrapper
-            span.base-subtitle Каталог
-            <ul> 
-              <li><a href="#">женщинам</a></li>
-              <li><a href="#">мужчинам</a></li>
-              <li><a href="#">аксессуары</a></li>
-              <li><a href="#">весеняя подборка</a></li>
-              <li><a href="#">базовый гардероб</a></li>
-              <li><a href="#">зимняя подборка</a></li>
-            </ul>
-          .top-multilevel-menu__list-wrapper
-            span.base-subtitle Покупателям
-            <ul> 
-              <li><a href="#">доставка и оплата</a></li>
-              <li><a href="#">обмен и возврат</a></li>
-              <li><a href="#">состав и уход</a></li>
-              <li><a href="#">размерная сетка</a></li>
-              <li><a href="#">программа лояльности</a></li>
-              <li><a href="#">подарочный сертификат</a></li>
-            </ul>
-          .top-multilevel-menu__list-wrapper
-            span.base-subtitle О нас
-            <ul> 
-              <li><a href="#">о бренде</a></li>
-              <li><a href="#">события</a></li>
-              <li><a href="#">вакансии</a></li>
-              <li><a href="#">оффлайн магазины</a></li>
-            </ul>
-          .top-multilevel-menu__city
-            span.base-subtitle Ваш город
-            span Санкт-Петербург
+    .top-multilevel-menu__grid.container
+      .top-multilevel-menu__grid-item.top-multilevel-menu__grid-item--main 
+        .top-multilevel-menu__list-wrapper
+          span.base-subtitle Каталог
+          <ul> 
+            <li><a href="#">женщинам</a></li>
+            <li><a href="#">мужчинам</a></li>
+            <li><a href="#">аксессуары</a></li>
+            <li><a href="#">весеняя подборка</a></li>
+            <li><a href="#">базовый гардероб</a></li>
+            <li><a href="#">зимняя подборка</a></li>
+          </ul>
+        .top-multilevel-menu__list-wrapper
+          span.base-subtitle Покупателям
+          <ul> 
+            <li><a href="#">доставка и оплата</a></li>
+            <li><a href="#">обмен и возврат</a></li>
+            <li><a href="#">состав и уход</a></li>
+            <li><a href="#">размерная сетка</a></li>
+            <li><a href="#">программа лояльности</a></li>
+            <li><a href="#">подарочный сертификат</a></li>
+          </ul>
+        .top-multilevel-menu__list-wrapper
+          span.base-subtitle О нас
+          <ul> 
+            <li><a href="#">о бренде</a></li>
+            <li><a href="#">события</a></li>
+            <li><a href="#">вакансии</a></li>
+            <li><a href="#">оффлайн магазины</a></li>
+          </ul>
+        .top-multilevel-menu__info
+          span.base-subtitle Ваш город 
 
-        .top-multilevel-menu__grid-item.top-multilevel-menu__grid-item--bottom
-          include ../../../blocks/certificate-block/certificate-block
+          +main-btn({
+            tag: 'a',
+            href: "#",
+            title: 'Санкт-Петербург',
+            cls: 'btn btn-thin underlined reversed',
+            icon: 'pin'
+          })
 
-      .top-multilevel-menu__side
+      .top-multilevel-menu__grid-item.top-multilevel-menu__grid-item--bottom
+        include ../../../blocks/certificate-block/certificate-block
+
+      .top-multilevel-menu__grid-item.top-multilevel-menu__grid-item--side
         +base-card({
           img: {
             name: 'mock-img-1',

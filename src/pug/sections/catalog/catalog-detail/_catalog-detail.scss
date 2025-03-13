@@ -9,11 +9,11 @@
 .catalog-detail {
 	container: catalog-detail / inline-size;
 
-	.container-fluid {
-		@include container-up("catalog-detail", $mobile-width) {
-			padding-right: var(--container-offset);
-		}
-	}
+	// .container-fluid {
+	// 	@include container-up("catalog-detail", 640px) {
+	// 		padding-right: var(--container-offset);
+	// 	}
+	// }
 
 	&__title {
 		font-weight: 400;
@@ -26,7 +26,7 @@
 		gap: 0 clamp(20px, 3vw, 40px);
 		margin-bottom: 60px;
 
-		@include container-up("catalog-detail", $mobile-width) {
+		@include container-up("catalog-detail", 640px) {
 			grid-template-columns: repeat(2, 1fr);
 			margin-bottom: 80px;
 		}
@@ -46,14 +46,24 @@
 				gap: clamp(40px, 4vw, 80px);
 				padding: 0 var(--container-offset);
 
-				@include container-up("catalog-detail", $mobile-width) {
-					position: sticky;
-					top: 120px;
-					padding: 0;
+				position: sticky;
+				top: 60px;
+
+				@include container-down("catalog-detail", 640px) {
+					position: revert !important;
+					top: revert !important;
 				}
 			}
 
 			&--gallery {
+				position: sticky;
+				top: 60px;
+
+				@include container-down("catalog-detail", 640px) {
+					position: revert;
+					top: revert;
+				}
+
 				.swiper-slide,
 				.swiper {
 					width: 100% !important;
@@ -68,7 +78,7 @@
 				}
 
 				.swiper-wrapper {
-					@include container-up("catalog-detail", $mobile-width) {
+					@include container-up("catalog-detail", 640px) {
 						display: grid;
 						grid-template-columns: 1fr;
 					}
@@ -124,7 +134,7 @@
 				padding: 20px 10px;
 			}
 
-			@include container-down("main", $mobile-width) {
+			@include container-down("main", 640px) {
 				order: 1;
 			}
 
@@ -144,7 +154,7 @@
 			@extend %flex-column;
 			gap: 10px;
 
-			@include container-down("main", $mobile-width) {
+			@include container-down("main", 640px) {
 				align-items: center;
 			}
 		}
@@ -153,7 +163,7 @@
 			@extend %flex-column;
 			font-size: 14px;
 
-			@include container-down("main", $mobile-width) {
+			@include container-down("main", 640px) {
 				align-items: center;
 				text-align: center;
 			}
