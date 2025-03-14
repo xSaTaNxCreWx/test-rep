@@ -3,15 +3,26 @@
 @use "@styles/_vars/scoped" as *;
 
 .sort {
-	// @extend %flex-align;
-	// gap: 10px;
-	// width: fit-content;
 	width: 100%;
+
+	.swiper-slide {
+		width: fit-content;
+	}
 
 	&-btn {
 		min-height: 40px;
 		border: none;
 		padding: 12px 10px;
 		background-color: var(--light);
+
+		&:hover,
+		&:focus {
+			background-color: var(--hover-dop-color);
+		}
+
+		&.active {
+			color: var(--white);
+			background-color: var(--primary);
+		}
 	}
 }

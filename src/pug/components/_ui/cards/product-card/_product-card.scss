@@ -1,6 +1,7 @@
 @forward "@styles/_extends/flexbox.scss";
 @forward "@styles/_extends/resets.scss";
 @use "@styles/_mixins/container-queries" as *;
+@use "@styles/_mixins/media-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
 @use "@pug/components/_ui/badge/badge";
@@ -63,20 +64,25 @@
 
 		& .btn-cart-wide {
 			position: absolute;
-			bottom: 0;
-			right: 0;
+			bottom: 20px;
+			right: 20px;
+			padding: 20px 12px;
+			max-width: calc(100% - 40px);
+			will-change: auto;
 			z-index: 11;
+			transform: translateY(140px);
+			transition: transform var(--main-transition);
 			display: none;
 
-			@include container-up("main", $mobile-width) {
+			@include media-equal-up($tablet-lg-width) {
 				display: flex;
 			}
+		}
 
-			@include container-up("main", $tablet-width) {
-				bottom: -140px;
-				right: 20px;
-				max-width: calc(100% - 40px);
-				transition: bottom var(--main-transition);
+		&:not(:has(.product-cart__props-row.active)):hover,
+		&:not(:has(.product-cart__props-row.active)):focus {
+			.btn-cart-wide {
+				transform: translateY(0);
 			}
 		}
 
@@ -85,45 +91,33 @@
 			bottom: 0;
 			right: 0;
 			z-index: 11;
-			@include container-up("main", $mobile-width) {
+
+			@include media-equal-up($tablet-lg-width) {
 				display: none;
-			}
-		}
-
-		@include container-up("main", $tablet-width) {
-			&:hover {
-				.btn-cart-wide {
-					bottom: 20px;
-				}
-			}
-
-			&:focus {
-				.btn-cart-wide {
-					bottom: 20px;
-				}
 			}
 		}
 	}
 
 	.product-cart__props-row {
 		position: absolute;
-		bottom: -140px;
+		bottom: 20px;
 		right: 20px;
+		transform: translateY(140px);
 
 		@extend %flex-center;
 		gap: 10px;
-
 		width: 100%;
 		min-height: 60px;
 		max-width: calc(100% - 40px);
-		transition: bottom var(--main-transition);
+		transition: transform var(--main-transition);
+		will-change: auto;
 		z-index: 11;
 
 		background: rgba(53, 56, 58, 0.2);
 		backdrop-filter: blur(2.5px);
 
 		&.active {
-			bottom: 20px;
+			transform: translateY(0);
 		}
 
 		.btn {
@@ -140,13 +134,9 @@
 			}
 		}
 
-		@include container-down("main", $mobile-width) {
-			display: none; // TEMP!! должна быть модалка
+		@include media-down($tablet-lg-width) {
+			display: none;
 		}
-	}
-
-	&:has(.product-cart__props-row.active) .btn-cart-wide {
-		transform: translateY(140px);
 	}
 
 	&__main {
