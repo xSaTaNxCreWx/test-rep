@@ -2,7 +2,7 @@ include ../../buttons/main-btn/btn
 include ../../badge/badge
 include ../../buttons/color-picker-btn-row/color-picker-btn-row
 include ../../price-row/price-row
-include ../../modals/size-modal/size-modal
+//- include ../../modals/size-modal/size-modal
 
 mixin product-card(data)
   .product-card
@@ -18,12 +18,11 @@ mixin product-card(data)
       //-   icon: 'fav' 
       //- })
 
-      - rand = Math.floor(Math.random() * 3000);
       +main-btn({
         tag: 'button', 
-        cls: 'btn-cart',
+        cls: 'btn-cart size-modal-opener',
         icon: 'cart',
-        modal: `size-modal-${Math.floor(rand)}`,
+        modal: 'size-modal'
       })
 
       +main-btn({
@@ -31,6 +30,7 @@ mixin product-card(data)
         cls: 'btn-cart-wide',
         title: 'Добавить в корзину',
       })
+
       .product-cart__props-row
         +main-btn({
           tag: 'button', 
@@ -87,9 +87,11 @@ mixin product-card(data)
         ]
       })
 
-      +size-modal({
-        id: `size-modal-${Math.floor(rand)}`,
-        cls: `size-modal`
-      })
-
-    
+      <template class="size-modal-content">
+        <div class="size-chooser">
+          <button type="button">XS</button>
+          <button type="button">S</button>
+          <button type="button">M</button>
+          <button type="button">L</button>
+        </div>
+      </template>

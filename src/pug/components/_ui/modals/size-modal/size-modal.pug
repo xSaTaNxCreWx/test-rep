@@ -1,14 +1,13 @@
-mixin size-modal(data)
-  .modal(id= data.id class= data.cls)
-    .modal-wrapper
-      .modal-header
-        span.base-subtitle Выберите размер
-        button(aria-label="Закрыть").modal-closer.main-btn
-          svg(width='32' height='32' role='img' aria-hidden='true' focusable='false')
-            use(xlink:href='./assets/sprite.svg#icon-close')
-      .modal-content
-        .size-chooser
-          button(type="button") XS
-          button(type="button") S
-          button(type="button") M
-          button(type="button") L
+.modal.size-modal#size-modal
+  .modal-wrapper
+    .modal-header
+      span.base-subtitle Выберите размер
+      button(aria-label="Закрыть").modal-closer.main-btn
+        svg(width='32' height='32' role='img' aria-hidden='true' focusable='false')
+          use(xlink:href='./assets/sprite.svg#icon-close')
+    .modal-content
+      .size-chooser
+        button(type="button") XS
+        button(type="button") S
+        button(type="button") M
+        button(type="button") L

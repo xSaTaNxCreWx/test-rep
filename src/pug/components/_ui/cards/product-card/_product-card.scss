@@ -15,6 +15,7 @@
 	gap: 10px;
 	height: 100%;
 	container: product-card / inline-size;
+	will-change: auto;
 
 	&-inner-slider.swiper {
 		z-index: 10;

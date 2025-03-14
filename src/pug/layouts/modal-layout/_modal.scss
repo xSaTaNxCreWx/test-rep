@@ -1,8 +1,13 @@
 @forward "@styles/_extends/flexbox.scss";
 @forward "@styles/_extends/effects.scss";
 @forward "@styles/_extends/resets.scss";
+@use "@styles/_mixins/media-queries" as *;
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
+
+html:has(.modal.active) {
+	padding-right: var(--scrollbar-width);
+}
 
 .modal {
 	position: fixed;

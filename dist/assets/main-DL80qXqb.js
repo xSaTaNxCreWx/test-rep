@@ -5367,6 +5367,21 @@ if (btns$1.length) {
     btn.addEventListener("click", onClickShowSizeBlock);
   });
 }
+const cards = document.querySelectorAll(".product-card");
+const modal = document.querySelector(".size-modal .modal-content");
+if (cards.length) {
+  cards.forEach((card) => {
+    const opener2 = card.querySelector(".size-modal-opener");
+    if (opener2) {
+      opener2.addEventListener("click", () => {
+        const template = card.querySelector(".size-modal-content");
+        const copy = template.content.cloneNode(true);
+        modal.innerHTML = "";
+        modal.appendChild(copy);
+      });
+    }
+  });
+}
 const btns = document.querySelectorAll(".product-card .size-chooser-btn");
 if (btns.length) {
   const onClickSetActiveSize = (evt) => {
@@ -5457,10 +5472,6 @@ if (opener$1) {
     setActiveClass(filter);
   });
 }
-const burger = document.querySelector(".burger");
-burger.addEventListener("click", () => {
-  burger.classList.toggle("active");
-});
 const items = document.querySelectorAll(".cart-item");
 const selectAllBtn = document.querySelector(".cart-select-all-btn");
 const removedNode = document.querySelector(".cart-removed-items span");
@@ -5535,13 +5546,13 @@ if (counters) {
   });
 }
 class Modal {
-  constructor(modal, options = {}) {
+  constructor(modal2, options = {}) {
     __publicField(this, "bodyLocker", (bool) => {
-      const body = document.querySelector("body");
+      const body2 = document.querySelector("body");
       if (bool) {
-        body.style.overflow = "hidden";
+        body2.style.overflow = "hidden";
       } else {
-        body.style.overflow = "auto";
+        body2.style.overflow = "auto";
       }
     });
     __publicField(this, "focusTrap", () => {
@@ -5627,7 +5638,7 @@ class Modal {
       this.addListeners();
       this.focusTrap();
     });
-    this.preventBodyLock = options.preventBodyLock ? true : false, this.modal = modal;
+    this.preventBodyLock = options.preventBodyLock ? true : false, this.modal = modal2;
     this.overlay = this.modal;
     this.content = this.modal.querySelector(".modal-content");
     this.close = this.modal.querySelector(".modal-closer");
@@ -5663,7 +5674,18 @@ class Modal {
 }
 const modals = document.querySelectorAll(".modal");
 if (modals) {
-  modals.forEach((modal) => {
-    new Modal(modal);
+  modals.forEach((modal2) => {
+    new Modal(modal2);
   });
 }
+const body = document.querySelector("body");
+const setSiteOffset = () => {
+  document.documentElement.style.setProperty(
+    "--scrollbar-width",
+    window.innerWidth - body.offsetWidth + "px"
+  );
+};
+setSiteOffset();
+window.addEventListener("resize", () => {
+  setSiteOffset();
+});

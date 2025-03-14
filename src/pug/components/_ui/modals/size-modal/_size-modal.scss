@@ -4,9 +4,7 @@
 @use "@styles/_vars/scoped" as *;
 
 /* purgecss start ignore */
-// html:has(.size-modal.active) {
-// 	scrollbar-gutter: stable;
-// }
+
 .size-modal {
 	@include media-equal-up($tablet-lg-width) {
 		display: none;

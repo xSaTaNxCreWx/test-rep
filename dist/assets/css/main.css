@@ -24,7 +24,7 @@
   --site-base-text-color:var(--primary);
   --site-bg-color:var(--white);
   --scrollbar-color:var(--site-bg-color);
-  --scrollbar-width:12px;
+  --scrollbar-width:0;
   --scrollbar-border-radius:0;
   --scrollbar-thumb-color:var(--primary);
   --scrollbar-thumb-border-radius:0;
@@ -786,6 +786,7 @@ body:has(.top-menu:focus) main{
   aspect-ratio:1/1;
   height:60px;
   padding:12px;
+  background-color:transparent;
 }
 .btn-cart svg{
   width:24px;
@@ -1339,6 +1340,10 @@ body:has(.top-menu:focus) main{
 }
 .text-collapsed-block-content > *:last-child{
   margin-bottom:0;
+}
+
+html:has(.modal.active){
+  padding-right:var(--scrollbar-width);
 }
 
 .modal{
@@ -1982,6 +1987,7 @@ section:has(.top-banner){
   gap:10px;
   height:100%;
   container:product-card/inline-size;
+  will-change:auto;
 }
 .product-card-inner-slider.swiper{
   z-index:10;
