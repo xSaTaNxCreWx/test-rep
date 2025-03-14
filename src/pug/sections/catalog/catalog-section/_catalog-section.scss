@@ -28,42 +28,47 @@
 	}
 
 	.filter-opener-btn {
+		width: 100%;
+		max-width: 100%;
+		color: var(--light);
+		background-color: var(--primary);
+
 		svg {
 			width: 24px;
 			height: 24px;
-			fill: var(--primary);
+			fill: var(--light);
 		}
 
-		&:hover,
-		&:focus {
-			background-color: var(--hover-dop-color);
+		@include media-up($mobile-width) {
+			max-width: fit-content;
 			color: var(--primary);
+			background-color: var(--light);
 
 			svg {
+				width: 24px;
+				height: 24px;
 				fill: var(--primary);
 			}
-		}
 
-		&.active {
-			background-color: var(--primary);
-			color: var(--light);
+			&:hover,
+			&:focus {
+				background-color: var(--hover-dop-color);
+				color: var(--primary);
 
-			svg {
-				fill: var(--light);
+				svg {
+					fill: var(--primary);
+				}
+			}
+
+			&.active {
+				background-color: var(--primary);
+				color: var(--light);
+
+				svg {
+					fill: var(--light);
+				}
 			}
 		}
-
-		// @include container-down("main", $mobile-width) {
-		// 	width: 100%;
-		// 	max-width: 100%;
-		// 	background-color: var(--primary);
-		// 	color: var(--light);
-		// 	margin-bottom: 10px;
-
-		// 	svg {
-		// 		fill: var(--light);
-		// 	}
-		// }
 	}
 
 	&__grid {

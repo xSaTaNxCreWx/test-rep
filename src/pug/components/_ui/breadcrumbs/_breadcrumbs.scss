@@ -11,6 +11,9 @@
 	}
 
 	&__item {
+		font-size: 12px;
+		text-transform: uppercase;
+
 		a span {
 			color: var(--primary);
 		}

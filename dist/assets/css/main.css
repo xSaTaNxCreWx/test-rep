@@ -2589,6 +2589,10 @@ body:has(.burger.active){
   width:100%;
   margin:20px 0;
 }
+.breadcrumbs__item{
+  font-size:12px;
+  text-transform:uppercase;
+}
 .breadcrumbs__item a span{
   color:var(--primary);
 }
@@ -2601,8 +2605,7 @@ body:has(.burger.active){
 
 .pagination{
   gap:5px;
-  margin-top:40px;
-  margin-bottom:20px;
+  margin:40px 0;
 }
 .pagination__btn{
   width:40px;
@@ -2879,23 +2882,15 @@ body:has(.burger.active){
 .catalog-section__sort{
   margin-bottom:20px;
 }
+.catalog-section .filter-opener-btn{
+  width:100%;
+  max-width:100%;
+  color:var(--light);
+  background-color:var(--primary);
+}
 .catalog-section .filter-opener-btn svg{
   width:24px;
   height:24px;
-  fill:var(--primary);
-}
-.catalog-section .filter-opener-btn:hover, .catalog-section .filter-opener-btn:focus{
-  background-color:var(--hover-dop-color);
-  color:var(--primary);
-}
-.catalog-section .filter-opener-btn:hover svg, .catalog-section .filter-opener-btn:focus svg{
-  fill:var(--primary);
-}
-.catalog-section .filter-opener-btn.active{
-  background-color:var(--primary);
-  color:var(--light);
-}
-.catalog-section .filter-opener-btn.active svg{
   fill:var(--light);
 }
 .catalog-section__grid{
@@ -3365,6 +3360,34 @@ html:has(.size-table-modal.active){
       -ms-flex-direction:column;
           flex-direction:column;
   gap:10px;
+}
+@media (min-width: 481px){
+  .catalog-section .filter-opener-btn{
+    max-width:-webkit-fit-content;
+    max-width:-moz-fit-content;
+    max-width:fit-content;
+    color:var(--primary);
+    background-color:var(--light);
+  }
+  .catalog-section .filter-opener-btn svg{
+    width:24px;
+    height:24px;
+    fill:var(--primary);
+  }
+  .catalog-section .filter-opener-btn:hover, .catalog-section .filter-opener-btn:focus{
+    background-color:var(--hover-dop-color);
+    color:var(--primary);
+  }
+  .catalog-section .filter-opener-btn:hover svg, .catalog-section .filter-opener-btn:focus svg{
+    fill:var(--primary);
+  }
+  .catalog-section .filter-opener-btn.active{
+    background-color:var(--primary);
+    color:var(--light);
+  }
+  .catalog-section .filter-opener-btn.active svg{
+    fill:var(--light);
+  }
 }
 @media (min-width: 1000px){
   .size-modal{

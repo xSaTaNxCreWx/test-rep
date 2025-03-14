@@ -3,8 +3,7 @@
 .pagination {
 	@extend %flex-center;
 	gap: 5px;
-	margin-top: 40px;
-	margin-bottom: 20px;
+	margin: 40px 0;
 	&__btn {
 		@extend %flex-center;
 		width: 40px;
