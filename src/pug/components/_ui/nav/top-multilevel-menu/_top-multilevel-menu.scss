@@ -38,7 +38,7 @@ body:has(.burger.active) {
 		grid-template-columns: 1fr;
 		height: fit-content;
 		padding: 40px 0 60px;
-		gap: 20px 0;
+		gap: 40px 0;
 
 		@include media-up($tablet-lg-width) {
 			grid-template-columns: 1fr 600px;
@@ -65,8 +65,9 @@ body:has(.burger.active) {
 					grid-column: -1/1;
 				}
 
-				@include media-equal-down($tablet-width) {
-					padding: 20px;
+				@include media-equal-down($tablet-lg-width) {
+					padding: 0;
+					gap: 0;
 				}
 			}
 
@@ -144,6 +145,10 @@ body:has(.burger.active) {
 		gap: 20px;
 		width: 100%;
 
+		@include media-equal-down($tablet-lg-width) {
+			padding: 20px;
+		}
+
 		&-field {
 			@extend %flex-column;
 			gap: 10px;
@@ -160,6 +165,12 @@ body:has(.burger.active) {
 				svg {
 					width: 16px;
 					height: 16px;
+				}
+			}
+
+			&--contacts {
+				@include media-up($tablet-lg-width) {
+					display: none;
 				}
 			}
 		}
@@ -225,6 +236,96 @@ body:has(.burger.active) {
 			&.active {
 				border-color: #69757c;
 			}
+		}
+	}
+}
+
+.top-multilevel-menu__main-list {
+	@extend %list-reset;
+	width: 100%;
+	display: none;
+
+	&.active {
+		@extend %flex-column;
+
+		@include media-up($tablet-lg-width) {
+			display: none;
+		}
+	}
+
+	@include media-up($tablet-lg-width) {
+		display: none;
+	}
+
+	ul {
+		@extend %list-reset;
+		@extend %flex-column;
+
+		li {
+			&:has(ul.expanded) {
+				svg {
+					transform: rotate(0);
+				}
+			}
+
+			ul.expanded {
+				display: flex;
+			}
+		}
+	}
+
+	& a {
+		@extend %flex-align;
+		align-items: baseline;
+		gap: 5px;
+		padding: 20px 40px;
+		font-size: 14px;
+		text-transform: uppercase;
+
+		svg {
+			width: 14px;
+			height: 14px;
+			transform: rotate(45deg);
+			transition: transform var(--main-transition);
+		}
+	}
+
+	.base-subtitle {
+		font-size: 14px;
+		text-transform: uppercase;
+	}
+
+	& > li {
+		& > a {
+			justify-content: space-between;
+		}
+
+		& > .base-subtitle {
+			font-size: 16px;
+		}
+	}
+
+	.level-2,
+	.level-3 {
+		a {
+			border-bottom: 1px solid #f2efef;
+			svg {
+				width: 10px;
+				height: 10px;
+			}
+		}
+	}
+
+	.level-2 {
+		a {
+			padding: 20px 60px;
+		}
+	}
+
+	.level-3 {
+		display: none;
+		a {
+			padding: 20px 100px;
 		}
 	}
 }

@@ -15,6 +15,7 @@ import "@pug/components/_ui/form-controls/main-input/main-input";
 import "@pug/components/_ui/sort/sort";
 import "@pug/components/blocks/filter/filter";
 import "@pug/components/_ui/nav/top-multilevel-menu/burger";
+import "@pug/components/_ui/nav/top-multilevel-menu/top-multilevel-menu-expand";
 // import "@pug/sections/cart/cart";
 import "@pug/sections/cart/item-remove";
 import "@pug/sections/cart/promo-field";
