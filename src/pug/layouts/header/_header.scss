@@ -28,13 +28,12 @@ body:has(.top-menu:focus) {
 	background-color: transparent;
 	backdrop-filter: blur(10px);
 	will-change: auto;
-	// transition: backdrop-filter var(--main-transition),
-	// 	background-color var(--main-transition);
 
+	&:has(.burger.active),
 	&:has(.top-menu:hover),
 	&:has(.top-menu:focus) {
 		background-color: var(--white);
-		backdrop-filter: none;
+		// backdrop-filter: none;
 	}
 
 	z-index: 99;
@@ -56,7 +55,7 @@ body:has(.top-menu:focus) {
 			&--left {
 				justify-content: flex-start;
 
-				@include container-down("header", $laptop-width) {
+				@include container-down("header", $tablet-lg-width) {
 					.top-menu {
 						display: none;
 					}

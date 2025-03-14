@@ -5472,6 +5472,10 @@ if (opener$1) {
     setActiveClass(filter);
   });
 }
+const burger = document.querySelector(".burger");
+burger.addEventListener("click", () => {
+  burger.classList.toggle("active");
+});
 const items = document.querySelectorAll(".cart-item");
 const selectAllBtn = document.querySelector(".cart-select-all-btn");
 const removedNode = document.querySelector(".cart-removed-items span");

@@ -35,10 +35,15 @@ body:has(.burger.active) {
 
 	&__grid {
 		display: grid;
-		grid-template-columns: 1fr 600px;
+		grid-template-columns: 1fr;
 		height: fit-content;
 		padding: 40px 0 60px;
-		gap: 60px 0;
+		gap: 20px 0;
+
+		@include media-up($tablet-lg-width) {
+			grid-template-columns: 1fr 600px;
+			gap: 60px 0;
+		}
 
 		@include media-up(1140px) {
 			grid-template-columns: 1fr 720px;
@@ -59,12 +64,20 @@ body:has(.burger.active) {
 				@include media-equal-down(1640px) {
 					grid-column: -1/1;
 				}
+
+				@include media-equal-down($tablet-width) {
+					padding: 20px;
+				}
 			}
 
 			&--bottom {
 				margin-top: auto;
-				grid-column: 1/2;
-				grid-row: 2/3;
+				grid-column: -1 / 1;
+
+				@include media-up($tablet-lg-width) {
+					grid-column: 1/2;
+					grid-row: 2/3;
+				}
 
 				@include media-equal-down(1640px) {
 					height: 100%;
@@ -82,17 +95,35 @@ body:has(.burger.active) {
 						&__content {
 							max-width: 640px;
 						}
+
 						&__grid {
 							display: flex;
 							flex-direction: column-reverse;
 							margin-top: auto;
+
+							@include media-equal-down($tablet-lg-width) {
+								display: grid;
+							}
+
+							@include media-equal-down($tablet-width) {
+								display: flex;
+								flex-direction: column;
+							}
 						}
+					}
+
+					@include media-equal-down($tablet-width) {
+						padding: 20px;
 					}
 				}
 			}
 
 			&--side {
-				display: grid;
+				display: none;
+				@include media-up($tablet-lg-width) {
+					display: grid;
+				}
+
 				grid-template-columns: repeat(2, 1fr);
 				grid-column: 2/3;
 				grid-row: 2/3;
@@ -110,15 +141,26 @@ body:has(.burger.active) {
 
 	&__info {
 		@extend %flex-column;
-		gap: 10px;
+		gap: 20px;
 		width: 100%;
 
-		.btn {
-			font-size: 12px;
-			line-height: 1;
-			svg {
-				width: 16px;
-				height: 16px;
+		&-field {
+			@extend %flex-column;
+			gap: 10px;
+			width: 100%;
+
+			.btn {
+				font-size: 12px;
+				min-height: 28px;
+
+				span {
+					line-height: 1;
+				}
+
+				svg {
+					width: 16px;
+					height: 16px;
+				}
 			}
 		}
 	}
@@ -129,6 +171,20 @@ body:has(.burger.active) {
 		width: fit-content;
 		max-width: calc(100% / 3 - 30px);
 
+		&.desktop-only {
+			display: none;
+			@include media-up($tablet-lg-width) {
+				display: flex;
+			}
+		}
+
+		&.mobile-only {
+			display: flex;
+			@include media-up($tablet-lg-width) {
+				display: none;
+			}
+		}
+
 		ul {
 			@extend %list-reset;
 			@extend %flex-column;
@@ -138,6 +194,12 @@ body:has(.burger.active) {
 				a {
 					font-size: 14px;
 					text-transform: uppercase;
+					transition: color var(--main-transition);
+
+					&:hover,
+					&:focus {
+						color: var(--hover-color);
+					}
 				}
 			}
 		}

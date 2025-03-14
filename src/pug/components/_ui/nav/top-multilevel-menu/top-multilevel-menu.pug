@@ -26,7 +26,7 @@ include ../../buttons/main-btn/btn
 
     .top-multilevel-menu__grid.container
       .top-multilevel-menu__grid-item.top-multilevel-menu__grid-item--main
-        .top-multilevel-menu__list-wrapper
+        .top-multilevel-menu__list-wrapper.desktop-only
           span.base-subtitle Каталог
           <ul> 
             <li><a href="#">женщинам</a></li>
@@ -36,7 +36,7 @@ include ../../buttons/main-btn/btn
             <li><a href="#">базовый гардероб</a></li>
             <li><a href="#">зимняя подборка</a></li>
           </ul>
-        .top-multilevel-menu__list-wrapper
+        .top-multilevel-menu__list-wrapper.desktop-only
           span.base-subtitle Покупателям
           <ul> 
             <li><a href="#">доставка и оплата</a></li>
@@ -46,7 +46,7 @@ include ../../buttons/main-btn/btn
             <li><a href="#">программа лояльности</a></li>
             <li><a href="#">подарочный сертификат</a></li>
           </ul>
-        .top-multilevel-menu__list-wrapper
+        .top-multilevel-menu__list-wrapper.desktop-only
           span.base-subtitle О нас
           <ul> 
             <li><a href="#">о бренде</a></li>
@@ -54,16 +54,40 @@ include ../../buttons/main-btn/btn
             <li><a href="#">вакансии</a></li>
             <li><a href="#">оффлайн магазины</a></li>
           </ul>
+        
         .top-multilevel-menu__info
-          span.base-subtitle Ваш город 
-
-          +main-btn({
-            tag: 'a',
-            href: "#",
-            title: 'Санкт-Петербург',
-            cls: 'btn btn-thin underlined reversed',
-            icon: 'pin'
-          })
+          .top-multilevel-menu__info-field.top-multilevel-menu__info-field--city
+            span.base-subtitle Ваш город 
+            +main-btn({
+              tag: 'a',
+              href: "#",
+              title: 'Санкт-Петербург',
+              cls: 'btn btn-thin underlined reversed',
+              icon: 'pin'
+            })
+          .top-multilevel-menu__info-field.top-multilevel-menu__info-field--contacts.mobile-only
+            span.base-subtitle контакты для связи
+            +main-btn({
+              tag: 'a',
+              href: "#",
+              title: '8 (804) 700 74 74',
+              cls: 'btn btn-thin underlined reversed',
+              icon: 'phone'
+            })
+            +main-btn({
+              tag: 'a',
+              href: "#",
+              title: 'чат в телеграм',
+              cls: 'btn btn-thin underlined reversed',
+              icon: 'tg'
+            })
+            +main-btn({
+              tag: 'a',
+              href: "#",
+              title: 'чат в whatsapp',
+              cls: 'btn btn-thin underlined reversed',
+              icon: 'whatsapp'
+            })
 
       .top-multilevel-menu__grid-item.top-multilevel-menu__grid-item--bottom
         include ../../../blocks/certificate-block/certificate-block
@@ -71,23 +95,23 @@ include ../../buttons/main-btn/btn
       .top-multilevel-menu__grid-item.top-multilevel-menu__grid-item--side
         +base-card({
           img: {
-            name: 'mock-img-1',
-            width: 920,
-            height: 920
+            name: 'menu-mock-img-1',
+            width: 480,
+            height: 705
           },
           title: {
-            text: 'Весенняя подборка',
+            text: 'магазины',
             icon: true
           }
         })
         +base-card({
           img: {
-            name: 'mock-img-1',
-            width: 920,
-            height: 920
+            name: 'menu-mock-img-2',
+            width: 480,
+            height: 705
           },
           title: {
-            text: 'Весенняя подборка',
+            text: 'О бренде',
             icon: true
           }
         })

@@ -18,14 +18,11 @@
 	&__grid {
 		@extend %flex-column;
 		flex-direction: column-reverse;
-		// margin: 0 auto;
 		gap: 20px;
 		max-width: 960px;
 
 		@include container-up("certificate-block", $mobile-width) {
 			display: grid;
-
-			// grid-template-columns: 1fr;
 			grid-template-columns: repeat(auto-fit, minmax(320px, auto));
 			grid-template-columns: repeat(2, 1fr);
 		}
@@ -44,9 +41,5 @@
 	&__content {
 		@extend %flex-column;
 		gap: 20px;
-
-		.btn {
-			margin-top: auto;
-		}
 	}
 }
