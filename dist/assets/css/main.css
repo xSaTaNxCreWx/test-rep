@@ -2827,6 +2827,8 @@ body:has(.burger.active){
   color:var(--light);
 }
 .filter__footer{
+  position:sticky;
+  bottom:0;
   -webkit-box-pack:justify;
       -ms-flex-pack:justify;
           justify-content:space-between;

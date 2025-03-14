@@ -105,6 +105,8 @@
 	}
 
 	&__footer {
+		position: sticky;
+		bottom: 0;
 		@extend %flex-align;
 		justify-content: space-between;
 		gap: 5px;
