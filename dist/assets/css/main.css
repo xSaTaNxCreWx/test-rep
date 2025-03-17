@@ -1971,6 +1971,9 @@ section:has(.top-banner){
   top:-60px;
   right:0;
 }
+.size-modal .modal-closer svg{
+  fill:var(--white);
+}
 .size-modal .modal-content button{
   display:-webkit-box;
   display:-ms-flexbox;
