@@ -5216,13 +5216,13 @@ function EffectFade(_ref) {
     })
   });
 }
-const slider$2 = document.querySelector(".top-banner-slider");
-if (slider$2) {
-  const pagination = slider$2.querySelector(".swiper-pagination");
-  const btnNext = slider$2.querySelector(".swiper-button-next");
-  const btnPrev = slider$2.querySelector(".swiper-button-prev");
+const slider$3 = document.querySelector(".top-banner-slider");
+if (slider$3) {
+  const pagination = slider$3.querySelector(".swiper-pagination");
+  const btnNext = slider$3.querySelector(".swiper-button-next");
+  const btnPrev = slider$3.querySelector(".swiper-button-prev");
   console.log(btnNext);
-  new Swiper(slider$2, {
+  new Swiper(slider$3, {
     modules: [Navigation, Pagination],
     slidesPerView: "auto",
     // spaceBetween: 20,
@@ -5238,8 +5238,8 @@ if (slider$2) {
     }
   });
 }
-const slider$1 = document.querySelector(".catalog-detail-slider");
-if (slider$1) {
+const slider$2 = document.querySelector(".catalog-detail-slider");
+if (slider$2) {
   let mediaQuery = window.matchMedia("(max-width: 479px)");
   let isInited = false;
   let swiper = null;
@@ -5447,9 +5447,9 @@ if (inputs.length) {
     });
   });
 }
-const slider = document.querySelector(".sort");
-if (slider) {
-  new Swiper(slider, {
+const slider$1 = document.querySelector(".sort");
+if (slider$1) {
+  new Swiper(slider$1, {
     modules: [freeMode],
     spaceBetween: 10,
     slidesPerView: "auto",
@@ -5470,6 +5470,15 @@ if (opener$1) {
   closer.addEventListener("click", () => {
     setActiveClass(opener$1);
     setActiveClass(filter);
+  });
+}
+const slider = document.querySelector(".filter-row");
+if (slider) {
+  new Swiper(slider, {
+    modules: [freeMode],
+    spaceBetween: 5,
+    slidesPerView: "auto",
+    freeMode: true
   });
 }
 const burger = document.querySelector(".burger");

@@ -1,0 +1,18 @@
+.swiper.filter-row
+  .swiper-wrapper
+    each title in ['черный','6000-20 000','SALE']
+      .swiper-slide
+        +main-btn({
+          tag: 'a',
+          href: "#",
+          cls: 'btn-light filter-row-btn',
+          icon: 'close',
+          title
+        })
+    .swiper-slide
+      +main-btn({
+        tag: 'a',
+        href: "#",
+        cls: 'btn-thin underlined',
+        title: 'очистить фильтр'
+      })
