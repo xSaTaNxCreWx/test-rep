@@ -12,13 +12,13 @@ include ../../buttons/main-btn/btn
           {
             tag: 'button',
             dataID: 'women',
-            cls: 'btn-secondary wide active',
+            cls: 'btn-secondary wide top-multilevel-menu-toggler active',
             title: 'Женщинам'
           },
           {
             tag: 'button',
-            dataID: 'mens',
-            cls: 'btn-secondary wide',
+            dataID: 'men',
+            cls: 'btn-secondary wide top-multilevel-menu-toggler',
             title: 'Мужчинам'
           },
         ]
@@ -26,7 +26,6 @@ include ../../buttons/main-btn/btn
 
     .top-multilevel-menu__grid.container
       .top-multilevel-menu__grid-item.top-multilevel-menu__grid-item--main
-
         ul.top-multilevel-menu__main-list(data-toggler="women").active
           li
             a(href="#").base-subtitle
@@ -66,6 +65,35 @@ include ../../buttons/main-btn/btn
                   li
                     a(href="#")
                       span пуховики
+              
+              li
+                a(href="#")
+                  span толстовки
+              li
+                a(href="#")
+                  span платья
+              li
+                a(href="#")
+                  span футболки
+              li
+                a(href="#")
+                  span костюмы
+              li
+                a(href="#")
+                  span брюки
+              li
+                a(href="#")
+                  span аксессуары
+                  svg(width='16' height='16' role='img' aria-hidden='true' focusable='false')
+                    use(xlink:href='./assets/sprite.svg#icon-arrow-up')
+                  
+                ul.level-3
+                  li
+                    a(href="#")
+                      span все товары
+              li
+                a(href="#")
+                  span все товары
           
           li
             a(href="#").base-subtitle
@@ -80,7 +108,7 @@ include ../../buttons/main-btn/btn
         ul.top-multilevel-menu__main-list(data-toggler="men")
           li
             a(href="#").base-subtitle
-              span Каталог
+              span Каталог М
               svg(width='16' height='16' role='img' aria-hidden='true' focusable='false')
                 use(xlink:href='./assets/sprite.svg#icon-arrow-up')
             ul.level-2
@@ -101,6 +129,60 @@ include ../../buttons/main-btn/btn
               li
                 a(href="#")
                   span боди
+              li
+                a(href="#")
+                  span верхняя одежда
+                  svg(width='16' height='16' role='img' aria-hidden='true' focusable='false')
+                    use(xlink:href='./assets/sprite.svg#icon-arrow-up')
+                ul.level-3
+                  li
+                    a(href="#")
+                      span куртки
+                  li
+                    a(href="#")
+                      span бомберы
+                  li
+                    a(href="#")
+                      span пуховики
+              
+              li
+                a(href="#")
+                  span толстовки
+              li
+                a(href="#")
+                  span платья
+              li
+                a(href="#")
+                  span футболки
+              li
+                a(href="#")
+                  span костюмы
+              li
+                a(href="#")
+                  span брюки
+              li
+                a(href="#")
+                  span аксессуары
+                  svg(width='16' height='16' role='img' aria-hidden='true' focusable='false')
+                    use(xlink:href='./assets/sprite.svg#icon-arrow-up')
+                ul.level-3
+                  li
+                    a(href="#")
+                      span все товары
+              li
+                a(href="#")
+                  span все товары
+          
+          li
+            a(href="#").base-subtitle
+              span покупателям
+              svg(width='16' height='16' role='img' aria-hidden='true' focusable='false')
+                use(xlink:href='./assets/sprite.svg#icon-arrow-up')
+          li
+            a(href="#").base-subtitle
+              span о нас
+              svg(width='16' height='16' role='img' aria-hidden='true' focusable='false')
+                use(xlink:href='./assets/sprite.svg#icon-arrow-up')
 
         .top-multilevel-menu__list-wrapper.desktop-only
           span.base-subtitle Каталог

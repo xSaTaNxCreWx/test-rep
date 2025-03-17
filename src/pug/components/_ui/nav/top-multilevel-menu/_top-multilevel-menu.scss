@@ -37,12 +37,17 @@ body:has(.burger.active) {
 		display: grid;
 		grid-template-columns: 1fr;
 		height: fit-content;
-		padding: 40px 0 60px;
+		padding: 0;
 		gap: 40px 0;
+
+		// @include media-up($tablet-lg-width) {
+		// 	display: none;
+		// }
 
 		@include media-up($tablet-lg-width) {
 			grid-template-columns: 1fr 600px;
 			gap: 60px 0;
+			padding: 40px 0 60px;
 		}
 
 		@include media-up(1140px) {
@@ -152,7 +157,7 @@ body:has(.burger.active) {
 
 		&-field {
 			@extend %flex-column;
-			gap: 10px;
+			gap: 12px;
 			width: 100%;
 
 			.btn {
@@ -279,9 +284,13 @@ body:has(.burger.active) {
 		@extend %flex-align;
 		align-items: baseline;
 		gap: 5px;
-		padding: 20px 40px;
+		padding: 20px 20px;
 		font-size: 14px;
 		text-transform: uppercase;
+
+		@include media-up($tablet-width) {
+			padding: 20px 40px;
+		}
 
 		svg {
 			width: 14px;
@@ -319,14 +328,22 @@ body:has(.burger.active) {
 
 	.level-2 {
 		a {
-			padding: 20px 60px;
+			padding: 20px 40px;
+
+			@include media-up($tablet-width) {
+				padding: 20px 60px;
+			}
 		}
 	}
 
 	.level-3 {
 		display: none;
 		a {
-			padding: 20px 100px;
+			padding: 20px 80px;
+
+			@include media-up($tablet-width) {
+				padding: 20px 100px;
+			}
 		}
 	}
 }
