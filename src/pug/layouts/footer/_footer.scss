@@ -17,11 +17,12 @@
 		@include container-up("footer", $mobile-width) {
 			grid-template-columns: repeat(2, 1fr);
 			gap: 20px;
+			padding: 20px 20px 0;
 		}
 
 		@include container-up("footer", 820px) {
 			gap: 40px;
-			padding: 0 40px;
+			padding: 40px 40px 0;
 			grid-template-columns: max-content 1fr minmax(300px, 1fr);
 		}
 
@@ -122,7 +123,7 @@
 	& .accordeon {
 		&-item {
 			@include container-up("footer", $mobile-width) {
-				gap: 14px;
+				gap: 10px;
 				&-header {
 					pointer-events: none;
 				}
@@ -133,7 +134,7 @@
 
 				@include container-up("footer", $mobile-width) {
 					padding: 0;
-					gap: 14px;
+					gap: 10px;
 				}
 			}
 		}
@@ -165,7 +166,7 @@
 
 			.content-block {
 				@extend %flex-column;
-				gap: 14px;
+				gap: 10px;
 				font-size: 14px;
 
 				@include container-down("footer", $mobile-width) {

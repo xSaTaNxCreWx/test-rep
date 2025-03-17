@@ -1472,12 +1472,13 @@ html:has(.modal.active){
   .footer__grid{
     grid-template-columns:repeat(2, 1fr);
     gap:20px;
+    padding:20px 20px 0;
   }
 }
 @container footer (min-width: 820px ){
   .footer__grid{
     gap:40px;
-    padding:0 40px;
+    padding:40px 40px 0;
     grid-template-columns:-webkit-max-content 1fr minmax(300px, 1fr);
     grid-template-columns:max-content 1fr minmax(300px, 1fr);
   }
@@ -1580,7 +1581,7 @@ html:has(.modal.active){
 }
 @container footer (min-width: 480px ){
   .footer .accordeon-item{
-    gap:14px;
+    gap:10px;
   }
 }
 .footer .accordeon-item.expanded .accordeon-body .content-block{
@@ -1589,7 +1590,7 @@ html:has(.modal.active){
 @container footer (min-width: 480px ){
   .footer .accordeon-item.expanded .accordeon-body .content-block{
     padding:0;
-    gap:14px;
+    gap:10px;
   }
 }
 .footer .accordeon-header{
@@ -1618,7 +1619,7 @@ html:has(.modal.active){
   }
 }
 .footer .accordeon-body .content-block{
-  gap:14px;
+  gap:10px;
   font-size:14px;
 }
 @container footer (max-width: 479px){
@@ -2198,7 +2199,7 @@ section:has(.top-banner){
 
 .subscribe{
   gap:clamp(10px, 3vw, 20px);
-  padding:clamp(20px, 2.4vw, 40px);
+  padding:20px;
   background-color:var(--primary);
   container:subscribe/inline-size;
 }
@@ -3469,6 +3470,11 @@ html:has(.size-table-modal.active){
   }
   .catalog-section .filter-opener-btn.active svg{
     fill:var(--light);
+  }
+}
+@media (min-width: 820px){
+  .subscribe{
+    padding:40px;
   }
 }
 @media (min-width: 1000px){

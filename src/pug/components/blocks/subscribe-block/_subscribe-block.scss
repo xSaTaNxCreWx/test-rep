@@ -1,15 +1,20 @@
 @forward "@styles/_extends/flexbox.scss";
 @forward "@styles/_extends/effects.scss";
 @forward "@styles/_extends/resets.scss";
+@use "@styles/_mixins/media-queries" as *;
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
 .subscribe {
 	@extend %flex-column;
 	gap: clamp(10px, 3vw, 20px);
-	padding: clamp(20px, 2.4vw, 40px);
+	padding: 20px;
 	background-color: var(--primary);
 	container: subscribe / inline-size;
+
+	@include media-equal-up(820px) {
+		padding: 40px;
+	}
 
 	.base-subtitle {
 		max-width: 760px;
