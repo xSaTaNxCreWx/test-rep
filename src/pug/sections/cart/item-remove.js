@@ -15,7 +15,6 @@ if (items.length) {
 				? selectAllBtn.classList.remove("hidden")
 				: null;
 		}
-
 		removedNode.innerHTML = checked;
 	};
 
@@ -49,6 +48,7 @@ if (items.length) {
 		items.forEach((item) => {
 			item.querySelector('input[type="checkbox"]').checked = true;
 		});
+		checked = items.length;
 		fillSelectBtn(true);
 	});
 

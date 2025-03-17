@@ -5524,6 +5524,7 @@ if (items.length) {
     items.forEach((item) => {
       item.querySelector('input[type="checkbox"]').checked = true;
     });
+    checked = items.length;
     fillSelectBtn(true);
   });
   console.log(checked, items.length);
