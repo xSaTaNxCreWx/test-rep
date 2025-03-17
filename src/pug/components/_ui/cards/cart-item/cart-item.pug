@@ -27,18 +27,18 @@ mixin cart-item(data)
       include ../../form-controls/counter/counter
 
       .cart-item__footer
-        +main-btn({
-          tag: 'button',
-          type: 'button',
-          title: 'в избранное',
-          cls: 'underlined btn-thin reversed active cart-item-fav-btn',
-          icon: 'fav'
-        })
+        //- +main-btn({
+        //-   tag: 'button',
+        //-   type: 'button',
+        //-   title: 'в избранное',
+        //-   cls: 'underlined btn-thin reversed active cart-item-fav-btn',
+        //-   icon: 'fav'
+        //- })
 
         label(for= data.title).btn.btn-thin.cart-item-remove-btn удалить
-          //- +main-btn({
-          //-   tag: 'button',
-          //-   type: 'button',
-          //-   title: 'удалить',
-          //-   cls: 'btn-thin cart-item-remove-btn',
-          //- })
+        //- +main-btn({
+        //-   tag: 'button',
+        //-   type: 'button',
+        //-   title: 'удалить',
+        //-   cls: 'btn-thin cart-item-remove-btn',
+        //- })

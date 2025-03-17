@@ -1,8 +1,18 @@
 @forward "@styles/_extends/flexbox.scss";
+@use "@styles/_mixins/media-queries" as *;
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 .base-section {
-	padding: var(--section-offset);
+	// padding: var(--section-offset);
+	padding: 20px 0;
+
+	@include media-equal-up($mobile-width) {
+		padding: 30px 0;
+	}
+
+	@include media-equal-up($tablet-width) {
+		padding: 40px 0;
+	}
 
 	&__header {
 		@extend %flex-align;
@@ -12,7 +22,7 @@
 		margin-bottom: 10px;
 		container: base-section-header / inline-size;
 
-		@include container-up("main", $mobile-width) {
+		@include media-equal-up($mobile-width) {
 			margin-bottom: 20px;
 		}
 
