@@ -710,19 +710,26 @@ body:has(.top-menu:focus) main{
           flex-direction:row-reverse;
 }
 .btn-light{
-  border-color:var(--light);
+  border-color:transparent;
   background-color:var(--light);
   color:var(--primary);
 }
 .btn-light svg{
   fill:var(--primary);
+  -webkit-transition:fill var(--main-transition), -webkit-transform var(--main-transition);
+  transition:fill var(--main-transition), -webkit-transform var(--main-transition);
+  transition:transform var(--main-transition), fill var(--main-transition);
+  transition:transform var(--main-transition), fill var(--main-transition), -webkit-transform var(--main-transition);
 }
 .btn-light:not(.disabled):focus{
-  background-color:#454c51;
-  color:var(--light);
+  background-color:var(--hover-dop-color);
+  color:var(--hover-color);
 }
 .btn-light:not(.disabled):focus svg{
-  fill:var(--light);
+  fill:var(--hover-color);
+  -webkit-transform:rotate(45deg);
+      -ms-transform:rotate(45deg);
+          transform:rotate(45deg);
 }
 .btn-light.wide{
   max-width:100%;
@@ -1665,11 +1672,14 @@ html:has(.modal.active){
     fill:#606b80;
   }
   .btn-light:not(.disabled):hover{
-    background-color:#454c51;
-    color:var(--light);
+    background-color:var(--hover-dop-color);
+    color:var(--hover-color);
   }
   .btn-light:not(.disabled):hover svg{
-    fill:var(--light);
+    fill:var(--hover-color);
+    -webkit-transform:rotate(45deg);
+        -ms-transform:rotate(45deg);
+            transform:rotate(45deg);
   }
   .btn-transparent:not(.disabled):hover{
     background-color:#454c51;
@@ -2001,10 +2011,11 @@ section:has(.top-banner){
   -o-object-fit:cover;
      object-fit:cover;
 }
-@container main (max-width: 479px){
-  .product-card-inner-slider.swiper .swiper-pagination{
-    display:none;
-  }
+.product-card-inner-slider.swiper .swiper-pagination{
+  visibility:hidden;
+  opacity:0;
+  -webkit-transition:opacity var(--main-transition), visibility var(--main-transition);
+  transition:opacity var(--main-transition), visibility var(--main-transition);
 }
 .product-card__header{
   position:relative;
@@ -3426,6 +3437,12 @@ html:has(.size-table-modal.active){
           flex-direction:column;
   gap:10px;
 }
+@media (min-width: 480px){
+  .product-card:hover .swiper-pagination{
+    visibility:visible;
+    opacity:1;
+  }
+}
 @media (min-width: 481px){
   .catalog-section .filter-opener-btn{
     max-width:-webkit-fit-content;
@@ -3591,6 +3608,12 @@ html:has(.size-table-modal.active){
         -ms-flex-align:start;
             align-items:flex-start;
     gap:10px;
+  }
+}
+@media (max-width: 479px){
+  .product-card-inner-slider.swiper .swiper-pagination{
+    display:none;
+    visibility:hidden;
   }
 }@font-face{
   font-family:'swiper-icons';

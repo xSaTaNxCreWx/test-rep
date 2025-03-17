@@ -121,9 +121,6 @@ body:has(.burger.active) {
 
 			&--side {
 				display: none;
-				@include media-up($tablet-lg-width) {
-					display: grid;
-				}
 
 				grid-template-columns: repeat(2, 1fr);
 				grid-column: 2/3;
@@ -131,6 +128,10 @@ body:has(.burger.active) {
 
 				img {
 					height: 100%;
+				}
+
+				@include media-up($tablet-lg-width) {
+					display: grid;
 				}
 
 				@include media-up(1640px) {

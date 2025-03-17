@@ -31,13 +31,29 @@
 			}
 		}
 
-		@include container-down("main", $mobile-width) {
+		@include media-down($mobile-width) {
 			.swiper-pagination {
 				display: none;
+				visibility: hidden;
 			}
+		}
+
+		.swiper-pagination {
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity var(--main-transition),
+				visibility var(--main-transition);
 		}
 	}
 
+	@include media-equal-up($mobile-width) {
+		&:hover {
+			.swiper-pagination {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
 	&__header {
 		position: relative;
 		margin-bottom: 10px;
