@@ -16,4 +16,14 @@
 		height: 2px;
 		background-color: var(--primary);
 	}
+
+	&.active {
+		& .burger__line--top {
+			transform: translate(0px, 6px) rotate(-45deg);
+		}
+
+		& .burger__line--bottom {
+			transform: translate(0px, -4px) rotate(45deg);
+		}
+	}
 }

@@ -5498,20 +5498,29 @@ if (items$1.length) {
 }
 const togglers = document.querySelectorAll(".top-multilevel-menu-toggler");
 if (togglers.length) {
-  const menus = document.querySelectorAll(".top-multilevel-menu__main-list");
+  const menus2 = document.querySelectorAll(".top-multilevel-menu__main-list");
   togglers.forEach((toggler) => {
     toggler.addEventListener("click", (evt) => {
       if (evt.currentTarget.classList.contains("active")) return;
       document.querySelector(".top-multilevel-menu-toggler.active").classList.remove("active");
       evt.currentTarget.classList.add("active");
       const id = evt.currentTarget.dataset.id;
-      menus.forEach((menu) => {
+      menus2.forEach((menu) => {
         if (menu.dataset.toggler !== id) {
           menu.classList.remove("active");
         } else {
           menu.classList.add("active");
         }
       });
+    });
+  });
+}
+const menus = document.querySelectorAll(".top-menu");
+if (menus.length) {
+  const burger2 = document.querySelector(".burger");
+  menus.forEach((menu) => {
+    menu.addEventListener("mouseover", () => {
+      burger2.classList.contains("active") ? burger2.classList.remove("active") : null;
     });
   });
 }

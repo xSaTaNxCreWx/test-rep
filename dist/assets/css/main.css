@@ -511,6 +511,16 @@ body:has(.top-menu:focus) main{
   height:2px;
   background-color:var(--primary);
 }
+.burger.active .burger__line--top{
+  -webkit-transform:translate(0px, 6px) rotate(-45deg);
+      -ms-transform:translate(0px, 6px) rotate(-45deg);
+          transform:translate(0px, 6px) rotate(-45deg);
+}
+.burger.active .burger__line--bottom{
+  -webkit-transform:translate(0px, -4px) rotate(45deg);
+      -ms-transform:translate(0px, -4px) rotate(45deg);
+          transform:translate(0px, -4px) rotate(45deg);
+}
 
 .main-logo img{
   width:60px;
@@ -2598,6 +2608,17 @@ body:has(.burger.active){
   .top-menu__grid-item--side > *:last-child{
     display:none;
   }
+}
+.top-menu__grid-item--side > *{
+  height:-webkit-fit-content;
+  height:-moz-fit-content;
+  height:fit-content;
+}
+.top-menu__grid-item--side .product-card .product-card__header .btn-cart{
+  display:none;
+}
+.top-menu__grid-item--side .product-card .product-card__header .btn-cart-wide{
+  display:none;
 }
 .top-menu__list-wrapper{
   position:relative;
