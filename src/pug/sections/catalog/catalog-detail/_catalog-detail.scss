@@ -19,30 +19,47 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 0 clamp(20px, 3vw, 40px);
-		margin-bottom: 60px;
+		margin-bottom: 20px;
 
 		@include container-up("catalog-detail", 640px) {
 			grid-template-columns: repeat(2, 1fr);
-			margin-bottom: 80px;
+			margin-bottom: 30px;
+		}
+
+		@include container-up("catalog-detail", $tablet-lg-width) {
+			margin-bottom: 40px;
 		}
 
 		&-item {
 			// элемент грид сетки
 			height: fit-content;
+			// outline: 1px solid red;
 
 			&-wrapper form,
 			&-wrapper {
 				@extend %flex-column;
 			}
 
+			&-wrapper:first-child {
+				margin-bottom: clamp(40px, 4vw, 80px);
+			}
+
 			&--main {
-				position: relative;
+				// position: relative;
 				@extend %flex-column;
-				gap: clamp(40px, 4vw, 80px);
+				// gap: clamp(40px, 4vw, 80px);
 				padding: 0 var(--container-offset);
 
+				// position: sticky;
+				// top: 60px;
+
+				// position: fixed;
+				// top: 114px;
+				// right: 0;
+				// width: 50%;
+
 				position: sticky;
-				top: 60px;
+				bottom: 60px;
 
 				@include container-down("catalog-detail", 640px) {
 					position: revert !important;
@@ -51,8 +68,8 @@
 			}
 
 			&--gallery {
-				position: sticky;
-				top: 60px;
+				// position: sticky;
+				// top: 60px;
 
 				@include container-down("catalog-detail", 640px) {
 					position: revert;

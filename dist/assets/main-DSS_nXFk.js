@@ -344,7 +344,7 @@ function animateCSSModeScroll(_ref) {
   let {
     swiper,
     targetPosition,
-    side
+    side: side2
   } = _ref;
   const window2 = getWindow();
   const startPosition = -swiper.translate;
@@ -369,7 +369,7 @@ function animateCSSModeScroll(_ref) {
       currentPosition = targetPosition;
     }
     swiper.wrapperEl.scrollTo({
-      [side]: currentPosition
+      [side2]: currentPosition
     });
     if (isOutOfBound(currentPosition, targetPosition)) {
       swiper.wrapperEl.style.overflow = "hidden";
@@ -377,7 +377,7 @@ function animateCSSModeScroll(_ref) {
       setTimeout(() => {
         swiper.wrapperEl.style.overflow = "";
         swiper.wrapperEl.scrollTo({
-          [side]: currentPosition
+          [side2]: currentPosition
         });
       });
       window2.cancelAnimationFrame(swiper.cssModeFrameID);
@@ -5270,6 +5270,32 @@ if (slider$2) {
   window.addEventListener("resize", () => {
     checkSliderInit();
   });
+}
+const side = document.querySelector(".catalog-detail__grid-item--main");
+const gallery = document.querySelector(".catalog-detail__grid-item--gallery");
+document.querySelector(".js-sticky-label");
+if (side && gallery) {
+  const initialPos = 90;
+  let currentPos = initialPos;
+  const setSticky = (el, pos) => {
+    side.style.position = "sticky";
+    side.style.top = pos + "px";
+  };
+  setSticky(side, initialPos);
+  console.log("sticky");
+  const resizeObserver = new ResizeObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.contentBoxSize) {
+        if (window.innerHeight - 115 < side.getBoundingClientRect().height) {
+          currentPos = -1 * (side.getBoundingClientRect().height - window.innerHeight + 30);
+          setSticky(side, currentPos);
+        } else {
+          setSticky(side, initialPos);
+        }
+      }
+    }
+  });
+  resizeObserver.observe(side);
 }
 const sliders$1 = document.querySelectorAll(".base-slider");
 if (sliders$1.length) {

@@ -1,57 +1,59 @@
-// const side = document.querySelector(".catalog-detail__grid-item--main");
-// const gallery = document.querySelector(".catalog-detail__grid-item--gallery");
+const side = document.querySelector(".catalog-detail__grid-item--main");
+const gallery = document.querySelector(".catalog-detail__grid-item--gallery");
+const label = document.querySelector(".js-sticky-label");
 
-// if (side && gallery) {
-// 	const wrap = document.querySelector(".catalog-detail__grid");
+if (side && gallery) {
+	const initialPos = 90;
+	let currentPos = initialPos;
 
-// 	const setSticky = (sideH, winH) => {
-// 		const raznica = winH - sideH - 30;
-// 		side.style.position = "sticky";
-// 		side.style.top = `${raznica}px`;
-// 	};
+	const setSticky = (el, pos) => {
+		side.style.position = "sticky";
+		side.style.top = pos + "px";
+	};
 
-// 	const resizeObserver = new ResizeObserver((entries) => {
-// 		for (const entry of entries) {
-// 			if (entry.contentBoxSize) {
-// 				const sideHeight = entry.contentBoxSize[0].blockSize;
-// 				// console.log(
-// 				// 	"Высота сайдбара:",
-// 				// 	sideHeight,
-// 				// 	"Высота галереи:",
-// 				// 	gallery.getBoundingClientRect().height,
-// 				// 	"Высота окна:",
-// 				// 	window.innerHeight,
-// 				// );
-// 				if (side.getBoundingClientRect().height > window.innerHeight) {
-// 					setSticky(side.getBoundingClientRect().height, window.innerHeight);
-// 				}
-// 			}
-// 		}
-// 	});
+	setSticky(side, initialPos);
+	console.log("sticky");
 
-// 	resizeObserver.observe(side);
+	const resizeObserver = new ResizeObserver((entries) => {
+		for (const entry of entries) {
+			if (entry.contentBoxSize) {
+				if (window.innerHeight - 115 < side.getBoundingClientRect().height) {
+					currentPos =
+						-1 *
+						(side.getBoundingClientRect().height - window.innerHeight + 30);
+					setSticky(side, currentPos);
+				} else {
+					setSticky(side, initialPos);
+				}
+			}
+		}
+	});
 
-// 	// window.addEventListener("resize", () => {
-// 	// 	console.log(
-// 	// 		"Высота сайдбара:",
-// 	// 		side.getBoundingClientRect().height,
-// 	// 		"Высота галереи:",
-// 	// 		gallery.getBoundingClientRect().height,
-// 	// 		"Высота окна:",
-// 	// 		window.innerHeight,
-// 	// 	);
+	resizeObserver.observe(side);
 
-// 	// 	if (
-// 	// 		side.getBoundingClientRect().height <
-// 	// 		gallery.getBoundingClientRect().height
-// 	// 	) {
-// 	// 		setSticky(side.getBoundingClientRect().height, window.innerHeight);
-// 	// 	}
-// 	// });
+	// let curScroll = 0;
+	// let startScrollUpPos = null;
+	// let isActive = false;
 
-// 	window.addEventListener("scroll", () => {
-// 		if (side.getBoundingClientRect().height > window.innerHeight) {
-// 			setSticky(side.getBoundingClientRect().height, window.innerHeight);
-// 		}
-// 	});
-// }
+	// function getScrollDirection() {
+	// 	if (window.scrollY > curScroll) {
+	// 		console.log("down");
+	// 		isActive = false;
+	// 	} else {
+	// 		console.log("up");
+	// 		curScroll = window.scrollY;
+	// 		setSticky(side, currentPos - 1);
+	// 		currentPos += 1;
+	// 		if (!isActive) {
+	// 			isActive = true;
+	// 			startScrollUpPos = window.scrollY;
+	// 		}
+	// 		console.log(startScrollUpPos, window.scrollY);
+	// 	}
+	// 	curScroll = window.scrollY;
+	// }
+
+	// window.addEventListener("scroll", (evt) => {
+	// 	getScrollDirection();
+	// });
+}
