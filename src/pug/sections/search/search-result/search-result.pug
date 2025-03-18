@@ -1,10 +1,10 @@
 include ../../../components/_ui/cards/product-card/product-card
 include ../../../components/_ui/buttons/main-btn/btn
 
-section.base-section.catalog-section
+section.base-section.search-result
   .container
     .base-section__header
-      h1.base-title женская одежда
+      h1.base-title Нашлось 20 товаров по запросу «футболка»
 
       +main-btn({
         tag: 'button',
@@ -15,15 +15,14 @@ section.base-section.catalog-section
 
     include ../../../components/_ui/sort/sort
     +sort({
-      showActive: true,
-      titles: ['верхняя одежда','костюмы','брюки','боди','сумки','платья','шапка','футболки']
+      showActive: false,
+      titles: ['Женщинам','Мужчинам']
     })
-    include ../../../components/_ui/filter-row/filter-row
        
   .container-fluid
-    .catalog-section__grid
-      each item in [1,2,3]
-        .catalog-section__grid-item
+    .search-result__grid
+       each item in [1,2,3]
+        .search-result__grid-item
           +product-card({
             images: [
               'product-card-mock-1',
@@ -81,7 +80,6 @@ section.base-section.catalog-section
             title: 'Брюки спортивные',
             price: '99999 ₽'
           })
-    
-    include ../../../components/_ui/pagination/pagination
+
     .filter-wrapper
       include ../../../components/blocks/filter/filter

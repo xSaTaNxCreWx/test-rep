@@ -21,3 +21,8 @@
 
 // ui
 @use "@pug/sections/ui/ui";
+
+//search
+
+@use "@pug/sections/search/search-result/search-result";
+@use "@pug/components/blocks/search-title/search-title";

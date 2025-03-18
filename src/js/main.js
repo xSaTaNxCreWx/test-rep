@@ -14,6 +14,7 @@ import "@pug/components/_ui/main-picker/main-picker";
 import "@pug/components/_ui/form-controls/main-input/main-input";
 import "@pug/components/_ui/sort/sort";
 import "@pug/components/blocks/filter/filter";
+import "@pug/components/blocks/search-title/search-title";
 import "@pug/components/_ui/filter-row/filter-row";
 import "@pug/components/_ui/nav/top-multilevel-menu/burger";
 import "@pug/components/_ui/nav/top-multilevel-menu/top-multilevel-menu-expand";

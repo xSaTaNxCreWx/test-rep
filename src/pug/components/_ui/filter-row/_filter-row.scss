@@ -2,9 +2,9 @@
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
-.sort + .swiper.filter-row {
-	padding-top: 20px; // TEMP
-}
+// .sort + .swiper.filter-row {
+// 	// padding-top: 20px; // TEMP
+// }
 
 .filter-row {
 	width: 100%;

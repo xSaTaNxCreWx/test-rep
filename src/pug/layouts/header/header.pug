@@ -19,12 +19,7 @@ header.header
       .header__grid-item.header__grid-item--center
         include ../../components/_ui/logos/main-logo/main-logo
       .header__grid-item.header__grid-item--right
-        +main-btn({
-          tag: 'a',
-          href: "#",
-          cls: 'btn-search search-opener-btn',
-          icon: 'search'
-        })
+        include ../../components/blocks/search-title/search-title
         +main-btn({
           tag: 'a',
           href: "#",

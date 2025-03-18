@@ -8,9 +8,10 @@
 @use "@pug/components/_ui/sort/sort";
 @use "@pug/components/blocks/filter/filter";
 @use "@pug/components/_ui/filter-row/filter-row";
+@use "@pug/components/_ui/buttons/filter-opener-btn/filter-opener-btn";
 
 .catalog-section {
-	container: catalog-grid / inline-size;
+	container: catalog-section / inline-size;
 
 	.base-section__header {
 		flex-wrap: nowrap;
@@ -24,63 +25,64 @@
 		}
 	}
 
-	&__sort {
+	.sort,
+	.filter-row {
 		margin-bottom: 20px;
 	}
 
-	.filter-opener-btn {
-		width: 100%;
-		max-width: 100%;
-		color: var(--light);
-		background-color: var(--primary);
+	// .filter-opener-btn {
+	// 	width: 100%;
+	// 	max-width: 100%;
+	// 	color: var(--light);
+	// 	background-color: var(--primary);
 
-		svg {
-			width: 24px;
-			height: 24px;
-			fill: var(--light);
-		}
+	// 	svg {
+	// 		width: 24px;
+	// 		height: 24px;
+	// 		fill: var(--light);
+	// 	}
 
-		&:focus svg {
-			transform: rotate(0);
-		}
+	// 	&:focus svg {
+	// 		transform: rotate(0);
+	// 	}
 
-		@media (hover: hover) {
-			&:hover svg {
-				transform: rotate(0);
-			}
-		}
+	// 	@media (hover: hover) {
+	// 		&:hover svg {
+	// 			transform: rotate(0);
+	// 		}
+	// 	}
 
-		@include media-up($mobile-width) {
-			max-width: fit-content;
-			color: var(--primary);
-			background-color: var(--light);
+	// 	@include media-up($mobile-width) {
+	// 		max-width: fit-content;
+	// 		color: var(--primary);
+	// 		background-color: var(--light);
 
-			svg {
-				width: 24px;
-				height: 24px;
-				fill: var(--primary);
-			}
+	// 		svg {
+	// 			width: 24px;
+	// 			height: 24px;
+	// 			fill: var(--primary);
+	// 		}
 
-			&:hover,
-			&:focus {
-				background-color: var(--hover-dop-color);
-				color: var(--primary);
+	// 		&:hover,
+	// 		&:focus {
+	// 			background-color: var(--hover-dop-color);
+	// 			color: var(--primary);
 
-				svg {
-					fill: var(--primary);
-				}
-			}
+	// 			svg {
+	// 				fill: var(--primary);
+	// 			}
+	// 		}
 
-			&.active {
-				// background-color: var(--primary);
-				color: var(--light);
+	// 		&.active {
+	// 			// background-color: var(--primary);
+	// 			color: var(--light);
 
-				svg {
-					fill: var(--light);
-				}
-			}
-		}
-	}
+	// 			svg {
+	// 				fill: var(--light);
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	&__grid {
 		display: grid;
@@ -88,15 +90,15 @@
 		gap: 40px 1px;
 		margin-bottom: 40px;
 
-		@include container-up("catalog-grid", 420px) {
+		@include container-up("catalog-section", 420px) {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
-		@include container-up("catalog-grid", $tablet-width) {
+		@include container-up("catalog-section", $tablet-width) {
 			grid-template-columns: repeat(3, 1fr);
 		}
 
-		@include container-up("catalog-grid", $tablet-lg-width) {
+		@include container-up("catalog-section", $tablet-lg-width) {
 			grid-template-columns: repeat(4, 1fr);
 		}
 

@@ -1,17 +1,19 @@
-.swiper.sort
-  .swiper-wrapper
-    .swiper-slide
-      +main-btn({
-        tag: 'a',
-        href: "#",
-        cls: 'sort-btn active',
-        title: 'активная'
-      })
-    each title in ['верхняя одежда','костюмы','брюки','боди','сумки','платья','шапка','футболки']
-      .swiper-slide
-        +main-btn({
-          tag: 'a',
-          href: "#",
-          cls: ' sort-btn',
-          title
-        })
+mixin sort(data)
+  .swiper.sort
+    .swiper-wrapper
+      if data.showActive
+        .swiper-slide
+          +main-btn({
+            tag: 'a',
+            href: "#",
+            cls: 'sort-btn active',
+            title: 'активная'
+          })
+      each title in data.titles
+        .swiper-slide
+          +main-btn({
+            tag: 'a',
+            href: "#",
+            cls: 'sort-btn',
+            title
+          })

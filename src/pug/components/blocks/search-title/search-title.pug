@@ -1,0 +1,124 @@
+include ../../_ui/buttons/main-btn/btn
+
+.search-title
+  +main-btn({
+    tag: 'a',
+    href: "#",
+    cls: 'btn-search search-title-opener',
+    icon: 'search'
+  })
+
+  .search-title__wrapper
+    .search-title__header
+      form(action="#")
+        fielset.search-title__line
+          +main-btn({
+            tag: 'button',
+            type: 'submit',
+            cls: 'btn-search search-submit-btn active',
+            icon: 'search'
+          })
+          input(type="text" placeholder="Введите название")
+          +main-btn({
+            tag: 'button',
+            cls: 'btn-thin search-title-refresh-btn',
+            title: 'Очистить'
+          })
+      +main-btn({
+        tag: 'button',
+        type: 'button',
+        cls: 'search-title-closer',
+        icon: 'close'
+      })
+    .search-title__grid
+      .search-title__grid-item.search-title__grid-item--main
+        .search-title__result.search-title__result--default
+          span.base-title популярные
+          +main-btn({
+            tag: 'a',
+            href: "#",
+            cls: 'btn-light',
+            title: 'женские футболки'
+          })
+          +main-btn({
+            tag: 'a',
+            href: "#",
+            cls: 'btn-light',
+            title: 'мужские футболки'
+          })
+        .search-title__result
+          ul.search-title__result-list
+            li
+              a(href="#") <span>футболка из</span> хлопка
+            li
+              a(href="#") <span>футболка из</span> хлопка с короткими рукавами
+
+          span.base-subtitle найдено в категориях
+          +main-btn({
+            tag: 'a',
+            href: "#",
+            cls: 'btn-light',
+            title: 'женские футболки'
+          })
+          +main-btn({
+            tag: 'a',
+            href: "#",
+            cls: 'btn-light',
+            title: 'мужские футболки'
+          })
+        
+      .search-title__grid-item.search-title__grid-item--side
+        .search-title__grid-item-row.search-title__grid-item-row--items
+          +product-card({
+            images: [
+              'product-card-mock-1',
+              'product-card-mock-2',
+              'product-card-mock-3',
+              'product-card-mock-4',
+            ],
+            badge: {
+              cls: 'badge-accent',
+              text: '-25%'
+            },
+            title: 'Брюки спортивные летние с двумя карманами',
+            price: '9999 ₽',
+            oldPrice: '19990 ₽'
+          })
+          +product-card({
+            images: [
+              'product-card-mock-1',
+              'product-card-mock-2',
+              'product-card-mock-3',
+              'product-card-mock-4',
+            ],
+            badge: {
+              cls: 'badge-accent',
+              text: '-25%'
+            },
+            title: 'Брюки спортивные летние с двумя карманами',
+            price: '9999 ₽',
+            oldPrice: '19990 ₽'
+          })
+          +product-card({
+            images: [
+              'product-card-mock-1',
+              'product-card-mock-2',
+              'product-card-mock-3',
+              'product-card-mock-4',
+            ],
+            badge: {
+              cls: 'badge-accent',
+              text: '-25%'
+            },
+            title: 'Брюки спортивные летние с двумя карманами',
+            price: '9999 ₽',
+            oldPrice: '19990 ₽'
+          })
+        .search-title__grid-item-row
+          +main-btn({
+            tag: 'a',
+            href: "#",
+            cls: 'btn-light',
+            title: 'показать все',
+            icon: 'arrow'
+          })

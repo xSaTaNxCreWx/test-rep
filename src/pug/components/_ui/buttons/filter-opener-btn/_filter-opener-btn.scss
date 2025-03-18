@@ -1,0 +1,57 @@
+@forward "@styles/_extends/flexbox.scss";
+@use "@styles/_mixins/media-queries" as *;
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.filter-opener-btn {
+	width: 100%;
+	max-width: 100%;
+	color: var(--light);
+	background-color: var(--primary);
+
+	svg {
+		width: 24px;
+		height: 24px;
+		fill: var(--light);
+	}
+
+	// &:focus svg {
+	// 	transform: rotate(0);
+	// }
+
+	// @media (hover: hover) {
+	// 	&:hover svg {
+	// 		transform: rotate(0);
+	// 	}
+	// }
+
+	@include media-up($mobile-width) {
+		max-width: fit-content;
+		color: var(--primary);
+		background-color: var(--light);
+
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: var(--primary);
+		}
+
+		&:hover,
+		&:focus {
+			background-color: var(--hover-dop-color);
+			color: var(--primary);
+
+			svg {
+				fill: var(--primary);
+			}
+		}
+
+		&.active {
+			color: var(--light);
+
+			svg {
+				fill: var(--light);
+			}
+		}
+	}
+}

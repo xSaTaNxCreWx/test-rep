@@ -5482,21 +5482,40 @@ if (slider$1) {
     freeMode: true
   });
 }
-const opener$1 = document.querySelector(".filter-opener-btn");
-if (opener$1) {
+const opener$2 = document.querySelector(".filter-opener-btn");
+if (opener$2) {
   const filter = document.querySelector(".filter-wrapper");
   const closer = document.querySelector(".filter-closer");
   const setActiveClass = (node, state) => {
     !!state ? node.classList.add("active") : node.classList.remove("active");
   };
-  opener$1.addEventListener("click", () => {
-    setActiveClass(opener$1, true);
+  opener$2.addEventListener("click", () => {
+    setActiveClass(opener$2, true);
     setActiveClass(filter, true);
   });
   closer.addEventListener("click", () => {
-    setActiveClass(opener$1);
+    setActiveClass(opener$2);
     setActiveClass(filter);
   });
+}
+const opener$1 = document.querySelector(".search-title-opener");
+if (opener$1) {
+  console.log(opener$1);
+  const closer = document.querySelector(".search-title-closer");
+  const body2 = document.querySelector("body");
+  const onClickCloseSearchTitle = () => {
+    opener$1.classList.remove("active");
+    body2.classList.remove("body-locked");
+    closer.removeEventListener("click", onClickCloseSearchTitle);
+    opener$1.addEventListener("click", onClickOpenSearchTitle);
+  };
+  const onClickOpenSearchTitle = () => {
+    opener$1.classList.add("active");
+    body2.classList.add("body-locked");
+    opener$1.removeEventListener("click", onClickOpenSearchTitle);
+    closer.addEventListener("click", onClickCloseSearchTitle);
+  };
+  opener$1.addEventListener("click", onClickOpenSearchTitle);
 }
 const slider = document.querySelector(".filter-row");
 if (slider) {

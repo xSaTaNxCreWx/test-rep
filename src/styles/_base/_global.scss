@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 *,
 *::before,
 *::after {
@@ -52,6 +53,7 @@ body {
 
 	&.body-locked {
 		overflow: hidden;
+		padding-right: var(--scrollbar-width);
 	}
 
 	will-change: auto;
@@ -110,3 +112,4 @@ picture,
 img {
 	display: flex;
 }
+/* purgecss end ignore */

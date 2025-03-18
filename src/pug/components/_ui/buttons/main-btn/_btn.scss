@@ -210,7 +210,7 @@ $btn-thin-hover-color: #606b80;
 			transition: transform var(--main-transition), fill var(--main-transition);
 		}
 
-		&:not(.disabled) {
+		&:not(.disabled):not(.filter-opener-btn) {
 			&:focus {
 				background-color: var(--hover-dop-color);
 				color: var(--hover-color);
