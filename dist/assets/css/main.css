@@ -2554,11 +2554,6 @@ body:has(.burger.active){
 .top-menu .base-card__title{
   font-size:24px;
 }
-.top-menu .base-card:hover .base-card__title svg, .top-menu .base-card:focus .base-card__title svg{
-  -webkit-transform:rotate(0) translateY(0);
-      -ms-transform:rotate(0) translateY(0);
-          transform:rotate(0) translateY(0);
-}
 .top-menu-show-all-btn{
   font-size:12px;
 }
@@ -3886,6 +3881,11 @@ body:has(.burger.active){
     -webkit-transform:rotate(-45deg) translateY(1px);
         -ms-transform:rotate(-45deg) translateY(1px);
             transform:rotate(-45deg) translateY(1px);
+  }
+  .top-menu .base-card:hover .base-card__title svg, .top-menu .base-card:focus .base-card__title svg{
+    -webkit-transform:rotate(0) translateY(0);
+        -ms-transform:rotate(0) translateY(0);
+            transform:rotate(0) translateY(0);
   }
 }
 @media (max-width: 1239px){
