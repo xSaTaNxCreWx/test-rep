@@ -6,5 +6,7 @@ mixin base-card(data)
         if data.headline
           span.base-card__headline!= data.headline
         if data.title
-          span.base-card__title
-            != data.title.text
+          .base-card__title(class= data.title.cls ? data.title.cls : null)
+            span!= data.title.text
+            svg(width='20' height='20' role='img' aria-hidden='true' focusable='false')
+              use(xlink:href='./assets/sprite.svg#icon-arrow')

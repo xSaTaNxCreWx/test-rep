@@ -18,6 +18,10 @@
 		aspect-ratio: 2 / 3;
 	}
 
+	&-show-all-btn {
+		font-size: 12px;
+	}
+
 	&-opener {
 		position: relative;
 		height: 100%;
@@ -129,6 +133,10 @@
 			position: relative;
 			@extend %flex-column;
 			gap: 10px;
+
+			.base-subtitle {
+				font-size: 16px;
+			}
 		}
 
 		li {

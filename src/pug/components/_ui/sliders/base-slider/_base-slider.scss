@@ -21,19 +21,53 @@
 				&__footer {
 					padding: 20px;
 				}
-				&__title {
-					font-size: 14px;
-					line-height: 11px;
-					gap: 6px;
-					align-items: flex-start;
-					color: var(--primary);
 
+				&__title {
+					border: none;
 					&::after {
-						width: 11px;
-						height: 11px;
-						background-image: url("@img/icon-arrow.svg");
+						content: "";
+						width: 100%;
+						height: 1px;
+						background-color: var(--primary);
+						position: absolute;
+						bottom: -7px;
+					}
+
+					span {
+						line-height: 1;
+					}
+
+					svg {
+						width: 12px;
+						height: 12px;
+						transform: rotate(-45deg) translateY(1px);
 					}
 				}
+
+				&:hover .base-card__title,
+				&:focus .base-card__title {
+					svg {
+						transform: rotate(0) translateY(0);
+					}
+				}
+
+				// &__title {
+				// 	font-size: 14px;
+				// 	line-height: 11px;
+				// 	gap: 6px;
+				// 	// align-items: flex-start;
+				// 	color: var(--primary);
+
+				// 	&::before {
+				// 		background-color: var(--primary);
+				// 	}
+
+				// 	&::after {
+				// 		width: 16px;
+				// 		height: 16px;
+				// 		background-image: url("@img/icon-arrow.svg");
+				// 	}
+				// }
 			}
 		}
 	}

@@ -22,7 +22,7 @@ mixin top-menu(data)
               li
                 a(href="#")
                   span.base-text верхняя одежда
-                  svg(width='12' height='12' role='img' aria-hidden='true' focusable='false')
+                  svg(width='10' height='10' role='img' aria-hidden='true' focusable='false')
                     use(xlink:href='./assets/sprite.svg#icon-arrow-up')
                   
                 ul.top-menu__inner-list
@@ -61,7 +61,7 @@ mixin top-menu(data)
               li
                 a(href="#")
                   span.base-text аксессуары
-                  svg(width='12' height='12' role='img' aria-hidden='true' focusable='false')
+                  svg(width='10' height='10' role='img' aria-hidden='true' focusable='false')
                     use(xlink:href='./assets/sprite.svg#icon-arrow-up')
                 ul.top-menu__inner-list
                   li
@@ -79,7 +79,7 @@ mixin top-menu(data)
             +main-btn({
               tag: 'a',
               href: 'catalog-main.html',
-              cls: 'btn-thin underlined',
+              cls: 'btn-thin underlined top-menu-show-all-btn',
               title: 'Посмотреть все'
             })
           .top-menu__list-wrapper
@@ -104,7 +104,7 @@ mixin top-menu(data)
             +main-btn({
               tag: 'a',
               href: 'catalog-main.html',
-              cls: 'btn-thin underlined',
+              cls: 'btn-thin underlined top-menu-show-all-btn',
               title: 'Посмотреть все'
             })
         .top-menu__grid-item-section
