@@ -28,7 +28,7 @@ include ../../buttons/main-btn/btn
       .top-multilevel-menu__grid-item.top-multilevel-menu__grid-item--main
         ul.top-multilevel-menu__main-list(data-toggler="women").active
           li
-            a(href="#").base-subtitle
+            a(href="#").base-subtitle 
               span Каталог
               svg(width='16' height='16' role='img' aria-hidden='true' focusable='false')
                 use(xlink:href='./assets/sprite.svg#icon-arrow-up')
@@ -259,7 +259,8 @@ include ../../buttons/main-btn/btn
           },
           title: {
             text: 'магазины',
-            icon: true
+            icon: true,
+            cls: 'base-card__title--light'
           }
         })
         +base-card({
@@ -270,7 +271,8 @@ include ../../buttons/main-btn/btn
           },
           title: {
             text: 'О бренде',
-            icon: true
+            icon: true,
+            cls: 'base-card__title--light'
           }
         })
           

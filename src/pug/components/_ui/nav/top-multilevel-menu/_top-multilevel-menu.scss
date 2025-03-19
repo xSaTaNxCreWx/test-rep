@@ -40,10 +40,6 @@ body:has(.burger.active) {
 		padding: 0;
 		gap: 40px 0;
 
-		// @include media-up($tablet-lg-width) {
-		// 	display: none;
-		// }
-
 		@include media-up($tablet-lg-width) {
 			grid-template-columns: 1fr 600px;
 			gap: 60px 0;
@@ -193,6 +189,10 @@ body:has(.burger.active) {
 		gap: 10px;
 		width: fit-content;
 		max-width: calc(100% / 3 - 30px);
+
+		.base-subtitle {
+			font-size: 16px;
+		}
 
 		&.desktop-only {
 			display: none;

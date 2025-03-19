@@ -2432,6 +2432,9 @@ body:has(.burger.active){
   width:fit-content;
   max-width:calc(33.33333% - 30px);
 }
+.top-multilevel-menu__list-wrapper .base-subtitle{
+  font-size:16px;
+}
 .top-multilevel-menu__list-wrapper.desktop-only{
   display:none;
 }
@@ -2540,13 +2543,21 @@ body:has(.burger.active){
 .top-menu{
   height:100%;
 }
-.top-menu .base-card img{
-  height:100%;
-}
 .top-menu .base-card,
 .top-menu .product-card-inner-slider{
   height:auto;
   aspect-ratio:2/3;
+}
+.top-menu .base-card img{
+  height:100%;
+}
+.top-menu .base-card__title{
+  font-size:24px;
+}
+.top-menu .base-card:hover .base-card__title svg, .top-menu .base-card:focus .base-card__title svg{
+  -webkit-transform:rotate(0) translateY(0);
+      -ms-transform:rotate(0) translateY(0);
+          transform:rotate(0) translateY(0);
 }
 .top-menu-show-all-btn{
   font-size:12px;
@@ -2617,14 +2628,6 @@ body:has(.burger.active){
   max-height:-moz-fit-content;
   max-height:fit-content;
   padding-bottom:40px;
-}
-@container main (max-width: 1239px){
-  .top-menu__grid-item--side{
-    grid-template-columns:repeat(2, 1fr);
-  }
-  .top-menu__grid-item--side > *:last-child{
-    display:none;
-  }
 }
 .top-menu__grid-item--side > *{
   height:-webkit-fit-content;
@@ -3859,6 +3862,38 @@ body:has(.burger.active){
     -webkit-box-direction:normal;
         -ms-flex-direction:column;
             flex-direction:column;
+  }
+}
+@media (max-width: 1539px){
+  .top-menu .base-card__title{
+    font-size:14px;
+    border:none;
+  }
+  .top-menu .base-card__title::after{
+    content:"";
+    width:100%;
+    height:1px;
+    background-color:var(--light);
+    position:absolute;
+    bottom:-7px;
+  }
+  .top-menu .base-card__title span{
+    line-height:1;
+  }
+  .top-menu .base-card__title svg{
+    width:12px;
+    height:12px;
+    -webkit-transform:rotate(-45deg) translateY(1px);
+        -ms-transform:rotate(-45deg) translateY(1px);
+            transform:rotate(-45deg) translateY(1px);
+  }
+}
+@media (max-width: 1239px){
+  .top-menu__grid-item--side{
+    grid-template-columns:repeat(2, 1fr);
+  }
+  .top-menu__grid-item--side > *:last-child{
+    display:none;
   }
 }
 @media (max-width: 1000px){
