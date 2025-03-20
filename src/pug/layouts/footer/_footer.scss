@@ -5,6 +5,9 @@
 @use "@styles/_mixins/container-queries" as *;
 @use "@styles/_vars/scoped" as *;
 
+// * {
+// 	outline: 1px solid red;
+// }
 .footer {
 	padding: 40px 0;
 	container: footer / inline-size;

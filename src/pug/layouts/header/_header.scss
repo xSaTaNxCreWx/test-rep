@@ -8,7 +8,7 @@ body:has(.top-banner) .header {
 	left: 0;
 }
 
-body.body-locked .header {
+body.body-locked:has(.top-banner) .header {
 	width: calc(100% - var(--scrollbar-width));
 }
 

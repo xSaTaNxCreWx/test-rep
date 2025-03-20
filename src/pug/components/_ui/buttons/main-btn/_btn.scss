@@ -194,11 +194,10 @@ $btn-thin-hover-color: #606b80;
 
 		svg {
 			fill: var(--primary);
-			// transform: rotate(-45deg);
 			transition: transform var(--main-transition), fill var(--main-transition);
 		}
 
-		&:not(.disabled):not(.filter-opener-btn) {
+		&:not(.disabled):not(.filter-opener-btn):not(.filter-row-btn) {
 			&:focus {
 				background-color: var(--hover-dop-color);
 				color: var(--hover-color);
