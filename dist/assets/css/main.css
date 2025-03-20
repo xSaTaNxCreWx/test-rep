@@ -979,10 +979,43 @@ body:has(.top-menu:focus) main{
   transition:transform var(--main-transition);
   transition:transform var(--main-transition), -webkit-transform var(--main-transition);
 }
+@container base-card (max-width: 479px){
+  .base-card__title{
+    border:none;
+  }
+  .base-card__title::after{
+    content:"";
+    width:100%;
+    height:1px;
+    background-color:var(--primary);
+    position:absolute;
+    bottom:-7px;
+  }
+  .base-card__title--light::after{
+    background-color:var(--light);
+  }
+  .base-card__title span{
+    line-height:1;
+  }
+  .base-card__title svg{
+    width:12px;
+    height:12px;
+    -webkit-transform:rotate(-45deg) translateY(1px);
+        -ms-transform:rotate(-45deg) translateY(1px);
+            transform:rotate(-45deg) translateY(1px);
+  }
+}
 .base-card:hover .base-card__title svg, .base-card:focus .base-card__title svg{
-  -webkit-transform:rotate(0) translateY(3px);
-      -ms-transform:rotate(0) translateY(3px);
-          transform:rotate(0) translateY(3px);
+  -webkit-transform:rotate(0) translateY(0);
+      -ms-transform:rotate(0) translateY(0);
+          transform:rotate(0) translateY(0);
+}
+@container base-card (min-width: 480px ){
+  .base-card:hover .base-card__title svg, .base-card:focus .base-card__title svg{
+    -webkit-transform:rotate(0) translateY(3px);
+        -ms-transform:rotate(0) translateY(3px);
+            transform:rotate(0) translateY(3px);
+  }
 }
 
 .base-slider.auto-fill-slider{

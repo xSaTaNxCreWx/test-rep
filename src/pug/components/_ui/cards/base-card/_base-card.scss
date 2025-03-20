@@ -74,12 +74,43 @@
 			transform: rotate(-45deg) translateY(5px);
 			transition: transform var(--main-transition);
 		}
+
+		@include container-down("base-card", $mobile-width) {
+			border: none;
+			&::after {
+				content: "";
+				width: 100%;
+				height: 1px;
+				background-color: var(--primary);
+				position: absolute;
+				bottom: -7px;
+			}
+
+			&--light {
+				&::after {
+					background-color: var(--light);
+				}
+			}
+
+			span {
+				line-height: 1;
+			}
+
+			svg {
+				width: 12px;
+				height: 12px;
+				transform: rotate(-45deg) translateY(1px);
+			}
+		}
 	}
 
-	&:hover &__title,
-	&:focus &__title {
+	&:hover .base-card__title,
+	&:focus .base-card__title {
 		svg {
-			transform: rotate(0) translateY(3px);
+			transform: rotate(0) translateY(0);
+			@include container-up("base-card", $mobile-width) {
+				transform: rotate(0) translateY(3px);
+			}
 		}
 	}
 }
