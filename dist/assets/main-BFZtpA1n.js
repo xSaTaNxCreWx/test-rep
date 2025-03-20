@@ -5527,8 +5527,14 @@ if (slider) {
   });
 }
 const burger = document.querySelector(".burger");
+const body$2 = document.querySelector("body");
 burger.addEventListener("click", () => {
   burger.classList.toggle("active");
+  if (burger.classList.contains("active")) {
+    body$2.classList.add("body-locked");
+  } else {
+    body$2.classList.remove("body-locked");
+  }
 });
 const items$1 = document.querySelectorAll(".top-multilevel-menu__main-list a");
 if (items$1.length) {
@@ -5561,11 +5567,13 @@ if (togglers.length) {
   });
 }
 const menus = document.querySelectorAll(".top-menu");
+const body$1 = document.querySelector("body");
 if (menus.length) {
   const burger2 = document.querySelector(".burger");
   menus.forEach((menu) => {
     menu.addEventListener("mouseover", () => {
       burger2.classList.contains("active") ? burger2.classList.remove("active") : null;
+      body$1.classList.contains("body-locked") ? body$1.classList.remove("body-locked") : null;
     });
   });
 }

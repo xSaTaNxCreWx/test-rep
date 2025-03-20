@@ -450,6 +450,10 @@ body:has(.top-banner) .header{
   left:0;
 }
 
+body.body-locked .header{
+  width:calc(100% - var(--scrollbar-width));
+}
+
 body:has(.top-menu:hover) main,
 body:has(.top-menu:focus) main{
   -webkit-filter:blur(2px);
