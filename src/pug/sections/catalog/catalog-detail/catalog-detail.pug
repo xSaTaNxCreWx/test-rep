@@ -11,6 +11,12 @@ section.catalog-detail
     .catalog-detail__grid
       .catalog-detail__grid-item.catalog-detail__grid-item--gallery
         .swiper.catalog-detail-slider
+          +main-btn({
+            tag: 'a',
+            href: 'catalog-section',
+            cls: 'btn-light catalog-detail-back-btn',
+            icon: 'arrow-left'
+          })
           +badge({
             text: 'Новинка'
           })

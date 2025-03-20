@@ -45,18 +45,8 @@
 			}
 
 			&--main {
-				// position: relative;
 				@extend %flex-column;
-				// gap: clamp(40px, 4vw, 80px);
 				padding: 0 var(--container-offset);
-
-				// position: sticky;
-				// top: 60px;
-
-				// position: fixed;
-				// top: 114px;
-				// right: 0;
-				// width: 50%;
 
 				position: sticky;
 				bottom: 60px;
@@ -68,9 +58,6 @@
 			}
 
 			&--gallery {
-				// position: sticky;
-				// top: 60px;
-
 				@include container-down("catalog-detail", 640px) {
 					position: revert;
 					top: revert;
@@ -83,9 +70,37 @@
 
 				.swiper {
 					.badge {
+						display: none;
+					}
+					@include container-up("catalog-detail", $mobile-width) {
+						.badge {
+							position: absolute;
+							top: 20px;
+							left: 20px;
+							display: flex;
+						}
+					}
+
+					.catalog-detail-back-btn {
 						position: absolute;
 						top: 20px;
 						left: 20px;
+						display: none;
+						width: 40px;
+						height: 40px;
+						min-height: 40px;
+						aspect-ratio: 1/1;
+						padding: 5px;
+						z-index: 7;
+						svg {
+							width: 12px;
+							height: 12px;
+						}
+					}
+					@include container-down("catalog-detail", $mobile-width) {
+						.catalog-detail-back-btn {
+							display: flex;
+						}
 					}
 				}
 

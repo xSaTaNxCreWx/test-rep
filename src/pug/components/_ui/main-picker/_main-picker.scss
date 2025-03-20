@@ -6,7 +6,7 @@
 	@extend %flex-column;
 	gap: 10px;
 
-	@include container-down("main", $mobile-width) {
+	@include container-down("main", 640px) {
 		align-items: center;
 	}
 
