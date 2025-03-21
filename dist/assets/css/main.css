@@ -3087,6 +3087,9 @@ body:has(.burger.active){
       -ms-flex-pack:justify;
           justify-content:space-between;
 }
+.catalog-section .base-section__header .base-title{
+  font-size:24px;
+}
 .catalog-section .sort,
 .catalog-section .filter-row{
   margin-bottom:20px;
@@ -3734,6 +3737,9 @@ body.body-locked .search-title__wrapper{
     visibility:visible;
     opacity:1;
   }
+  .catalog-section .base-section__header .base-title{
+    font-size:34px;
+  }
   .cart{
     margin-bottom:30px;
   }
@@ -3998,7 +4004,7 @@ body.body-locked .search-title__wrapper{
   }
 }
 @media (max-width: 767px){
-  .breadcrumbs{
+  body:has(.catalog-detail) .breadcrumbs{
     display:none;
   }
 }
