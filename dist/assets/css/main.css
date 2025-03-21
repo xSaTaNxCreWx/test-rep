@@ -3086,6 +3086,7 @@ body:has(.burger.active){
   -webkit-box-pack:justify;
       -ms-flex-pack:justify;
           justify-content:space-between;
+  margin-bottom:20px;
 }
 .catalog-section .base-section__header .base-title{
   font-size:24px;
@@ -4035,6 +4036,7 @@ body.body-locked .search-title__wrapper{
     -webkit-box-align:start;
         -ms-flex-align:start;
             align-items:flex-start;
+    gap:10px;
   }
 }
 @media (max-width: 479px){
