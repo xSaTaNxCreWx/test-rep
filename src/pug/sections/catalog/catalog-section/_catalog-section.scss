@@ -21,7 +21,6 @@
 		@include media-equal-down($mobile-width) {
 			flex-direction: column;
 			align-items: flex-start;
-			gap: 10px;
 		}
 
 		.base-title {

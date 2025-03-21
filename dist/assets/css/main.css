@@ -4035,7 +4035,6 @@ body.body-locked .search-title__wrapper{
     -webkit-box-align:start;
         -ms-flex-align:start;
             align-items:flex-start;
-    gap:10px;
   }
 }
 @media (max-width: 479px){
