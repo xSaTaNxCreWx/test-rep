@@ -85,13 +85,9 @@
 			}
 		}
 	}
-	&:has(input:checked) {
-		.cart-item-remove-btn {
-			color: var(--gray);
-		}
-	}
 
 	&-remove-btn {
 		cursor: pointer;
+		color: var(--gray);
 	}
 }

@@ -3356,7 +3356,7 @@ body:has(.burger.active){
 .empty-section__grid{
   display:grid;
   grid-template-columns:1fr;
-  gap:0 20px;
+  gap:20px;
 }
 @container empty-section (min-width: 1000px ){
   .empty-section__grid{
@@ -3375,6 +3375,9 @@ body:has(.burger.active){
     max-width:-moz-fit-content;
     max-width:fit-content;
   }
+}
+.empty-section__content .base-text{
+  font-size:16px;
 }
 @container empty-section (min-width: 1000px ){
   .empty-section__content{
@@ -3447,11 +3450,9 @@ body:has(.burger.active){
 .cart-item-fav-btn.active svg{
   fill:var(--primary);
 }
-.cart-item:has(input:checked) .cart-item-remove-btn{
-  color:var(--gray);
-}
 .cart-item-remove-btn{
   cursor:pointer;
+  color:var(--gray);
 }
 
 .cart{

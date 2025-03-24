@@ -26,3 +26,4 @@ import "@pug/sections/cart/promo-field";
 import "@pug/components/_ui/form-controls/counter/counter";
 import "./modules/modal";
 import "./modules/setScrollbarWidth";
+// import "@pug/components/_ui/cards/cart-item/cart-remove-item";
