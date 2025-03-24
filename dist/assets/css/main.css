@@ -2752,7 +2752,7 @@ body:has(.burger.active){
 
 .breadcrumbs{
   width:100%;
-  margin:20px 0 10px;
+  margin:20px 0;
 }
 .breadcrumbs__item{
   font-size:12px;
@@ -3075,10 +3075,11 @@ body:has(.burger.active){
   max-width:100%;
   color:var(--light);
   background-color:var(--primary);
+  padding:15px 20px;
 }
 .filter-opener-btn svg{
-  width:24px;
-  height:24px;
+  width:16px;
+  height:16px;
   fill:var(--light);
 }
 
@@ -3767,8 +3768,6 @@ body.body-locked .search-title__wrapper{
     background-color:var(--light);
   }
   .filter-opener-btn svg{
-    width:24px;
-    height:24px;
     fill:var(--primary);
   }
   .filter-opener-btn:hover, .filter-opener-btn:focus{

@@ -10,7 +10,7 @@ body:has(.catalog-detail) .breadcrumbs {
 
 .breadcrumbs {
 	width: 100%;
-	margin: 20px 0 10px;
+	margin: 20px 0;
 
 	.container {
 		@extend %flex-align;
