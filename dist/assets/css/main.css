@@ -1358,13 +1358,14 @@ body:has(.top-menu:focus) main{
 }
 .counter-btn{
   width:20px;
+  min-width:20px;
   height:20px;
   min-height:revert;
-  padding:5px;
+  padding:2px;
 }
 .counter-btn svg{
-  width:10px;
-  height:10px;
+  width:12px;
+  height:12px;
   fill:var(--primary);
 }
 .counter-btn.disabled svg{
