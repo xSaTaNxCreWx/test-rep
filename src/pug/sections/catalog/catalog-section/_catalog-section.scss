@@ -17,7 +17,7 @@
 		flex-wrap: nowrap;
 		gap: 20px;
 		justify-content: space-between;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 
 		@include media-equal-down($mobile-width) {
 			flex-direction: column;

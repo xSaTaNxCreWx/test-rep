@@ -2751,7 +2751,7 @@ body:has(.burger.active){
 
 .breadcrumbs{
   width:100%;
-  margin:20px 0;
+  margin:20px 0 10px;
 }
 .breadcrumbs__item{
   font-size:12px;
@@ -2805,6 +2805,7 @@ body:has(.burger.active){
           align-items:center;
 }
 .sort-btn{
+  font-size:12px;
   min-height:40px;
   border:none;
   padding:12px 10px;
@@ -3050,7 +3051,11 @@ body:has(.burger.active){
       -ms-flex-align:center;
           align-items:center;
 }
+.filter-row-refresh-btn{
+  font-size:12px;
+}
 .filter-row-btn{
+  font-size:12px;
   min-height:40px;
   border:none;
   padding:12px 10px;
@@ -3086,7 +3091,7 @@ body:has(.burger.active){
   -webkit-box-pack:justify;
       -ms-flex-pack:justify;
           justify-content:space-between;
-  margin-bottom:20px;
+  margin-bottom:10px;
 }
 .catalog-section .base-section__header .base-title{
   font-size:24px;

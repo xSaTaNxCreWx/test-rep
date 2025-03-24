@@ -5477,7 +5477,7 @@ const slider$1 = document.querySelector(".sort");
 if (slider$1) {
   new Swiper(slider$1, {
     modules: [freeMode],
-    spaceBetween: 10,
+    spaceBetween: 5,
     slidesPerView: "auto",
     freeMode: true
   });
