@@ -87,6 +87,8 @@
 		@extend %btn-reset;
 		line-height: 20px;
 		margin-left: auto;
+		font-size: 12px;
+		text-transform: uppercase;
 
 		&.hidden {
 			visibility: hidden;
