@@ -28,14 +28,6 @@
 		grid-template-columns: 1fr;
 		gap: 20px 40px;
 
-		@include media-equal-up($mobile-width) {
-			gap: 40px;
-		}
-
-		@include media-equal-up($tablet-width) {
-			gap: 60px 40px;
-		}
-
 		@include media-up(1320px) {
 			grid-template-columns: repeat(4, 1fr);
 		}
@@ -45,8 +37,17 @@
 				flex-grow: 1;
 				width: 100%;
 
+				@include media-equal-up($mobile-width) {
+					margin-bottom: 20px;
+				}
+
+				@include media-equal-up($tablet-lg-width) {
+					margin-bottom: 40px;
+				}
+
 				@include media-up(1320px) {
 					grid-column: 2/4;
+					margin-bottom: 0;
 				}
 			}
 		}
