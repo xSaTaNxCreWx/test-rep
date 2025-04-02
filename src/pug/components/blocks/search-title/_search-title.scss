@@ -31,10 +31,17 @@ body.body-locked .search-title__wrapper {
 
 	&__header {
 		@extend %flex-align;
-		gap: 10px;
+		gap: 5px;
 		margin-bottom: 40px;
 		width: 100%;
-		padding: 0 var(--container-offset);
+
+		@include media-up(375px) {
+			padding: 0 10px;
+		}
+
+		@include media-up($tablet-width) {
+			padding: 0 40px;
+		}
 
 		form {
 			width: 100%;
@@ -46,10 +53,11 @@ body.body-locked .search-title__wrapper {
 			aspect-ratio: 1/1;
 			padding: 10px;
 			background-color: transparent;
+			margin-top: -3px;
 
 			svg {
-				width: 24px;
-				height: 24px;
+				width: 18px;
+				height: 18px;
 				fill: var(--primary);
 			}
 
@@ -70,14 +78,26 @@ body.body-locked .search-title__wrapper {
 		input {
 			flex-grow: 1;
 			border: none;
-			padding: 10px;
-			font-size: 16px;
+			padding: 10px 0;
+			font-size: 14px;
 			outline: 0;
 			outline-offset: 0;
 
 			&::placeholder {
-				font-size: 16px;
+				font-size: 14px;
 				color: var(--gray);
+			}
+
+			@include media-up(375px) {
+				padding: 10px 5px;
+			}
+
+			@include media-up($mobile-width) {
+				font-size: 16px;
+
+				&::placeholder {
+					font-size: 16px;
+				}
 			}
 		}
 
@@ -87,11 +107,10 @@ body.body-locked .search-title__wrapper {
 
 		.search-title-refresh-btn {
 			font-size: 12px;
+			line-height: 1;
+			min-height: fit-content;
+			padding: 0;
 			color: var(--gray);
-
-			@include media-down($mobile-width) {
-				display: none;
-			}
 		}
 
 		.search-submit-btn {
@@ -102,8 +121,8 @@ body.body-locked .search-title__wrapper {
 			padding: 5px;
 
 			svg {
-				width: 24px;
-				height: 24px;
+				width: 20px;
+				height: 20px;
 				fill: var(--primary);
 			}
 		}
@@ -127,6 +146,7 @@ body.body-locked .search-title__wrapper {
 		}
 
 		& > span {
+			font-size: 24px;
 			margin-bottom: 5px;
 		}
 	}
@@ -138,7 +158,7 @@ body.body-locked .search-title__wrapper {
 
 		@include media-up($tablet-lg-width) {
 			grid-template-columns: 1fr 3fr;
-			padding-left: var(--container-offset);
+			padding-left: 40px;
 		}
 
 		&-item {
@@ -146,7 +166,11 @@ body.body-locked .search-title__wrapper {
 			gap: 40px;
 
 			&--main {
-				padding: 0 var(--container-offset);
+				padding: 0 10px;
+
+				@include media-up($tablet-width) {
+					padding: 0 40px;
+				}
 
 				@include media-up($tablet-lg-width) {
 					grid-template-columns: 1fr 3fr;
@@ -175,7 +199,7 @@ body.body-locked .search-title__wrapper {
 						}
 					}
 
-					@include media-up($tablet-lg-width) {
+					@include media-up($tablet-width) {
 						grid-template-columns: repeat(3, 1fr);
 						.product-card:last-child {
 							display: flex;

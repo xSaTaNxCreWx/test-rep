@@ -1,0 +1,17 @@
+.inner-section {
+	&__wrapper {
+		&:has(.inner-section__sidebar) {
+			display: grid;
+			grid-template-columns: 300px auto;
+			gap: 40px;
+		}
+	}
+
+	&__sidebar {
+		outline: 1px solid red;
+	}
+
+	&__content {
+		outline: 1px solid red;
+	}
+}
