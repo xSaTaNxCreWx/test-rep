@@ -64,10 +64,14 @@
 		&__content {
 			display: grid;
 			grid-template-columns: 1fr;
-			gap: 40px;
+			gap: 20px 40px;
 
-			@include media-equal-up($tablet-width) {
+			@include media-equal-up($tablet-lg-width) {
 				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@include media-up(1320px) {
+				gap: 40px;
 			}
 		}
 	}

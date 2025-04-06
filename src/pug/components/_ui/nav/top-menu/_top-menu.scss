@@ -134,12 +134,12 @@
 
 			&--side {
 				display: grid;
-				grid-template-columns: repeat(3, 1fr);
+				grid-template-columns: repeat(4, 1fr);
 				max-height: fit-content;
 				padding-bottom: 40px;
 
-				@include media-down(1240px) {
-					grid-template-columns: repeat(2, 1fr);
+				@include media-down(1440px) {
+					grid-template-columns: repeat(3, 1fr);
 
 					& > *:last-child {
 						display: none;

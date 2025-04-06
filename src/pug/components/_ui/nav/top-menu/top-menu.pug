@@ -109,20 +109,19 @@ mixin top-menu(data)
             })
         .top-menu__grid-item-section
       .top-menu__grid-item.top-menu__grid-item--side
-        +product-card({
-          images: [
-            'product-card-mock-1',
-            'product-card-mock-2',
-            'product-card-mock-3',
-            'product-card-mock-4',
-          ],
-          badge: {
-            cls: 'badge-accent',
-            text: '-25%'
+
+
+        +base-card({
+          img: {
+            name: 'mock-img-1',
+            width: 920,
+            height: 920
           },
-          title: 'Брюки спортивные летние с двумя карманами',
-          price: '9999 ₽',
-          oldPrice: '19990 ₽'
+          title: {
+            text: 'Весенняя коллекция',
+            icon: true,
+            cls: 'base-card__title--light'
+          }
         })
 
         +base-card({
@@ -136,6 +135,22 @@ mixin top-menu(data)
             icon: true,
             cls: 'base-card__title--light'
           }
+        })
+
+        +product-card({
+          images: [
+            'product-card-mock-1',
+            'product-card-mock-2',
+            'product-card-mock-3',
+            'product-card-mock-4',
+          ],
+          badge: {
+            cls: 'badge-accent',
+            text: '-25%'
+          },
+          title: 'Брюки спортивные летние с двумя карманами',
+          price: '9999 ₽',
+          oldPrice: '19990 ₽' 
         })
 
         +product-card({
