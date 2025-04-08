@@ -12,46 +12,42 @@ mixin product-card(data)
           cls: data.badge.cls ? data.badge.cls : null,
           text: data.badge.text
         })
-      //- +main-btn({
-      //-   tag: 'button',
-      //-   cls: 'btn-fav',
-      //-   icon: 'fav' 
-      //- })
 
-      +main-btn({
-        tag: 'button', 
-        cls: 'btn-cart size-modal-opener',
-        icon: 'cart',
-        modal: 'size-modal'
-      })
+      if data.hideAddProductHandlers
+        +main-btn({
+          tag: 'button', 
+          cls: 'btn-cart size-modal-opener',
+          icon: 'cart',
+          modal: 'size-modal'
+        })
 
-      +main-btn({
-        tag: 'button', 
-        cls: 'btn-cart-wide',
-        title: 'Добавить в корзину',
-      })
+        +main-btn({
+          tag: 'button', 
+          cls: 'btn-cart-wide',
+          title: 'Добавить в корзину',
+        })
 
-      .product-cart__props-row
-        +main-btn({
-          tag: 'button', 
-          cls: 'size-chooser-btn',
-          title: 'XS',
-        })
-        +main-btn({
-          tag: 'button', 
-          cls: 'size-chooser-btn active',
-          title: 'S',
-        })
-        +main-btn({
-          tag: 'button', 
-          cls: 'size-chooser-btn',
-          title: 'M',
-        })
-        +main-btn({
-          tag: 'button', 
-          cls: 'size-chooser-btn',
-          title: 'L',
-        })
+        .product-cart__props-row
+          +main-btn({
+            tag: 'button', 
+            cls: 'size-chooser-btn',
+            title: 'XS',
+          })
+          +main-btn({
+            tag: 'button', 
+            cls: 'size-chooser-btn active',
+            title: 'S',
+          })
+          +main-btn({
+            tag: 'button', 
+            cls: 'size-chooser-btn',
+            title: 'M',
+          })
+          +main-btn({
+            tag: 'button', 
+            cls: 'size-chooser-btn',
+            title: 'L',
+          })
 
       .swiper.product-card-inner-slider
         .swiper-wrapper
@@ -68,30 +64,31 @@ mixin product-card(data)
           current: data.price
         })
     
-    .product-card__footer
-      +color-picker-btn-row({
-        items: [
-          {
-            label: 'Белый',
-            hex: '#ffffff',
-            isActive: true
-          },
-          {
-            label: 'Синий',
-            hex: '#363ef1'
-          },
-          {
-            label: 'Черный',
-            hex: '#000000'
-          },
-        ]
-      })
+    if data.hideAddProductHandlers
+      .product-card__footer
+        +color-picker-btn-row({
+          items: [
+            {
+              label: 'Белый',
+              hex: '#ffffff',
+              isActive: true
+            },
+            {
+              label: 'Синий',
+              hex: '#363ef1'
+            },
+            {
+              label: 'Черный',
+              hex: '#000000'
+            },
+          ]
+        })
 
-      <template class="size-modal-content">
-        <div class="size-chooser">
-          <button type="button">XS</button>
-          <button type="button">S</button>
-          <button type="button">M</button>
-          <button type="button">L</button>
-        </div>
-      </template>
+        <template class="size-modal-content">
+          <div class="size-chooser">
+            <button type="button">XS</button>
+            <button type="button">S</button>
+            <button type="button">M</button>
+            <button type="button">L</button>
+          </div>
+        </template>

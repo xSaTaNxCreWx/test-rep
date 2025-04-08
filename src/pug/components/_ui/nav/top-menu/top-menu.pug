@@ -109,8 +109,6 @@ mixin top-menu(data)
             })
         .top-menu__grid-item-section
       .top-menu__grid-item.top-menu__grid-item--side
-
-
         +base-card({
           img: {
             name: 'mock-img-1',
@@ -131,7 +129,7 @@ mixin top-menu(data)
             height: 920
           },
           title: {
-            text: 'Весенняя коллекция',
+            text: 'Весенняя коллекция2',
             icon: true,
             cls: 'base-card__title--light'
           }
@@ -154,6 +152,8 @@ mixin top-menu(data)
         })
 
         +product-card({
+
+          hideAddProductHandlers: true, 
           images: [
             'product-card-mock-1',
             'product-card-mock-2',

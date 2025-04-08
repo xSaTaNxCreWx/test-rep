@@ -2679,12 +2679,6 @@ body:has(.burger.active){
   height:-moz-fit-content;
   height:fit-content;
 }
-.top-menu__grid-item--side .product-card .product-card__header .btn-cart{
-  display:none;
-}
-.top-menu__grid-item--side .product-card .product-card__header .btn-cart-wide{
-  display:none;
-}
 .top-menu__list-wrapper{
   position:relative;
   gap:10px;
